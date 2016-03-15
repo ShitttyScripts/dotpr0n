@@ -1,0 +1,40 @@
+colorscheme herrbischoff
+
+filetype /^ssh-/i
+         \ FUSE_MOUNT2|sshfs %PARAM %DESTINATION_DIR
+
+fileviewer *.zip,*.jar,*.war,*.ear unzip -l %c, echo "No zip to preview:"
+
+filetype *.zip,*.jar,*.war,*.ear,*.tar.gz,*.tgz,*.tar.xz,*.txz,*.tar.bz2,*.tbz,*.rar,*.cab,*.iso,*.xar,*.epub
+         \ {Mount with fuse-zip}
+         \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
+         \ {View contents}
+         \ zip −sf %c | less,
+         \ {Extract here}
+         \ tar −xf %c,
+
+filetype *.avi,*.mpg,*.mpeg,*.mp4,*.m4v,*.mkv,*.wmv,*.webm,*.ogv,*.flv,*.mov
+         \ mpv %c
+
+filetype *.png,*.jpg,*.jpeg,*.bmp,*.tiff,*.tif,*.gif
+         \ imgcat %c; and false
+
+fileviewer *.epub,*.docx,*.md,*.markdown,*.rst
+         \ pandoc -i %c -t plain | less
+
+filetype *.mp3,*.m4a,*.m4b,*.oga,*.flac
+         \ mplayer -novideo %c
+
+filetype *.dmg
+         \ hdiutil attach %c
+
+fileviewer *.dmg
+         \ hdiutil imageinfo %c
+
+filetype *.pdf
+         \ open %c
+
+fileviewer *.pdf
+         \ pandoc -i %c -t plain | less
+
+" vim:ft=vim

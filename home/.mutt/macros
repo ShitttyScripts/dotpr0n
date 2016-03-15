@@ -1,0 +1,30 @@
+# {{{ Accounts
+macro index,pager gw "<change-folder>=herrbischoff.com/INBOX<enter>" "Change to Work inbox"
+macro index,pager gp "<change-folder>=irulan.net/INBOX<enter>" "Change to Personal inbox"
+# }}}
+# {{{ mbsync
+macro index n "<shell-escape>mbsync herrbischoff irulan && notmuch new<enter>" "run mbsync to sync all mail"
+# }}}
+# {{{ Saner copy/move dialogs
+macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
+macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+# }}}
+# {{{ Spamcop
+macro index \cs ":set autoedit=no fast_reply=yes editor=\"true\"\n<tag-prefix><forward-message>submit.GZCfUpRwtLeZLlPz@spam.spamcop.net\n\n" "Forward mail to SpamCop"
+macro pager \cs ":set autoedit=no fast_reply=yes editor=\"true\"\n<tag-prefix><forward-message>submit.GZCfUpRwtLeZLlPz@spam.spamcop.net\n\n" "Forward mail to SpamCop"
+# }}}
+# {{{ HTML handling
+macro pager \Cu "|urlview<enter>" "call urlview to open links"
+macro pager l "| elinks -force-html; clear\n"
+# }}}
+# {{{ Sidebar Patch
+macro index b '<enter-command>toggle sidebar_visible<enter><refresh>'
+macro pager b '<enter-command>toggle sidebar_visible<enter><redraw-screen>'
+# }}}
+# {{{ notmuch
+# 'L' performs a notmuch query, showing only the results
+macro index L "<enter-command>unset wait_key<enter><shell-escape>read -p 'notmuch query: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;chomp@a;s/\^id:// for@a;$,=\"|\";print@a'\`\"<enter>" "show only messages matching a notmuch pattern"
+# 'a' shows all messages again (supersedes default <alias> binding)
+macro index a "<limit>all\n" "show all messages (undo limit)"
+# }}}
+# vim:foldmethod=marker:foldlevel=0:ft=muttrc

@@ -1,0 +1,22 @@
+set fisher_home ~/.local/share/fisherman
+set fisher_config ~/.config/fisherman
+source $fisher_home/config.fish
+
+set fish_color_autosuggestion grey
+set fish_color_command green
+set fish_color_comment grey
+set fish_color_cwd green
+set fish_color_cwd_root red
+set fish_color_end 0087d7
+set fish_color_error red
+set fish_color_escape cyan
+set fish_color_history_current cyan
+set fish_color_match cyan
+set fish_color_normal white
+set fish_color_operator cyan
+set fish_color_param white
+set fish_color_quote yellow
+set fish_color_redirection white
+set fish_color_search_match black \x2d\x2dbackground\x3dwhite
+set fish_color_selection black \x2d\x2dbackground\x3dwhite
+set fish_color_valid_path \x2d\x2dunderline

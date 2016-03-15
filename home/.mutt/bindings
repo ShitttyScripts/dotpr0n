@@ -1,0 +1,46 @@
+bind index <space> collapse-thread
+bind index <tab> sync-mailbox
+bind index G last-entry
+bind index gg first-entry
+bind index P recall-message
+bind index R group-reply
+bind index h noop
+
+bind pager R group-reply
+bind pager h exit
+bind pager gg top
+bind pager G bottom
+bind pager J next-line
+bind pager K previous-line
+
+bind browser l select-entry
+bind browser L view-file
+bind browser gg first-entry
+bind browser G last-entry
+bind browser h exit
+
+bind attach h exit
+bind attach e edit-type
+bind attach l view-attach
+
+bind compose P postpone-message
+
+bind editor <Tab> complete-query
+bind editor ^T complete
+
+# {{{ Sidebar Patch
+bind index,pager \Ck sidebar-prev
+bind index,pager \Cj sidebar-next
+bind index,pager \Cl sidebar-open
+bind index,pager \Cn sidebar-scroll-up
+bind index,pager \Cv sidebar-scroll-down
+# }}}
+
+# {{{
+# 'L' performs a notmuch query, showing only the results
+# macro index L "<enter-command>unset wait_key<enter><shell-escape>read -p 'notmuch query: ' x; echo \$x >~/.cache/mutt_terms<enter><limit>~i \"\`notmuch search --output=messages \$(cat ~/.cache/mutt_terms) | head -n 600 | perl -le '@a=<>;chomp@a;s/\^id:// for@a;$,=\"|\";print@a'\`\"<enter>" "show only messages matching a notmuch pattern"
+# # 'a' shows all messages again (supersedes default <alias> binding)
+# macro index a "<limit>all\n" "show all messages (undo limit)"
+# }}}
+
+# vim:foldmethod=marker:foldlevel=0:ft=muttrc

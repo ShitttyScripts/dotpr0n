@@ -1,0 +1,21 @@
+set spoolfile="+irulan.net/INBOX"
+set postponed="+irulan.net/Drafts"
+set record="+irulan.net/Sent"
+
+## Send options.
+set sendmail = "/usr/local/bin/msmtp -a irulan"
+set realname = "Marcel Bischoff
+set from = marcel@irulan.net
+set hostname = irulan.net
+
+mailboxes +irulan.net/INBOX \
+          +irulan.net/Archive \
+          +irulan.net/Sent \
+          +irulan.net/Drafts \
+          +irulan.net/Trash
+
+macro index A "<save-message>=irulan.net/Archive<return>" "move message to archive folder"
+
+account-hook $folder "set spoolfile="+irulan.net/INBOX"
+
+# vim:foldmethod=marker:foldlevel=0:ft=muttrc

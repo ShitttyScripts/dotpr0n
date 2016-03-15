@@ -1,0 +1,47 @@
+[user]
+	email = marcel@herrbischoff.com
+	name = Marcel Bischoff
+	signingkey = B0A039CD
+[core]
+	editor = nvim
+	excludesfile = ~/.gitignore_global
+	quotepath = false
+[color]
+	branch = auto
+	status = auto
+[push]
+#	default = simple
+	default = matching
+[alias]
+        st = status
+        ci = commit
+        di = diff
+        co = checkout
+        amend = commit --amend
+        b = branch
+        d = log --diff-filter=D -- $1
+        ignore = "!f() { echo $1 >> \"${GIT_PREFIX}.gitignore\"; }; f"
+	switch = !legit switch \"$@\"
+	branches = !legit branches
+	sprout = !legit sprout \"$@\"
+	unpublish = !legit unpublish \"$@\"
+	harvest = !legit harvest \"$@\"
+	sync = !legit sync \"$@\"
+	publish = !legit publish \"$@\"
+	graft = !legit graft \"$@\"
+	svn-diff = !git-svn-diff
+	pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+	pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+	ctags = !.git/hooks/ctags
+[filter "media"]
+	clean = git media clean %f
+	required = true
+	smudge = git media smudge %f
+[filter "lfs"]
+	clean = git lfs clean %f
+	required = true
+	smudge = git lfs smudge %f
+[github]
+	user = herrbischoff
+[init]
+	templatedir = ~/.git_template

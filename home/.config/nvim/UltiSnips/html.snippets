@@ -1,0 +1,12 @@
+snippet svg
+<svg role="img" class="$1">
+  <use xlink:href="#$1"></use>
+</svg>
+endsnippet
+
+snippet repeater
+{% for item in post.get_field('$1') %}
+  $2
+{% endfor %}
+$0
+endsnippet

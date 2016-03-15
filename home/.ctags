@@ -1,0 +1,12 @@
+# Basic options
+--recurse=yes
+--tag-relative=yes
+--exclude=.git
+--totals=yes
+
+# PHP
+--langmap=php:.engine.inc.module.theme.install.php
+--PHP-kinds=+cf
+--regex-PHP='/abstract class ([^ ]*)//c/'
+--regex-PHP='/interface ([^ ]*)//c/'
+--regex-PHP='/(public |static |abstract |protected |private )+function ([^ (]*)//f/'
