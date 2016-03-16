@@ -179,9 +179,7 @@ alias bc 'command bc -l'
 alias c 'clear'
 alias sha1 'openssl sha1'
 
-# function mkdir
-#     command mkdir -pv
-# end
+alias mkdir 'command mkdir -pv'
 
 # Get web server headers
 alias header 'curl -I'
