@@ -1,183 +1,93 @@
 # Neovim as Vim
-function vim
-    command nvim $argv
-end
+alias vim 'nvim'
 
 # Shortcuts
-function d
-    docker
-end
-
-function dl
-    cd ~/Downloads
-end
-
-function dt
-    cd ~/Desktop
-end
-
-function e
-    nvim -w
-end
-
-function g
-    git $argv
-end
-
-function h
-    history $argv
-end
-
-function j
-    jobs $argv
-end
-
-function p
-    cd ~/Projekte
-end
-
-function v
-    vifm $argv
-end
+alias d 'docker'
+alias dl 'cd ~/Downloads'
+alias dt 'cd ~/Desktop'
+alias e 'nvim -w'
+alias g 'git'
+alias h 'history'
+alias j 'jobs'
+alias p 'cd ~/Projekte'
+alias v 'vifm'
 
 # Git shortcuts
-function gd
-    git diff | nvim
-end
+alias ga 'git add'
+alias gaa 'git add --all'
+alias gb 'git branch'
+alias gba 'git branch -a'
+alias gbd 'git branch -D'
+alias gbl 'git blame -b -w'
+alias gc 'git commit -v'
+alias gc! 'git commit -v --amend'
+alias gca 'git commit -v -a'
+alias gca! 'git commit -v -a --amend'
+alias gcam 'git commit -a -m'
+alias gcan! 'git commit -v -a -s --no-edit --amend'
+alias gcd 'cd (git rev-parse --show-toplevel)'
+alias gcl 'git clone --recursive'
+alias gclean 'git clean -fd'
+alias gco 'git checkout'
+alias gcob 'git checkout -b'
+alias gcom 'git checkout master'
+alias gcp 'git cherry-pick'
+alias gcs 'git commit -S'
+alias gd 'git diff'
+alias gdca 'git diff --cached'
+alias gdct 'git describe --tags (git rev-list --tags --max-count 1)'
+alias gdt 'git diff-tree --no-commit-id --name-only -r'
+alias gdw 'git diff --word-diff'
+alias gf 'git fetch'
+alias gfa 'git fetch --all --prune'
+alias gfo 'git fetch origin'
+alias gi 'git ignore'
+alias gl 'git log --pretty=format:"%Cgreen%h%Creset %an - %s" --graph'
+alias gm 'git merge'
+alias gmom 'git merge origin/master'
+alias gmum 'git merge upstream/master'
+alias gp 'git push'
+alias gpa 'git push --all'
+alias gpl 'git pull'
+alias gplr 'git pull --rebase'
+alias gpoat 'git push origin --all; and git push origin --tags'
+alias gpom 'git pull origin master'
+alias gpristine 'git reset --hard; and git clean -dfx'
+alias gpt 'git push --tags'
+alias gpu 'git push upstream'
+alias gr 'git remote'
+alias gra 'git remote add'
+alias grb 'git rebase'
+alias grh 'git reset HEAD'
+alias grhh 'git reset HEAD --hard'
+alias gst 'git status'
 
-function ga
-    git add $argv
-end
-
-function gi
-    git ignore $argv
-end
-
-function gbd
-    git branch -D $argv
-end
-
-function gst
-    git status $argv
-end
-
-function gc
-    git commit $argv
-end
-
-function gca
-    git commit -a -m  $argv
-end
-
-function gm
-    git merge --no-ff $argv
-end
-
-function gput
-    git push --tags
-end
-
-function gpu
-    git push $argv
-end
-
-function gpua
-    git push --all $argv
-end
-
-function gpl
-    git pull $argv
-end
-
-function gplr
-    git pull --rebase $argv
-end
-
-function grh
-    git reset --hard $argv
-end
-
-function gb
-    git branch $argv
-end
-
-function gcob
-    git checkout -b $argv
-end
-
-function gco
-    git checkout $argv
-end
-
-function gcom
-    git checkout master $argv
-end
-
-function gba
-    git branch -a $argv
-end
-
-function gcp
-    git cherry-pick $argv
-end
-
-function gl
-    git log --pretty=format:"%Cgreen%h%Creset %an - %s" --graph $argv
-end
-
-function gpom
-    git pull origin master $argv
-end
-
-function gcd
-    cd (git rev-parse --show-toplevel) $argv
-end
+# Homeshick shortcuts
+alias h 'homeshick'
+alias hc 'homeshick cd'
+alias hcd 'homeshick cd dotfiles'
 
 # Taskwarrior shortcuts
-function t
-    task $argv
-end
-
-function ta
-    task add $argv
-end
-
-function tl
-    task list $argv
-end
+alias t 'task'
+alias ta 'task add'
+alias tl 'task list'
 
 # tmux shortcuts
-function txa
-    tmux attach-session -t $argv
-end
-
-function txk
-    tmux kill-session -t $argv
-end
-
-function txl
-    tmux ls $argv
-end
+alias txa 'tmux attach-session -t'
+alias txk 'tmux kill-session -t'
+alias txl 'tmux ls'
 
 # dtrx shortcut
-function x
-    dtrx -v $argv
-end
+alias x 'dtrx -v'
 
 # Docker
-function docker-clean
-    docker rmi -f (docker images -q -a -f dangling=true)
-end
+alias docker-clean 'docker rmi -f (docker images -q -a -f dangling=true)'
 
 # Ansiweather
-function weather
-    ansiweather
-end
+alias weather 'ansiweather'
 
 # Sane cat for Markdown files
-function mdcat
-    pandoc -f markdown -t plain $argv
-end
+alias mdcat 'pandoc -f markdown -t plain'
 
 # Detect which `ls` flavor is in use
 # if ls --color > /dev/null 2>&1 # GNU `ls`
@@ -202,51 +112,28 @@ end
 # end
 
 # Get week number
-function week
-    date +%V
-end
+alias week 'date +%V'
 
 # IP addresses
-function extip
-    dig +short myip.opendns.com @resolver1.opendns.com
-end
-
-function locip
-    ipconfig getifaddr en0
-end
-
-function ips
-    ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'
-end
+alias extip 'dig +short myip.opendns.com @resolver1.opendns.com'
+alias ips 'ifconfig -a | grep -o "inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)" | awk "{ sub(/inet6? (addr:)? ?/, \"\"); print }"'
+alias locip 'ipconfig getifaddr en0'
 
 # Flush Directory Service cache
-function flush
-    dscacheutil -flushcache; and killall -HUP mDNSResponder
-end
+alias flush 'dscacheutil -flushcache; and killall -HUP mDNSResponder'
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
-function lscleanup
-    /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder
-end
+alias lscleanup '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder'
 
 # Serve folder via HTTP
-function http-serve
-    python -m SimpleHTTPServer
-end
+alias http-serve 'python -m SimpleHTTPServer'
 
 # View HTTP traffic
-function sniff
-    sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'
-end
-
-function httpdump
-    sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\"
-end
+alias httpdump 'sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\"'
+alias sniff 'sudo ngrep -d "en1" -t "^(GET|POST) " "tcp and port 80"'
 
 # List file sizes in human-readable format
-function sizes
-    du -sh * | sort -n
-end
+alias sizes 'du -sh * | sort -n'
 
 # Listening ports
 function openports
@@ -268,108 +155,61 @@ command -v md5sum > /dev/null; or alias md5sum "md5"
 command -v sha1sum > /dev/null; or alias sha1sum "shasum"
 
 # Recursively delete `.DS_Store` files
-function cleanup
-    find . -type f -name '*.DS_Store' -ls -delete
-end
+alias cleanup 'find . -type f -name "*.DS_Store" -ls -delete'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-function emptytrash
-    sudo rm -rfv /Volumes/*/.Trashes; \
-    and sudo rm -rfv ~/.Trash; \
-    and sudo rm -rfv /private/var/log/asl/*.asl
-end
+alias emptytrash 'sudo rm -rfv /Volumes/*/.Trashes; and sudo rm -rfv ~/.Trash; and sudo rm -rfv /private/var/log/asl/*.asl'
 
 # Show/hide hidden files in Finder
-function show
-    defaults write com.apple.finder AppleShowAllFiles -bool true; \
-    and killall Finder
-end
-
-function hide
-    defaults write com.apple.finder AppleShowAllFiles -bool false; \
-    and killall Finder
-end
+alias hide 'defaults write com.apple.finder AppleShowAllFiles -bool false; and killall Finder'
+alias show 'defaults write com.apple.finder AppleShowAllFiles -bool true; and killall Finder'
 
 # Hide/show all desktop icons (useful when presenting)
-function hidedesktop
-    defaults write com.apple.finder CreateDesktop -bool falsel; \
-    and killall Finder
-end
-
-function showdesktop
-    defaults write com.apple.finder CreateDesktop -bool true; \
-    and killall Finder
-end
+alias hidedesktop 'defaults write com.apple.finder CreateDesktop -bool falsel; and killall Finder'
+alias showdesktop 'defaults write com.apple.finder CreateDesktop -bool true; and killall Finder'
 
 # URL-encode strings
-function urlencode
-  python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"
-end
+alias urlencode 'python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
-function mergepdf
-  /System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py
-end
+alias mergepdf '/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
 
 # Disable Spotlight
-function spotoff
-    sudo mdutil -a -i off
-end
+alias spotoff 'sudo mdutil -a -i off'
+
 # Enable Spotlight
-function spoton
-    sudo mdutil -a -i on
-end
+alias spoton 'sudo mdutil -a -i on'
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-function plistbuddy
-    /usr/libexec/PlistBuddy
-end
+alias plistbuddy '/usr/libexec/PlistBuddy'
 
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
-function badge
-    tput bel
-end
+alias badge 'tput bel'
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
 # find . -name .gitattributes | map dirname
-function map
-    xargs -n1
-end
+alias map 'xargs -n1'
 
 # Lock the screen (when going AFK)
-function afk
-  /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
-end
+alias afk '/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 # Output all open ports (does not work in Mac OS X)
 # alias openports "netstat -tulpn"
 
-function c
-    clear
-end
-
-function bc
-    command bc -l
-end
-
-function sha1
-    openssl sha1
-end
+alias bc 'command bc -l'
+alias c 'clear'
+alias sha1 'openssl sha1'
 
 # function mkdir
-#     command mkdir -pv $argv
+#     command mkdir -pv
 # end
 
 # Get web server headers
-function header
-    curl -I
-end
+alias header 'curl -I'
 
 # Find out if remote server supports gzip / mod_deflate or not
-function headerc
-    curl -I --compress
-end
+alias headerc 'curl -I --compress'
