@@ -23,7 +23,7 @@ Plug 'Shougo/deoplete.nvim'
 Plug 'xolox/vim-session'
 Plug 'Chiel92/vim-autoformat'
 Plug 'Raimondi/delimitMate'
-Plug 'Shougo/vimproc', { 'do': 'make -f make_mac.mak' }
+Plug 'Shougo/vimproc', { 'do': 'make' }
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'StanAngeloff/php.vim', { 'for': 'php' }
 " Plug 'Valloric/YouCompleteMe', { 'dir': '~/.config/nvim/plugged/YouCompleteMe', 'do': './install.py --clang-completer --tern-completer' }
