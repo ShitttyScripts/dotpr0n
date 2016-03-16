@@ -124,7 +124,7 @@ function openports
 end
 
 # Canonical hex dump; some systems have this symlinked
-# command -v hd > /dev/null; or alias hd "hexdump -C"
+command -v hd > /dev/null; or alias hd "hexdump -C"
 
 # OS X has no `md5sum`, so use `md5` as a fallback
 command -v md5sum > /dev/null; or alias md5sum "md5"
