@@ -89,28 +89,6 @@ alias weather 'ansiweather'
 # Sane cat for Markdown files
 alias mdcat 'pandoc -f markdown -t plain'
 
-# Detect which `ls` flavor is in use
-# if ls --color > /dev/null 2>&1 # GNU `ls`
-#     set -x colorflag "--color"
-# else # OS X `ls`
-#     set -x colorflag "-G"
-# end
-#
-# # List all files colorized in long format
-# function l
-#     ls -lF $colorflag
-# end
-#
-# # List all files colorized in long format, including dot files
-# function la
-#     ls -laF $colorflag
-# end
-#
-# # List only directories
-# function lsd
-#     ls -lF $colorflag | grep --color=never '^d'
-# end
-
 # Get week number
 alias week 'date +%V'
 
