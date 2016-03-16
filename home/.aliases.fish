@@ -119,7 +119,7 @@ function openports
         case Darwin
             lsof -i | grep LISTEN
         case '*'
-            netstat -nlp
+            netstat -tulpn
     end
 end
 
@@ -174,9 +174,6 @@ alias map 'xargs -n1'
 
 # Lock the screen (when going AFK)
 alias afk '/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-
-# Output all open ports (does not work in Mac OS X)
-# alias openports "netstat -tulpn"
 
 alias bc 'command bc -l'
 alias c 'clear'
