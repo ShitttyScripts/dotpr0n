@@ -37,4 +37,7 @@ filetype *.pdf
 fileviewer *.pdf
          \ pandoc -i %c -t plain | less
 
+set trash!
+set confirm!
+
 " vim:ft=vim
