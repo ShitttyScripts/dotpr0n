@@ -24,6 +24,7 @@ set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set modelines=1
 set mouse=a " Enable mouse use in all modes
 set nocursorcolumn " Do not highlight column
+set noequalalways
 set nolist
 set number
 set numberwidth=4

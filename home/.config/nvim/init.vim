@@ -2,9 +2,6 @@ set shell=/bin/sh
 
 source $HOME/.config/nvim/plugins.vim
 source $HOME/.config/nvim/ui.vim
-source $HOME/.config/nvim/autocommands.vim
-source $HOME/.config/nvim/bindings.vim
-source $HOME/.config/nvim/functions.vim
 
 filetype plugin indent on
 set autoread " Reload files changed outside vim
@@ -58,5 +55,9 @@ set undodir=~/.tmp " set undo file location
 set undofile
 set undolevels=1000 " use many muchos levels of undo
 set writebackup
+
+source $HOME/.config/nvim/functions.vim
+source $HOME/.config/nvim/autocommands.vim
+source $HOME/.config/nvim/bindings.vim
 
 " vim:foldmethod=marker:foldlevel=0

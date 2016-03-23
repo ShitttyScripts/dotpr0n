@@ -18,12 +18,10 @@ augroup configgroup
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
   autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-  " if exists('g:plugs["tern_for_vim"]')
-  "   let g:tern_show_argument_hints = 'on_hold'
-  "   let g:tern_show_signature_in_pum = 1
-  "
-  "   autocmd FileType javascript setlocal omnifunc=tern#Complete
-  " endif
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
 
   " Python
   au BufNewFile,BufRead *.py
@@ -49,8 +47,5 @@ augroup configgroup
 
   " Enable Neomake
   autocmd! BufWritePost * Neomake
-
-  " Strip trailing whitespace on save
-  autocmd BufWritePre *.py,*.js,*.php,*.twig,*.coffee,*.jade,*.html :call <SID>StripTrailingWhitespaces()
 
 augroup END

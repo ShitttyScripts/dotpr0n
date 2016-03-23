@@ -29,6 +29,9 @@ set pastetoggle=<F2>
 " x does not overwrite yank buffer
 nnoremap x "_x
 
+" Fix whitespace
+nnoremap <silent> <F4> :StripWhitespace<CR>
+
 " Sort
 vnoremap <silent> <F5> :sort<CR>
 
