@@ -16,7 +16,8 @@ function update
             sudo gem update --system; and \
             sudo gem update; and \
             echo "=====[ pip ]======================================================"; and \
-            pip install --upgrade (pip list --outdated | awk '/.*/ {print $1}')
+            sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
+            sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
         case Linux
             echo "=====[ apt-get Software Update ]===================================="; and \
             sudo apt-get update; and \
@@ -34,8 +35,8 @@ function update
             echo "=====[ Gems ]====================================================="; and \
             sudo gem update; and \
             echo "=====[ pip ]======================================================"; and \
-            sudo pip install --upgrade (pip list --outdated | awk '/.*/ {print $1}'); and \
-            sudo pip3 install --upgrade (pip3 list --outdated | awk '/.*/ {print $1}')
+            sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
+            sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
         case '*'
             echo "Not supported on (uname)."
     end
