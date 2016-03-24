@@ -35,7 +35,7 @@ function update
             echo "=====[ Gems ]====================================================="; and \
             sudo gem update; and \
             echo "=====[ pip ]======================================================"
-            if cat /etc/issue | grep Ubuntu
+            if cat /etc/issue | grep Ubuntu > /dev/null
                 echo "pip updates not supported on Ubuntu as some packages are owned by the system."
             else
                 sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
