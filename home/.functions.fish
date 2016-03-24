@@ -20,10 +20,10 @@ function update
         case Linux
             echo "=====[ apt-get Software Update ]===================================="; and \
             sudo apt-get update; and \
-            sudo apt-get -y upgrade; and \
-            sudo apt-get -y dist-upgrade; and \
-            sudo apt-get -y autoremove; and \
-            sudo apt-get -y (deborphan); and \
+            sudo apt-get upgrade -y; and \
+            sudo apt-get dist-upgrade -y; and \
+            sudo apt-get autoremove -y; and \
+            sudo apt-get remove -y (deborphan); and \
             echo "=====[ Homebrew ]================================================="; and \
             brew update; and \
             brew upgrade; and \
