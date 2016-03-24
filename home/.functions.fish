@@ -1,20 +1,45 @@
 # Get OS X Software Updates, and update installed Ruby gems, Homebrew, npm, and their installed packages
 function update
-  echo "=====[ Apple Software Update ]===================================="; and \
-  sudo softwareupdate -i -a; and \
-  echo "=====[ Homebrew ]================================================="; and \
-  brew update; and \
-  brew upgrade; and \
-  brew cleanup -s; and \
-  brew cask cleanup; and \
-  echo "=====[ npm ]======================================================"; and \
-  npm install npm -g; and \
-  npm update -g; and \
-  echo "=====[ Gems ]====================================================="; and \
-  sudo gem update --system; and \
-  sudo gem update; and \
-  echo "=====[ pip ]======================================================"; and \
-  pip install --upgrade (pip list --outdated | awk '/.*/ {print $1}')
+    switch (uname)
+        case Darwin
+            echo "=====[ Apple Software Update ]===================================="; and \
+            sudo softwareupdate -i -a; and \
+            echo "=====[ Homebrew ]================================================="; and \
+            brew update; and \
+            brew upgrade; and \
+            brew cleanup -s; and \
+            brew cask cleanup; and \
+            echo "=====[ npm ]======================================================"; and \
+            npm install npm -g; and \
+            npm update -g; and \
+            echo "=====[ Gems ]====================================================="; and \
+            sudo gem update --system; and \
+            sudo gem update; and \
+            echo "=====[ pip ]======================================================"; and \
+            pip install --upgrade (pip list --outdated | awk '/.*/ {print $1}')
+        case Linux
+            echo "=====[ apt-get Software Update ]===================================="; and \
+            sudo apt-get update; and \
+            sudo apt-get -y upgrade; and \
+            sudo apt-get -y dist-upgrade; and \
+            sudo apt-get -y autoremove; and \
+            sudo apt-get -y (deborphan); and \
+            echo "=====[ Homebrew ]================================================="; and \
+            brew update; and \
+            brew upgrade; and \
+            brew cleanup -s; and \
+            echo "=====[ npm ]======================================================"; and \
+            npm install npm -g; and \
+            npm update -g; and \
+            echo "=====[ Gems ]====================================================="; and \
+            sudo gem update --system; and \
+            sudo gem update; and \
+            echo "=====[ pip ]======================================================"; and \
+            sudo pip install --upgrade (pip list --outdated | awk '/.*/ {print $1}'); and \
+            sudo pip3 install --upgrade (pip3 list --outdated | awk '/.*/ {print $1}')
+        case '*'
+            echo "Not supported on (uname)."
+    end
 end
 
 function haltall

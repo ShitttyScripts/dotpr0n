@@ -95,13 +95,34 @@ alias week 'date +%V'
 # IP addresses
 alias extip 'dig +short myip.opendns.com @resolver1.opendns.com'
 alias ips 'ifconfig -a | grep -o "inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)" | awk "{ sub(/inet6? (addr:)? ?/, \"\"); print }"'
-alias locip 'ipconfig getifaddr en0'
+function locip
+    switch (uname)
+    case Darwin
+        ipconfig getifaddr en0
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Flush Directory Service cache
-alias flush 'dscacheutil -flushcache; and killall -HUP mDNSResponder'
+function flush
+    switch (uname)
+    case Darwin
+        'dscacheutil -flushcache; and killall -HUP mDNSResponder'
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
-alias lscleanup '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder'
+function lscleanup
+    switch (uname)
+    case Darwin
+        '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder'
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Serve folder via HTTP
 alias http-serve 'python -m SimpleHTTPServer'
@@ -116,10 +137,10 @@ alias sizes 'du -sh * | sort -n'
 # Listening ports
 function openports
     switch (uname)
-        case Darwin
-            lsof -i | grep LISTEN
-        case '*'
-            netstat -tulpn
+    case Darwin
+        lsof -i | grep LISTEN
+    case '*'
+        netstat -tulpn
     end
 end
 
@@ -133,39 +154,111 @@ command -v md5sum > /dev/null; or alias md5sum "md5"
 command -v sha1sum > /dev/null; or alias sha1sum "shasum"
 
 # Recursively delete `.DS_Store` files
-alias cleanup 'find . -type f -name "*.DS_Store" -ls -delete'
+alias dscleanup 'find . -type f -name "*.DS_Store" -ls -delete'
 
 # Empty the Trash on all mounted volumes and the main HDD
 # Also, clear Apple’s System Logs to improve shell startup speed
-alias emptytrash 'sudo rm -rfv /Volumes/*/.Trashes; and sudo rm -rfv ~/.Trash; and sudo rm -rfv /private/var/log/asl/*.asl'
+function emptytrash
+    switch (uname)
+    case Darwin
+        sudo rm -rfv /Volumes/*/.Trashes; and sudo rm -rfv ~/.Trash; and sudo rm -rfv /private/var/log/asl/*.asl
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Show/hide hidden files in Finder
-alias hide 'defaults write com.apple.finder AppleShowAllFiles -bool false; and killall Finder'
-alias show 'defaults write com.apple.finder AppleShowAllFiles -bool true; and killall Finder'
+function hide
+    switch (uname)
+    case Darwin
+        defaults write com.apple.finder AppleShowAllFiles -bool false; and killall Finder
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
+
+function show
+    switch (uname)
+    case Darwin
+        defaults write com.apple.finder AppleShowAllFiles -bool true; and killall Finder
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Hide/show all desktop icons (useful when presenting)
-alias hidedesktop 'defaults write com.apple.finder CreateDesktop -bool falsel; and killall Finder'
-alias showdesktop 'defaults write com.apple.finder CreateDesktop -bool true; and killall Finder'
+function hidedesktop
+    switch (uname)
+    case Darwin
+        defaults write com.apple.finder CreateDesktop -bool falsel; and killall Finder
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
+
+function showdesktop
+    switch (uname)
+    case Darwin
+        defaults write com.apple.finder CreateDesktop -bool true; and killall Finder
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # URL-encode strings
 alias urlencode 'python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
 
 # Merge PDF files
 # Usage: `mergepdf -o output.pdf input{1,2,3}.pdf`
-alias mergepdf '/System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py'
+function mergepdf
+    switch (uname)
+    case Darwin
+        /System/Library/Automator/Combine\ PDF\ Pages.action/Contents/Resources/join.py
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Disable Spotlight
-alias spotoff 'sudo mdutil -a -i off'
+function spotoff
+    switch (uname)
+    case Darwin
+        sudo mdutil -a -i off
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Enable Spotlight
-alias spoton 'sudo mdutil -a -i on'
+function spoton
+    switch (uname)
+    case Darwin
+        sudo mdutil -a -i on
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # PlistBuddy alias, because sometimes `defaults` just doesn’t cut it
-alias plistbuddy '/usr/libexec/PlistBuddy'
+function plistbuddy
+    switch (uname)
+    case Darwin
+        /usr/libexec/PlistBuddy
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Ring the terminal bell, and put a badge on Terminal.app’s Dock icon
 # (useful when executing time-consuming commands)
-alias badge 'tput bel'
+function badge
+    switch (uname)
+    case Darwin
+        tput bel
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 # Intuitive map function
 # For example, to list all directories that contain a certain file:
@@ -173,7 +266,14 @@ alias badge 'tput bel'
 alias map 'xargs -n1'
 
 # Lock the screen (when going AFK)
-alias afk '/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
+function afk
+    switch (uname)
+    case Darwin
+        /System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend
+    case '*'
+        echo 'Mac OS X only command.'
+    end
+end
 
 alias bc 'command bc -l'
 alias c 'clear'
