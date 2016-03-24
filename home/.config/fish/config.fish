@@ -55,9 +55,9 @@ case Darwin
     set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/opt/ruby/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
     set -x MANPATH /usr/local/man (brew --prefix coreutils)/libexec/gnuman $MANPATH
 case Linux
-    set -x PATH $HOME/.linuxbrew/bin:$PATH
-    set -x MANPATH $HOME/.linuxbrew/share/man:$MANPATH
-    set -x INFOPATH $HOME/.linuxbrew/share/info:$INFOPATH
+    set -x PATH $HOME/.linuxbrew/bin $PATH
+    set -x MANPATH $HOME/.linuxbrew/share/man $MANPATH
+    set -x INFOPATH $HOME/.linuxbrew/share/info $INFOPATH
 case '*'
     # Do nothing
 end
