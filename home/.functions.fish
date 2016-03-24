@@ -29,8 +29,8 @@ function update
             brew upgrade; and \
             brew cleanup -s; and \
             echo "=====[ npm ]======================================================"; and \
-            npm install npm -g; and \
-            npm update -g; and \
+            sudo npm install npm -g; and \
+            sudo npm update -g; and \
             echo "=====[ Gems ]====================================================="; and \
             sudo gem update --system; and \
             sudo gem update; and \
