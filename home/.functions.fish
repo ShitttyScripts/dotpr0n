@@ -34,9 +34,13 @@ function update
             sudo npm update -g; and \
             echo "=====[ Gems ]====================================================="; and \
             sudo gem update; and \
-            echo "=====[ pip ]======================================================"; and \
-            sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
-            sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
+            echo "=====[ pip ]======================================================"
+            if cat /etc/issue | grep Ubuntu
+                echo "pip updates not supported on Ubuntu as some packages are owned by the system."
+            else
+                sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
+                sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
+            end
         case '*'
             echo "Not supported on (uname)."
     end
