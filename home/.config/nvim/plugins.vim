@@ -189,11 +189,11 @@ let g:jsx_ext_required = 1 " Allow JSX in normal JS files
 let g:multi_cursor_exit_from_visual_mode = 0
 
 " neomake
-noremap <Leader>o :lopen<CR> " open location window
-noremap <Leader>c :lclose<CR> " close location window
-" noremap <Leader><Space>, :ll<CR>         " go to current error/warning
-noremap <Leader>n :lnext<CR>      " next error/warning
-noremap <Leader>p :lprev<CR>      " previous error/warning
+noremap <leader>o :lopen<CR> " open location window
+noremap <leader>c :lclose<CR> " close location window
+noremap <leader>l :ll<CR>         " go to current error/warning
+noremap <leader>n :lnext<CR>      " next error/warning
+noremap <leader>p :lprev<CR>      " previous error/warning
 let g:neomake_javascript_enabled_makers = ['eslint']
 autocmd! BufWritePre * Neomake
 autocmd! QuitPre * let g:neomake_verbose = 0
