@@ -19,7 +19,7 @@ set ignorecase
 set incsearch " find the next match as we type the search
 set laststatus=2
 set linebreak
-set linespace=2 " Set line spacing
+" set linespace=2 " Set line spacing
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set modelines=1
 set mouse=a " Enable mouse use in all modes
