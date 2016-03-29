@@ -58,11 +58,13 @@ function ssidChangedCallback()
         -- We just joined our home WiFi network
         hs.audiodevice.defaultOutputDevice():setVolume(25)
         hs.task.new("/usr/bin/sudo", function(code, stdout, stderr) print("stdout: "..stdout) ; print("stderr: "..stderr) end, {"/usr/bin/tmutil", "enable"}):start()
+        hs.task.new("/usr/bin/sudo", function(code, stdout, stderr) print("stdout: "..stdout) ; print("stderr: "..stderr) end, {"/usr/sbin/scselect", "Home"}):start()
         hs.notify.new({title="Hammerspoon", informativeText="Arrived Home"}):send()
     elseif newSSID ~= homeSSID and lastSSID == homeSSID then
         -- We just departed our home WiFi network
         hs.audiodevice.defaultOutputDevice():setVolume(0)
-        hs.task.new("/usr/bin/sudo", function(code, stdout, stderr) print("stdout: "..stdout) ; print("stderr: "..stderr) end, {"/usr/bin/tmutil", "disable"}):start()
+        hs.task.new("/usr/bin/sudo", function(code, stdout, stderr) print("stdout: "..stdout) ; print("stderr: "..stderr) end, {"/usr/sbin/scselect", "Automatic"}):start()
+        hs.task.new("/usr/sbin/scselect", function() end, {"Automatic"})
         hs.notify.new({title="Hammerspoon", informativeText="Being somewhere else"}):send()
     end
 
