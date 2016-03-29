@@ -80,24 +80,24 @@ end
 
 # An easy way to create .icns files
 # Inspired by http://stackoverflow.com/a/20703594
-
-# function mkicns() {
-#   if [[ -z "$@" ]]; then
-#       echo "Input file missing"
-#   else
-#     filename=${1%.*}
-#     mkdir $filename.iconset
-#     sips -z 16 16   $1 --out $filename.iconset/icon_16x16.png
-#     sips -z 32 32   $1 --out $filename.iconset/icon_16x16@2x.png
-#     sips -z 32 32   $1 --out $filename.iconset/icon_32x32.png
-#     sips -z 64 64   $1 --out $filename.iconset/icon_32x32@2x.png
-#     sips -z 128 128 $1 --out $filename.iconset/icon_128x128.png
-#     sips -z 256 256 $1 --out $filename.iconset/icon_128x128@2x.png
-#     sips -z 256 256 $1 --out $filename.iconset/icon_256x256.png
-#     sips -z 512 512 $1 --out $filename.iconset/icon_256x256@2x.png
-#     sips -z 512 512 $1 --out $filename.iconset/icon_512x512.png
-#     cp $1 $filename.iconset/icon_512x512@2x.png
-#     iconutil -c icns $filename.iconset
-#     rm -r $filename.iconset
-#   fi
-# }
+function __mkicns
+    set filename (echo $argv[1] | sed 's/\.[^.]*$//')
+    mkdir $filename.iconset > /dev/null
+    sips -z 16 16 $argv[1] --out $filename.iconset/icon_16x16.png > /dev/null
+    sips -z 32 32 $argv[1] --out $filename.iconset/icon_16x16@2x.png > /dev/null
+    sips -z 32 32 $argv[1] --out $filename.iconset/icon_32x32.png > /dev/null
+    sips -z 64 64 $argv[1] --out $filename.iconset/icon_32x32@2x.png > /dev/null
+    sips -z 128 128 $argv[1] --out $filename.iconset/icon_128x128.png > /dev/null
+    sips -z 256 256 $argv[1] --out $filename.iconset/icon_128x128@2x.png > /dev/null
+    sips -z 256 256 $argv[1] --out $filename.iconset/icon_256x256.png > /dev/null
+    sips -z 512 512 $argv[1] --out $filename.iconset/icon_256x256@2x.png > /dev/null
+    sips -z 512 512 $argv[1] --out $filename.iconset/icon_512x512.png > /dev/null
+    cp $argv[1] $filename.iconset/icon_512x512@2x.png > /dev/null
+    iconutil -c icns $filename.iconset > /dev/null
+    rm -r $filename.iconset > /dev/null
+end
+function mkicns
+    if not spin "__mkicns $argv[1]"
+        return 1
+    end
+end
