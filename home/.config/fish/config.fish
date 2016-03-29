@@ -89,6 +89,7 @@ set -x LC_CTYPE en_US.UTF-8
 set -x EDITOR nvim
 set -x VISUAL nvim
 set -x PAGER less
+set -x MANPAGER 'less -X'
 
 # iTerm 2 Shell integration
 source $HOME/.iterm2_shell_integration.fish
