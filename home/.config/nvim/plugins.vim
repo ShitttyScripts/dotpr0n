@@ -17,6 +17,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'tobyS/pdv'
 " Plug 'tobyS/vmustache'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'easymotion/vim-easymotion'
 Plug 'Chiel92/vim-autoformat'
 Plug 'JulesWang/css.vim'
 Plug 'Raimondi/delimitMate'
@@ -221,6 +222,11 @@ let g:better_whitespace_filetypes_blacklist=['diff', 'gitcommit', 'unite', 'qf',
 " vim-easy-align
 xnoremap ga <Plug>(EasyAlign) " Start interactive EasyAlign in visual mode (e.g. vipga)
 nnoremap ga <Plug>(EasyAlign) " Start interactive EasyAlign for a motion/text object (e.g. gaip)
+
+" vim-easymotion
+map <Leader> <Plug>(easymotion-prefix)
+nmap s <Plug>(easymotion-s2)
+nmap t <Plug>(easymotion-t2)
 
 " vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
