@@ -2,7 +2,7 @@ call plug#begin()
 
 " Plug 'Shutnik/jshint2.vim'
 " Plug 'Valloric/YouCompleteMe', { 'dir': '~/.config/nvim/plugged/YouCompleteMe', 'do': './install.py --clang-completer --tern-completer' }
-" Plug 'chriskempson/base16-vim'
+Plug 'chriskempson/base16-vim'
 " Plug 'ervandew/supertab'
 " Plug 'godlygeek/csapprox'
 " Plug 'guns/xterm-color-table.vim'
@@ -16,6 +16,7 @@ call plug#begin()
 " Plug 'skammer/vim-css-color'
 " Plug 'tobyS/pdv'
 " Plug 'tobyS/vmustache'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'Chiel92/vim-autoformat'
 Plug 'JulesWang/css.vim'
 Plug 'Raimondi/delimitMate'
@@ -93,7 +94,8 @@ call plug#end()
 
 " Airline
 let g:airline_powerline_fonts = 1
-let g:airline_theme='gruvbox'
+" let g:airline_theme='gruvbox'
+let g:airline_theme='base16_monokai'
 
 " ctrlp
 " let g:ctrlp_working_path_mode = 'c'
@@ -103,6 +105,9 @@ let g:airline_theme='gruvbox'
 "       \ }
 " nnoremap <leader>b :CtrlPBuffer<CR>
 " nnoremap <leader>c :CtrlPTag<cr>
+
+" Base16
+let base16colorspace=256
 
 " Dash
 noremap <silent> <leader>d <Plug>DashSearch

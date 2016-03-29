@@ -7,7 +7,7 @@ source $fisher_home/config.fish
 source $HOME/.homesick/repos/homeshick/homeshick.fish
 source $HOME/.homesick/repos/homeshick/completions/homeshick.fish
 
-set fish_color_autosuggestion grey
+set fish_color_autosuggestion 75715e
 set fish_color_command green
 set fish_color_comment grey
 set fish_color_cwd green
@@ -22,7 +22,7 @@ set fish_color_operator cyan
 set fish_color_param white
 set fish_color_quote yellow
 set fish_color_redirection white
-set fish_color_search_match normal \x2d\x2dbackground\x3d3A3A3A
+set fish_color_search_match normal \x2d\x2dbackground\x3d75715e
 set fish_color_selection black \x2d\x2dbackground\x3dwhite
 set fish_color_valid_path \x2d\x2dunderline
 
@@ -108,3 +108,5 @@ set -x LS_COLORS 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;
 
 # Remove deprecated dot for source command
 functions -e .
+
+eval sh $HOME/.bin/base16-shell/base16-monokai.dark.sh

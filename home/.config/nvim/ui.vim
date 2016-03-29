@@ -1,6 +1,7 @@
-colorscheme gruvbox
-let &t_EI = "\<Esc>]50;CursorShape=0\x7"
-let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+" colorscheme gruvbox
+colorscheme base16-monokai
+" let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+" let &t_SI = "\<Esc>]50;CursorShape=1\x7"
 set autoindent " autoindent based on line above, works most of the time
 set background=dark
 set breakindent
