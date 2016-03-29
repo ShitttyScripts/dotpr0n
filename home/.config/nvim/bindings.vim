@@ -1,5 +1,8 @@
 let mapleader = "\<Space>"
 
+" Remove search highlight
+nnoremap <ESC><ESC> :noh<CR>
+
 
 " map <leader>, and <leader>. to buffer prev/next buffer
 noremap <leader>, :bp<CR>
@@ -32,9 +35,6 @@ nnoremap <silent> <F4> :StripWhitespace<CR>
 
 " Sort
 vnoremap <silent> <F5> :sort<CR>
-
-" Remove search highlight
-nnoremap <leader><space> :noh<CR>
 
 " Fast saving
 nmap <leader>w :w!<cr>
