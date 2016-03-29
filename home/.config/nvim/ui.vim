@@ -28,6 +28,7 @@ set noequalalways
 set nolist
 set number
 set numberwidth=4
+set relativenumber
 set ruler
 set scrolloff=3 " Keep the cursor visible within 3 lines when scrolling
 set shiftwidth=2 " when reading, tabs are 2 spaces
