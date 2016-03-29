@@ -14,7 +14,7 @@ Plug 'chriskempson/base16-vim'
 " Plug 'scrooloose/syntastic'
 " Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
 " Plug 'skammer/vim-css-color'
-" Plug 'tobyS/pdv'
+Plug 'tobyS/pdv'
 " Plug 'tobyS/vmustache'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'Chiel92/vim-autoformat'
@@ -202,6 +202,10 @@ autocmd! QuitPre * let g:neomake_verbose = 0
 map - :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable  = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
+
+"pdv
+let g:pdv_template_dir = $HOME ."/.config/neovim/plugged/pdv/templates_snip"
+nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 " UltiSnips
 let g:UltiSnipsExpandTrigger       = '<tab>'
