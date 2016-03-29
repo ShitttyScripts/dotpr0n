@@ -122,7 +122,6 @@ let g:delimitMate_expand_space = 1
 let g:delimitMate_jump_expansion = 1
 
 " deoplete
-set omnifunc=syntaxcomplete#Complete
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#disable_auto_complete = 1
 set completeopt+=noinsert

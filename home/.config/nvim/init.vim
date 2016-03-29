@@ -43,8 +43,8 @@ set ttimeoutlen=10
 
 " Better Completion
 " set complete=.,w,b,u,t
-" set completeopt=longest,menuone
-" set omnifunc=syntaxcomplete#Complete
+set completeopt=longest,menuone
+set omnifunc=syntaxcomplete#Complete
 
 set nobackup
 set backupdir=~/.tmp,~/tmp,/var/tmp,/tmp
