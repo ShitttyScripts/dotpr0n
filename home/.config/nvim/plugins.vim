@@ -156,11 +156,11 @@ let g:user_emmet_install_global = 0
 let g:user_emmet_leader_key     = '<C-Z>'
 
 " Fugitive
-nnoremap <leader>ga :Git add %:p<CR><CR>
-nnoremap <Leader>gc :Gcommit %<CR>i
-nnoremap <leader>gst :Gstatus<CR>
-nnoremap <leader>gp :Gpush<CR>
-vnoremap <leader>gb :Gblame<CR>
+nnoremap <space>ga :Git add %:p<CR><CR>
+nnoremap <space>gc :Gcommit %<CR>i
+nnoremap <space>gst :Gstatus<CR>
+nnoremap <space>gp :Gpush<CR>
+vnoremap <space>gb :Gblame<CR>
 
 " fzf
 let $FZF_DEFAULT_COMMAND= 'ag -g ""'
