@@ -1,7 +1,5 @@
 let mapleader = "\<Space>"
 
-" Shortcut to rapidly toggle `set list`
-" nmap <leader>l :set list!<CR>
 
 " map <leader>, and <leader>. to buffer prev/next buffer
 noremap <leader>, :bp<CR>
@@ -44,9 +42,6 @@ nmap <leader>w :w!<cr>
 " Fast quit
 nmap <leader>q :q!<cr>
 
-" Delete current buffer
-nmap <A-w> :bd<CR>
-
 " Do not show stupid q: window
 map q: :q
 
@@ -63,8 +58,6 @@ nnoremap Y y$
 nmap <Leader>v :e ~/.config/nvim/init.vim<CR>
 
 " Map arrow keys to screen line movement instead of buffer movement
-" map <Up> gk
-" map <Down> gj
 " map k gk
 " map j gj
 
