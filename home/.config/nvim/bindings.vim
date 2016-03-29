@@ -13,14 +13,14 @@ noremap <leader>, :bp<CR>
 noremap <leader>. :bn<CR>
 
 " Disable arrow keys
-" inoremap <Left>  <NOP>
-" inoremap <Right> <NOP>
-" inoremap <Up>    <NOP>
-" inoremap <Down>  <NOP>
-" nnoremap <Left>  <NOP>
-" nnoremap <Right> <NOP>
-" nnoremap <Up>    <NOP>
-" nnoremap <Down>  <NOP>
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
+nnoremap <Left>  <NOP>
+nnoremap <Right> <NOP>
+nnoremap <Up>    <NOP>
+nnoremap <Down>  <NOP>
 
 xmap ' S'
 xmap " S"
