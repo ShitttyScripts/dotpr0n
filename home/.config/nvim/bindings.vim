@@ -3,6 +3,10 @@ let mapleader = "\<Space>"
 " Remove search highlight
 nnoremap <ESC><ESC> :noh<CR>
 
+map <ScrollWheelUp> <C-Y>
+map <S-ScrollWheelUp> <C-U>
+map <ScrollWheelDown> <C-E>
+map <S-ScrollWheelDown> <C-D>
 
 " map <leader>, and <leader>. to buffer prev/next buffer
 noremap <leader>, :bp<CR>
