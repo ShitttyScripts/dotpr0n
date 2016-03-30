@@ -11,7 +11,7 @@ augroup configgroup
   autocmd FileType fish setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType html EmmetInstall
   autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  " autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
   autocmd FileType markdown setlocal ts=4 sts=4 sw=4 expandtab
   autocmd FileType php setlocal ts=4 sts=4 sw=4 expandtab omnifunc=phpcomplete#CompletePHP
@@ -23,22 +23,19 @@ augroup configgroup
 
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 
+  " CoffeeScript
+  autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
+  autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
+
   " Python
-  au BufNewFile,BufRead *.py
-    \ tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-    \ expandtab
-    \ autoindent
-    \ fileformat=unix
+  autocmd BufNewFile,BufRead *.py setl ts=4 sts=4 sw=4 tw=79 expandtab autoindent fileformat=unix
 
   " Markdown
   autocmd BufNewFile,BufRead *.md setlocal ft=markdown
   autocmd BufNewFile,BufRead *.markdown setlocal ft=markdown
 
   " Stylus
-  autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
+  " autocmd BufNewFile,BufReadPost *.styl set filetype=stylus
   autocmd BufNewFile,BufReadPost *.css set filetype=css
   autocmd BufNewFile,BufRead *.styl set filetype=stylus
 
