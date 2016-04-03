@@ -66,6 +66,10 @@ end
 #        [[ -f "$i" ]]; and ( echo -n "Processing ${i}..."; mpg123 -w "${out}" "$i" &>/dev/null ; and echo "done." || echo "failed."; )
 #    done
 
+function archive
+    tar -cv --exclude bower_components/ --exclude node_modules/ -f - $argv[1] | pixz -9 | gpg -e -r 'marcel@herrbischoff.com' > $argv[1].tar.xz.gpg
+end
+
 function vertraulich
   for file in $argv
     composite -dissolve 20% -gravity center ~/Documents/Watermarks/vertraulich.png $file $file.watermarked.jpg
