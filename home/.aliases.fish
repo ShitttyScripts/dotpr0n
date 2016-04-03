@@ -1,4 +1,5 @@
 # Neovim as Vim
+alias vi 'nvim'
 alias vim 'nvim'
 
 # Shortcuts
