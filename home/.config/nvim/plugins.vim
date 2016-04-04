@@ -202,7 +202,7 @@ noremap <leader>c :lclose<CR> " close location window
 noremap <leader>l :ll<CR>         " go to current error/warning
 noremap <leader>n :lnext<CR>      " next error/warning
 noremap <leader>p :lprev<CR>      " previous error/warning
-let g:neomake_javascript_enabled_makers = ['eslint']
+let g:neomake_javascript_enabled_makers = ['standard']
 autocmd! BufWritePre * Neomake
 autocmd! QuitPre * let g:neomake_verbose = 0
 
