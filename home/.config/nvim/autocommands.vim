@@ -23,6 +23,9 @@ augroup configgroup
 
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 
+  " automatically resize panes on resize
+  autocmd VimResized * exe 'normal! \<c-w>='
+
   " CoffeeScript
   autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent
   autocmd BufNewFile,BufReadPost *.coffee setl shiftwidth=2 expandtab
