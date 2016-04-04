@@ -5,17 +5,20 @@ call plug#begin()
 " Plug 'ervandew/supertab'
 " Plug 'godlygeek/csapprox'
 " Plug 'guns/xterm-color-table.vim'
+" Plug 'herrbischoff/cobalt2.vim'
 " Plug 'itspriddle/vim-marked'
 " Plug 'kien/ctrlp.vim'
 " Plug 'majutsushi/tagbar'
 " Plug 'mattn/webapi-vim'
+" Plug 'morhetz/gruvbox'
 " Plug 'phpvim/phpcd.vim', { 'for': 'php' }
 " Plug 'scrooloose/syntastic'
 " Plug 'shawncplus/phpcomplete.vim', { 'for': 'php' }
+" Plug 'sjl/gundo.vim'
 " Plug 'skammer/vim-css-color'
 " Plug 'tobyS/vmustache'
 Plug 'Chiel92/vim-autoformat'
-Plug 'JulesWang/css.vim'
+Plug 'JulesWang/css.vim', { 'for': 'css' }
 Plug 'Konfekt/FastFold'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/context_filetype.vim'
@@ -33,19 +36,17 @@ Plug 'benekastah/neomake'
 Plug 'bling/vim-airline'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'chriskempson/base16-vim'
-Plug 'dag/vim-fish'
+Plug 'dag/vim-fish', { 'for': 'fish' }
 Plug 'davidoc/taskpaper.vim'
 Plug 'diepm/vim-rest-console'
-Plug 'digitaltoad/vim-pug'
+Plug 'digitaltoad/vim-pug', { 'for': ['jade', 'pug'] }
 Plug 'easymotion/vim-easymotion'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'elzr/vim-json'
 Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'evidens/vim-twig'
 Plug 'gavocanov/vim-js-indent', { 'for': 'javascript' }
 Plug 'godlygeek/tabular'
-Plug 'herrbischoff/cobalt2.vim'
 Plug 'joonty/vim-sauce'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -57,44 +58,42 @@ Plug 'm2mdas/phpcomplete-extended'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'mhinz/vim-startify'
 Plug 'moll/vim-node', { 'for': 'javascript' }
-Plug 'morhetz/gruvbox'
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'nelstrom/vim-markdown-folding', { 'for': 'markdown' }
 Plug 'nelstrom/vim-visual-star-search'
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'othree/html5.vim'
+Plug 'othree/html5.vim', { 'for': 'html' }
 Plug 'othree/javascript-libraries-syntax.vim', { 'for': 'javascript' }
 Plug 'othree/jspc.vim', { 'for': 'javascript' }
 Plug 'othree/yajs.vim', { 'for': 'javascript' } | Plug 'othree/es.next.syntax.vim', { 'for': 'javascript' }
 Plug 'parkr/vim-jekyll'
-Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown', { 'for': 'markdown' }
 Plug 'reedes/vim-wheel'
 Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree/'
-Plug 'sjl/gundo.vim'
+Plug 'scrooloose/nerdtree/', { 'on': 'NerdTreeToggle' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmux-plugins/vim-tmux'
-Plug 'tobyS/pdv'
+Plug 'tobyS/pdv', { 'for': 'php' }
 Plug 'tomtom/tcomment_vim'
-Plug 'toyamarinyon/vim-swift'
+Plug 'toyamarinyon/vim-swift', { 'for': 'swift' }
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-git'
-Plug 'tpope/vim-liquid'
+Plug 'tpope/vim-liquid', { 'for': 'liquid' }
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-ruby/vim-ruby'
+Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/hexHighlight.vim', { 'for': ['css', 'stylus'] }
-Plug 'vim-scripts/nginx.vim'
+Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
 Plug 'vim-scripts/progressbar-widget'
 Plug 'wakatime/vim-wakatime'
-Plug 'wavded/vim-stylus'
+Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
@@ -131,28 +130,35 @@ let g:delimitMate_jump_expansion = 1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#disable_auto_complete = 1
-set completeopt+=noinsert
-let g:deoplete#enable_ignore_case = 'ignorecase'
-let g:deoplete#omni_patterns = {}
-let g:deoplete#omni_patterns.html = '<[^>]*'
-let g:deoplete#omni_patterns.xml  = '<[^>]*'
-let g:deoplete#omni_patterns.md   = '<[^>]*'
-let g:deoplete#omni_patterns.css   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni_patterns.scss   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni_patterns.sass   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
-let g:deoplete#omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-let g:deoplete#omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-let g:deoplete#omni_patterns.go = '[^.[:digit:] *\t]\.\w*'
-let g:deoplete#omni_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
-let g:deoplete#omni_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-let g:deoplete#omni_patterns.python = ['[^. *\t]\.\h\w*\','\h\w*::']
-let g:deoplete#omni_patterns.python3 = ['[^. *\t]\.\h\w*\','\h\w*::']
-autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
-imap     <Nul> <C-Space>
-inoremap <expr><C-Space> deoplete#mappings#manual_complete()
-inoremap <expr><BS>      deoplete#mappings#smart_close_popup()."\<C-h>"
+" let g:deoplete#disable_auto_complete = 0
+" let g:deoplete#enable_smart_case = 1
+" set completeopt+=noinsert
+" let g:deoplete#enable_ignore_case = 'ignorecase'
+" let g:deoplete#omni_patterns = {}
+" let g:deoplete#omni_patterns.html = '<[^>]*'
+" let g:deoplete#omni_patterns.xml  = '<[^>]*'
+" let g:deoplete#omni_patterns.md   = '<[^>]*'
+" let g:deoplete#omni_patterns.css   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
+" let g:deoplete#omni_patterns.scss   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
+" let g:deoplete#omni_patterns.sass   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
+" let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
+" let g:deoplete#omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+" let g:deoplete#omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+" let g:deoplete#omni_patterns.go = '[^.[:digit:] *\t]\.\w*'
+" let g:deoplete#omni_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
+" let g:deoplete#omni_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
+" let g:deoplete#omni_patterns.python = ['[^. *\t]\.\h\w*\','\h\w*::']
+" let g:deoplete#omni_patterns.python3 = ['[^. *\t]\.\h\w*\','\h\w*::']
+" autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
+" let g:deoplete#sources = {}
+" let g:deoplete#sources._ = ['buffer']
+" let g:deoplete#sources.coffee = ['buffer', 'tag', 'member', 'file', 'omni']
+" imap     <Nul> <C-Space>
+" inoremap <expr><C-Space> deoplete#mappings#manual_complete()
+" inoremap <expr><BS>      deoplete#mappings#smart_close_popup()."\<C-h>"
+" inoremap <silent><expr> <Tab>
+"   \ pumvisible() ? "\<C-n>" :
+"   \ deoplete#mappings#manual_complete()
 
 " editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -176,11 +182,11 @@ nnoremap <space>b :Buffers<CR>
 nnoremap <space>f :Files<CR>
 
 " Gruvbox
-let g:gruvbox_italic = 1
-let g:gruvbox_contrast_dark = 'hard'
+" let g:gruvbox_italic = 1
+" let g:gruvbox_contrast_dark = 'hard'
 
 " Gundo
-nnoremap <leader>u :GundoToggle<CR>
+" nnoremap <leader>u :GundoToggle<CR>
 
 " HexHighlight {{{
 if exists('*HexHighlight()')
