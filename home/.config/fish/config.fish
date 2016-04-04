@@ -1,4 +1,8 @@
-set -x TERM xterm-256color
+if test -n "$TMUX"
+    set -x TERM screen-256color
+else
+    set -x TERM xterm-256color
+end
 
 set fisher_home ~/.local/share/fisherman
 set fisher_config ~/.config/fisherman
