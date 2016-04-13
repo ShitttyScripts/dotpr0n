@@ -109,7 +109,7 @@ end
 function flush
     switch (uname)
     case Darwin
-        'dscacheutil -flushcache; and killall -HUP mDNSResponder'
+        dscacheutil -flushcache; and sudo killall -HUP mDNSResponder
     case '*'
         echo 'Mac OS X only command.'
     end
@@ -119,7 +119,7 @@ end
 function lscleanup
     switch (uname)
     case Darwin
-        '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder'
+        /System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder
     case '*'
         echo 'Mac OS X only command.'
     end
