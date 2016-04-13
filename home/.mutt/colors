@@ -4,7 +4,7 @@
 #
 # $Id: colours 6 2007-03-02 17:36:39Z vdanen $
 
-color sidebar_new color221 color233
+# color sidebar_new color221 color233
 
 # Default colour definitions
 color normal            white           default

@@ -91,12 +91,6 @@ set crypt_replyencrypt = yes
 set pgp_sign_as = B0A039CD
 set pgp_timeout = 3600
 set pgp_use_gpg_agent = yes
-# }}}
-# {{{ Sidebar Patch
-set sidebar_delim = ' ┆'
-set sidebar_visible = no
-set sidebar_width = 24
-# }}}
 
 source ~/.mutt/personal
 folder-hook $folder 'source ~/.mutt/personal'
