@@ -88,11 +88,6 @@ set -x MANPAGER 'less -X'
 # iTerm 2 shell integration
 source $HOME/.iterm2_shell_integration.fish
 
-# Ruby version manager
-if bass echo > /dev/null
-    bass source $HOME/.rvm/scripts/rvm
-end
-
 # Use `ag` for fzf searches
 set -x FZF_DEFAULT_COMMAND 'ag -g ""'
 
