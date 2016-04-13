@@ -5,6 +5,8 @@ else
     set -x TERM xterm-256color
 end
 
+# Disable greeting message
+set fish_greeting
 
 # Dotfile management
 source $HOME/.homesick/repos/homeshick/homeshick.fish
