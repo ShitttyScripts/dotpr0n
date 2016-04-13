@@ -1,5 +1,6 @@
 edc/bass
 fishery/debug
+fishery/docker-completion
 fishery/fzf
 fishery/getopts
 oh-my-fish/plugin-hash
