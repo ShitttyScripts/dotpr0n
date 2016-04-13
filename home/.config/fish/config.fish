@@ -36,7 +36,6 @@ set fish_color_valid_path \x2d\x2dunderline
 source $HOME/.aliases.fish
 source $HOME/.functions.fish
 
-# Paths
 # Global paths
 set -x PATH /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin $HOME/.bin $PATH
 
@@ -53,7 +52,6 @@ case '*'
     # Do nothing
 end
 
-# Homebrew Options
 # Homebrew options
 switch (uname)
 case Darwin
@@ -77,14 +75,12 @@ set -x LANGUAGE en_US.UTF-8
 set -x LC_ALL en_US.UTF-8
 set -x LC_CTYPE en_US.UTF-8
 
-# Set preferred editors
 # Set preferred editors and pagers
 set -x EDITOR nvim
 set -x VISUAL nvim
 set -x PAGER less
 set -x MANPAGER 'less -X'
 
-# iTerm 2 Shell integration
 # iTerm 2 shell integration
 source $HOME/.iterm2_shell_integration.fish
 
