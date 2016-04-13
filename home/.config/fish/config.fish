@@ -5,9 +5,6 @@ else
     set -x TERM xterm-256color
 end
 
-set fisher_home ~/.local/share/fisherman
-set fisher_config ~/.config/fisherman
-source $fisher_home/config.fish
 
 # Dotfile management
 source $HOME/.homesick/repos/homeshick/homeshick.fish
