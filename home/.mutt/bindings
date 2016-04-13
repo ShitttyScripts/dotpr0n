@@ -10,8 +10,8 @@ bind pager R group-reply
 bind pager h exit
 bind pager gg top
 bind pager G bottom
-bind pager J next-line
-bind pager K previous-line
+bind pager j next-line
+bind pager k previous-line
 
 bind browser l select-entry
 bind browser L view-file
