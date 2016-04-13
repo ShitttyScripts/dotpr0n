@@ -13,4 +13,7 @@ switch (uname)
         fisher i bass battery fzf get hash pure replace spin ssh herrbischoff/fish-ssh-agent tmux z
 end
 source ~/.config/fish/config.fish
+brew tap homebrew/bundle
+hcd
+brew bundle
 ```
