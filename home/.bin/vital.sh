@@ -1,0 +1,1 @@
+/Users/mbischoff/.homesick/repos/dotfiles/home/.bin/vital.sh
