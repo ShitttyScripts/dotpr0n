@@ -223,7 +223,7 @@ let g:pdv_template_dir = $HOME ."/.config/neovim/plugged/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 " UltiSnips
-let g:UltiSnipsExpandTrigger       = '<tab>'
+" let g:UltiSnipsExpandTrigger       = '<tab>'
 let g:UltiSnipsListSnippets        = '<s-tab>'
 let g:UltiSnipsJumpForwardTrigger  = '<C-j>'
 let g:UltiSnipsJumpBackwardTrigger = '<C-k>'
