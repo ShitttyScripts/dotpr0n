@@ -43,7 +43,8 @@ set -x PATH /usr/local/bin /usr/local/sbin /usr/bin /bin /usr/sbin /sbin $HOME/.
 switch (uname)
 case Darwin
     set -x PATH (brew --prefix coreutils)/libexec/gnubin /usr/local/opt/ruby/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
-    set -x MANPATH /usr/local/man (brew --prefix coreutils)/libexec/gnuman $MANPATH
+    set -x MANPATH /usr/local/man (brew --prefix coreutils)/libexec/gnuman /usr/share/man /usr/local/share/man $MANPATH
+
 case Linux
     set -x PATH $HOME/.linuxbrew/bin $PATH
     set -x MANPATH $HOME/.linuxbrew/share/man $MANPATH
