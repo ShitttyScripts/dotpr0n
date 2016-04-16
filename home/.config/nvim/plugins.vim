@@ -18,6 +18,7 @@ call plug#begin()
 " Plug 'skammer/vim-css-color'
 " Plug 'tobyS/vmustache'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'vimwiki/vimwiki'
 Plug 'Chiel92/vim-autoformat'
 Plug 'JulesWang/css.vim', { 'for': 'css' }
 Plug 'Konfekt/FastFold'
