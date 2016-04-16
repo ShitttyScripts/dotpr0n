@@ -18,6 +18,8 @@ function update
             echo "=====[ pip ]======================================================"; and \
             python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
             python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
+            echo "=====[ fin ]======================================================"; and \
+            fin up
         case Linux
             echo "=====[ apt-get Software Update ]===================================="; and \
             sudo apt-get update; and \
