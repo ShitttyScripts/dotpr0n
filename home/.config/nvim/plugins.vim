@@ -76,7 +76,7 @@ Plug 'reedes/vim-wheel'
 Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 Plug 'ryanoasis/vim-devicons'
-Plug 'scrooloose/nerdtree/', { 'on': 'NerdTreeToggle' }
+Plug 'scrooloose/nerdtree/', { 'on': 'NERDTreeToggle' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmux-plugins/vim-tmux'
