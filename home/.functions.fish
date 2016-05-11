@@ -21,12 +21,12 @@ function update
             echo "=====[ Fisherman ]================================================"; and \
             fisher up
         case Linux
-            echo "=====[ apt-get Software Update ]===================================="; and \
-            sudo apt-get update; and \
-            sudo apt-get upgrade -y; and \
-            sudo apt-get dist-upgrade -y; and \
-            sudo apt-get autoremove -y; and \
-            sudo apt-get remove -y (deborphan); and \
+            echo "=====[ apt Software Update ]===================================="; and \
+            sudo apt update; and \
+            sudo apt upgrade -y; and \
+            sudo apt full-upgrade -y; and \
+            sudo apt autoremove -y; and \
+            sudo apt remove -y (deborphan); and \
             echo "=====[ Homebrew ]================================================="; and \
             brew update; and \
             brew upgrade; and \
