@@ -43,6 +43,8 @@ function update
                 sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
                 sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
             end
+            echo "=====[ Fisherman ]================================================"; and \
+            fisher up
         case '*'
             echo "Not supported on (uname)."
     end
