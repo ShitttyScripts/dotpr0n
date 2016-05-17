@@ -22,10 +22,11 @@ function update
             fisher up
         case Linux
             echo "=====[ apt Software Update ]===================================="; and \
-            sudo apt update; and \
-            sudo apt -y full-upgrade; and \
-            sudo apt -y autoremove; and \
-            sudo apt -y remove (deborphan); and \
+            sudo apt-get update; and \
+            sudo apt-get -y upgrade; and \
+            sudo apt-get -y dist-upgrade; and \
+            sudo apt-get -y autoremove; and \
+            sudo apt-get -y remove (deborphan); and \
             echo "=====[ Homebrew ]================================================="; and \
             brew update; and \
             brew upgrade; and \
