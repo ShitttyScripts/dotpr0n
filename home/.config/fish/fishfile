@@ -5,7 +5,7 @@ fishery/fzf
 fishery/get
 fishery/getopts
 oh-my-fish/plugin-hash
-rafaelrinaldi/pure
+fishery/pure
 oh-my-fish/plugin-rvm
 fishery/shark
 fishery/spin
