@@ -23,10 +23,9 @@ function update
         case Linux
             echo "=====[ apt Software Update ]===================================="; and \
             sudo apt update; and \
-            sudo apt upgrade -y; and \
-            sudo apt full-upgrade -y; and \
-            sudo apt autoremove -y; and \
-            sudo apt remove -y (deborphan); and \
+            sudo apt -y full-upgrade; and \
+            sudo apt -y autoremove; and \
+            sudo apt -y remove (deborphan); and \
             echo "=====[ Homebrew ]================================================="; and \
             brew update; and \
             brew upgrade; and \
