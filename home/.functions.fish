@@ -21,21 +21,21 @@ function update
             echo "=====[ Fisherman ]================================================"; and \
             fisher up
         case Linux
-            echo "=====[ apt-get Software Update ]===================================="; and \
+            echo "=====[ apt Software Update ]===================================="; and \
             sudo apt-get update; and \
-            sudo apt-get upgrade -y; and \
-            sudo apt-get dist-upgrade -y; and \
-            sudo apt-get autoremove -y; and \
-            sudo apt-get remove -y (deborphan); and \
+            sudo apt-get -y upgrade; and \
+            sudo apt-get -y dist-upgrade; and \
+            sudo apt-get -y autoremove; and \
+            sudo apt-get -y remove (deborphan)
             echo "=====[ Homebrew ]================================================="; and \
             brew update; and \
             brew upgrade; and \
-            brew cleanup -s; and \
+            brew cleanup -s
             echo "=====[ npm ]======================================================"; and \
             sudo npm install npm -g; and \
-            sudo npm update -g; and \
+            sudo npm update -g
             echo "=====[ Gems ]====================================================="; and \
-            sudo gem update; and \
+            sudo gem update
             echo "=====[ pip ]======================================================"
             if cat /etc/issue | grep Ubuntu > /dev/null
                 echo "pip updates not supported on Ubuntu as some packages are owned by the system."
@@ -43,6 +43,8 @@ function update
                 sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
                 sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
             end
+            echo "=====[ Fisherman ]================================================"; and \
+            fisher up
         case '*'
             echo "Not supported on (uname)."
     end
