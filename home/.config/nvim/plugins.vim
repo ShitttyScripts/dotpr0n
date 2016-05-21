@@ -221,6 +221,9 @@ map - :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable  = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
+" phpcomplete_extended
+let g:phpcomplete_index_composer_command = '/usr/local/bin/composer'
+
 "pdv
 let g:pdv_template_dir = $HOME ."/.config/neovim/plugged/pdv/templates_snip"
 nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
