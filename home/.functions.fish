@@ -26,16 +26,16 @@ function update
             sudo apt-get -y upgrade; and \
             sudo apt-get -y dist-upgrade; and \
             sudo apt-get -y autoremove; and \
-            sudo apt-get -y remove (deborphan); and \
+            sudo apt-get -y remove (deborphan)
             echo "=====[ Homebrew ]================================================="; and \
             brew update; and \
             brew upgrade; and \
-            brew cleanup -s; and \
+            brew cleanup -s
             echo "=====[ npm ]======================================================"; and \
             sudo npm install npm -g; and \
-            sudo npm update -g; and \
+            sudo npm update -g
             echo "=====[ Gems ]====================================================="; and \
-            sudo gem update; and \
+            sudo gem update
             echo "=====[ pip ]======================================================"
             if cat /etc/issue | grep Ubuntu > /dev/null
                 echo "pip updates not supported on Ubuntu as some packages are owned by the system."
