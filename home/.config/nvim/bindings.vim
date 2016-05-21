@@ -43,6 +43,10 @@ vnoremap <silent> <F5> :sort<CR>
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Let's be reasonable, shall we?
+nmap k gk
+nmap j gj
+
 " Fast quit
 nmap <leader>q :q!<cr>
 
