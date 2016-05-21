@@ -3,18 +3,18 @@ function update
     switch (uname)
         case Darwin
             echo "=====[ Apple Software Update ]===================================="; and \
-            sudo softwareupdate -i -a; and \
+            sudo softwareupdate -i -a
             echo "=====[ Homebrew ]================================================="; and \
             brew update; and \
             brew upgrade; and \
             brew cleanup -s; and \
-            brew cask cleanup; and \
+            brew cask cleanup
             echo "=====[ npm ]======================================================"; and \
             npm install npm -g; and \
-            npm update -g; and \
+            npm update -g
             echo "=====[ Gems ]====================================================="; and \
-            sudo gem update --system; and \
-            sudo gem update; and \
+            gem update; and \
+            gem cleanup
             echo "=====[ pip ]======================================================"; and \
             python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}'); and \
             python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
