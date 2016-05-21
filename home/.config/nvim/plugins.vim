@@ -212,6 +212,7 @@ noremap <leader>l :ll<CR>         " go to current error/warning
 noremap <leader>n :lnext<CR>      " next error/warning
 noremap <leader>p :lprev<CR>      " previous error/warning
 let g:neomake_javascript_enabled_makers = ['standard']
+let g:neomake_php_enabled_makers = ['phpmd']
 autocmd! BufWritePre * Neomake
 autocmd! QuitPre * let g:neomake_verbose = 0
 
