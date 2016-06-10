@@ -108,4 +108,8 @@ if status --is-interactive
     # Set correct terminal colors
     eval sh $HOME/.bin/base16-shell/base16-monokai.dark.sh
 
+    function fish_right_prompt
+        echo $color_white $color_yellow (hostname)
+    end
+
 end
