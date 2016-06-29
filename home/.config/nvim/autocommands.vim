@@ -39,7 +39,7 @@ augroup configgroup
   " Markdown
   autocmd BufNewFile,BufRead *.md,*.markdown setlocal ft=markdown
   autocmd FileType markdown setlocal ts=4 sts=4 sw=4 expandtab
-  autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell
+  autocmd FileType markdown,textile setlocal textwidth=0 wrapmargin=0 wrap spell formatoptions+=l
 
   " CSS/Stylus
   autocmd BufNewFile,BufRead *.styl set filetype=stylus
