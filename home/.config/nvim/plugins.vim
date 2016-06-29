@@ -95,7 +95,7 @@ Plug 'vim-ruby/vim-ruby', { 'for': 'ruby' }
 Plug 'vim-scripts/hexHighlight.vim', { 'for': ['css', 'stylus'] }
 Plug 'vim-scripts/nginx.vim', { 'for': 'nginx' }
 Plug 'vim-scripts/progressbar-widget'
-Plug 'wakatime/vim-wakatime'
+" Plug 'wakatime/vim-wakatime'
 Plug 'wavded/vim-stylus', { 'for': 'stylus' }
 Plug 'wdalmut/vim-phpunit', { 'for': 'php' }
 Plug 'xolox/vim-misc'
