@@ -38,6 +38,12 @@ function update {
                 sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
             fi
             ;;
+        FreeBSD)
+            echo "=====[ System Software Update ]====================================" && \
+            freebsd-upgrade fetch upgrade
+            echo "\n=====[ Update Ports ]====================================" && \
+            portmaster -av
+            ;;
         *)
             echo "Not supported on (uname)."
     esac
