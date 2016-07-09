@@ -42,3 +42,34 @@ function update {
             echo "Not supported on (uname)."
     esac
 }
+
+#
+# Opens man pages in Dash.app.
+#
+
+function mand {
+  if (( $# > 0 )); then
+    open "dash://man:$1" 2>/dev/null
+    if (( $? != 0 )); then
+      print "$0: Dash is not installed" >&2
+      break
+    fi
+  else
+    print 'What manual page do you want?' >&2
+  fi
+}
+
+#
+# Opens man pages in Preview.app.
+#
+
+function manp {
+  local page
+  if (( $# > 0 )); then
+    for page in "$@"; do
+      man -t "$page" | open -f -a Preview
+    done
+  else
+    print 'What manual page do you want?' >&2
+  fi
+}

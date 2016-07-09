@@ -91,7 +91,7 @@ if [ "`tty`" != "not a tty" ]; then
     export FZF_DEFAULT_COMMAND='ag -g ""'
 
     # Base16 Shell
-    BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.dark.sh"
+    BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.sh"
     [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
     # Set terminal colors
