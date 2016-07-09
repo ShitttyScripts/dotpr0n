@@ -2,12 +2,9 @@
 
 ## Install
 
-```bash
-curl -Lo ~/.config/fish/functions/fisher.fish --create-dirs git.io/fisherman
+```zsh
 git clone git://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 ~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotfiles
-source ~/.config/fish/config.fish
-hcd
-brew analytics off
-brew bundle
+source ~/.zshrc
+zplug update
 ```
