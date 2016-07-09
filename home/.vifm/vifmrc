@@ -40,4 +40,6 @@ fileviewer *.pdf
 set trash!
 set confirm!
 
+set syscalls
+
 " vim:ft=vim
