@@ -1,0 +1,44 @@
+# Get OS X Software Updates, and update installed Ruby gems, MacPorts, npm, and their installed packages
+function update {
+    case $(uname) in
+        Darwin)
+            echo "=====[ Apple Software Update ]====================================" && \
+            sudo softwareupdate -i -a
+            echo "\n=====[ MacPorts ]=================================================" && \
+            sudo port selfupdate && \
+            sudo port upgrade outdated
+            echo "\n=====[ npm ]======================================================" && \
+            sudo npm install npm -g && \
+            sudo npm update -g
+            echo "=====[ Gems ]=====================================================" && \
+            sudo gem update && \
+            sudo gem cleanup
+            echo "\n=====[ pip ]======================================================" && \
+            sudo -H pip-2.7 install --upgrade $(sudo -H pip-2.7 list --outdated | awk '/.*/ {print $1}') && \
+            sudo -H pip-3.5 install --upgrade $(sudo -H pip-3.5 list --outdated | awk '/.*/ {print $1}')
+            ;;
+        Linux)
+            echo "=====[ apt Software Update ]====================================" && \
+            sudo apt-get update && \
+            sudo apt-get -y upgrade && \
+            sudo apt-get -y dist-upgrade && \
+            sudo apt-get -y autoremove && \
+            sudo apt-get -y remove (deborphan)
+            echo "=====[ npm ]======================================================" && \
+            sudo npm install npm -g && \
+            sudo npm update -g
+            echo "=====[ Gems ]=====================================================" && \
+            sudo gem update
+            echo "=====[ pip ]======================================================"
+            if [ $(cat /etc/issue) -eq "Ubuntu" ]
+            then
+                echo "pip updates not supported on Ubuntu as some packages are owned by the system."
+            else
+                sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}') && \
+                sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
+            fi
+            ;;
+        *)
+            echo "Not supported on (uname)."
+    esac
+}
