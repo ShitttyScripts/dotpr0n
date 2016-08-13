@@ -8,3 +8,5 @@ home/.cmus/search-history
 home/.config/nvim/spell/
 home/.vifm/scripts/README
 home/.config/nvim/autoload/plug.vim.old
+home/.bin/mountall
+home/.fzf.zsh
