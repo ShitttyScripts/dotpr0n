@@ -40,7 +40,7 @@ function update {
             ;;
         FreeBSD)
             echo "=====[ System Software Update ]====================================" && \
-            freebsd-upgrade fetch upgrade
+            freebsd-update fetch upgrade
             echo "\n=====[ Update Ports ]====================================" && \
             portmaster -av
             ;;
