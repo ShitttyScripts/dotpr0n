@@ -65,10 +65,6 @@ nnoremap Y y$
 " Opens nvim config for editing
 nmap <Leader>v :e ~/.config/nvim/init.vim<CR>
 
-" Map arrow keys to screen line movement instead of buffer movement
-" map k gk
-" map j gj
-
 " Disable Ex mode
 nnoremap Q <nop>
 
