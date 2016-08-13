@@ -22,7 +22,7 @@ alias sl='ls'            # I often screw this up.
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias p="sudo port"
+alias port="sudo port"
 alias g="git"
 alias h="homeshick"
 alias hcd="cd ~/.homesick/repos/dotfiles"
