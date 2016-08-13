@@ -6,7 +6,11 @@ function update {
             sudo softwareupdate -i -a
             echo "\n=====[ MacPorts ]=================================================" && \
             sudo port selfupdate && \
+            sudo port outdated
             sudo port upgrade outdated
+            echo "Cleaning up ..."
+            sudo port uninstall inactive
+            sudo port uninstall leaves
             echo "\n=====[ npm ]======================================================" && \
             sudo npm install npm -g && \
             sudo npm update -g
