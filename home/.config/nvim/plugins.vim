@@ -18,6 +18,11 @@ call plug#begin()
 " Plug 'skammer/vim-css-color'
 " Plug 'tobyS/vmustache'
 Plug 'fatih/vim-go', { 'for': 'go' }
+Plug 'sickill/vim-monokai'
+Plug 'tomasr/molokai'
+Plug 'elixir-lang/vim-elixir'
+Plug 'posva/vim-vue'
+Plug 's3rvac/AutoFenc'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'vimwiki/vimwiki'
 Plug 'Chiel92/vim-autoformat'
@@ -108,6 +113,9 @@ let g:airline_powerline_fonts = 1
 " let g:airline_theme='gruvbox'
 let g:airline_theme='base16_monokai'
 
+" AutoFenc
+let g:autofenc_enable = 1
+
 " ctrlp
 " let g:ctrlp_working_path_mode = 'c'
 " let g:ctrlp_custom_ignore = {
@@ -133,39 +141,10 @@ let g:delimitMate_jump_expansion = 1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
-" let g:deoplete#disable_auto_complete = 0
-" let g:deoplete#enable_smart_case = 1
-" set completeopt+=noinsert
-" let g:deoplete#enable_ignore_case = 'ignorecase'
-" let g:deoplete#omni_patterns = {}
-" let g:deoplete#omni_patterns.html = '<[^>]*'
-" let g:deoplete#omni_patterns.xml  = '<[^>]*'
-" let g:deoplete#omni_patterns.md   = '<[^>]*'
-" let g:deoplete#omni_patterns.css   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-" let g:deoplete#omni_patterns.scss   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-" let g:deoplete#omni_patterns.sass   = '^\s\+\w\+\|\w\+[):;]\?\s\+\w*\|[@!]'
-" let g:deoplete#omni_patterns.javascript = '[^. \t]\.\%(\h\w*\)\?'
-" let g:deoplete#omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)\w*'
-" let g:deoplete#omni_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
-" let g:deoplete#omni_patterns.go = '[^.[:digit:] *\t]\.\w*'
-" let g:deoplete#omni_patterns.ruby = ['[^. *\t]\.\w*', '\h\w*::']
-" let g:deoplete#omni_patterns.php = '\h\w*\|[^. \t]->\%(\h\w*\)\?\|\h\w*::\%(\h\w*\)\?'
-" let g:deoplete#omni_patterns.python = ['[^. *\t]\.\h\w*\','\h\w*::']
-" let g:deoplete#omni_patterns.python3 = ['[^. *\t]\.\h\w*\','\h\w*::']
-" autocmd CmdwinEnter * let b:deoplete_sources = ['buffer']
-" let g:deoplete#sources = {}
-" let g:deoplete#sources._ = ['buffer']
-" let g:deoplete#sources.coffee = ['buffer', 'tag', 'member', 'file', 'omni']
-" imap     <Nul> <C-Space>
-" inoremap <expr><C-Space> deoplete#mappings#manual_complete()
-" inoremap <expr><BS>      deoplete#mappings#smart_close_popup()."\<C-h>"
-" inoremap <silent><expr> <Tab>
-"   \ pumvisible() ? "\<C-n>" :
-"   \ deoplete#mappings#manual_complete()
 
 " editorconfig
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
-let g:EditorConfig_exec_path        = '/usr/local/bin/editorconfig'
+let g:EditorConfig_exec_path        = '/opt/local/bin/editorconfig'
 
 " emmet
 let g:user_emmet_mode           = 'a'
@@ -191,7 +170,7 @@ nnoremap <space>f :Files<CR>
 " Gundo
 " nnoremap <leader>u :GundoToggle<CR>
 
-" HexHighlight {{{
+" HexHighlight
 if exists('*HexHighlight()')
   nnoremap <leader>h :call HexHighlight()<Return>
 endif
@@ -249,7 +228,7 @@ nmap s <Plug>(easymotion-s2)
 nmap t <Plug>(easymotion-t2)
 
 " vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
+" let g:indent_guides_enable_on_vim_startup = 1
 
 " vim-session
 let g:session_autosave = 'no'
