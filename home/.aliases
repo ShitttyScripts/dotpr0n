@@ -195,3 +195,5 @@ alias header='curl -I'
 
 # Find out if remote server supports gzip / mod_deflate or not
 alias headerc='curl -I --compress'
+
+[ -f ~/.aliases.local ] && source ~/.aliases.local
