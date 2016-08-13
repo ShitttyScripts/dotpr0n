@@ -2,6 +2,7 @@
 alias zshconf="nvim ~/.zshrc"
 
 # Neovim as Vim
+alias ni="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
