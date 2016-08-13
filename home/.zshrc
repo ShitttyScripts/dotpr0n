@@ -97,7 +97,6 @@ if [ "`tty`" != "not a tty" ]; then
 
     # Marker
     [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
-    export MARKER_KEY_GET="\A-@"
 
     # Set terminal colors
     case $os in
