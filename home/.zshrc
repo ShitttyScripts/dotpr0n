@@ -1,4 +1,4 @@
-###############################################################################
+################################################################################
 ## .zshrc
 ################################################################################
 
@@ -60,9 +60,8 @@ if [ "`tty`" != "not a tty" ]; then
     # Platform-dependent PATH handling
     case $(uname) in
         Darwin)
-            export PATH=/opt/local/bin:/opt/local/sbin:/opt/X11/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/local/bin:$HOME/.pear/bin:/opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin:$PATH
+            export PATH=/opt/local/bin:/opt/local/sbin:/opt/X11/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/local/bin:$HOME/.pear/bin:$PATH
             export MANPATH=/opt/local/share/man:/usr/local/man:/usr/share/man:/usr/local/share/man:$MANPATH
-            source /opt/local/etc/profile.d/z.sh
             ;;
         Linux)
             #

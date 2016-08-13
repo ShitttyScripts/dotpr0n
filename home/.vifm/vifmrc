@@ -378,4 +378,6 @@ set confirm!
 set syscalls
 set trash!
 
+set syscalls
+
 " vim:ft=vim
