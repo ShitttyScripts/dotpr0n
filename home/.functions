@@ -83,3 +83,14 @@ function manp {
     print 'What manual page do you want?' >&2
   fi
 }
+
+function removetags {
+  local file
+  if (( $# > 0 )); then
+    for f in "$@"; do
+      tag --remove \* $f
+    done
+  else
+    print 'Please specify files.' >&2
+  fi
+}
