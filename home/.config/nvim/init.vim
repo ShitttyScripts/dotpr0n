@@ -6,7 +6,6 @@ source $HOME/.config/nvim/ui.vim
 filetype plugin indent on
 set autoread " Reload files changed outside vim
 set backspace=indent,eol,start " Enable delete over line breaks and automatically-inserted indentation
-" set clipboard=unnamed
 set fileencoding=utf-8
 set fileformat=unix " Set unix line endings
 set fileformats=unix,mac,dos
