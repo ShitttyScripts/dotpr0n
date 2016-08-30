@@ -64,7 +64,7 @@ alias txk="tmux kill-session -t"
 alias txl="tmux ls"
 
 # dtrx shortcut
-alias x="dtrx"
+alias x="exit"
 
 # Bower
 alias bower="noglob bower"
