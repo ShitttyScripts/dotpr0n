@@ -36,7 +36,7 @@ if [ "`tty`" != "not a tty" ]; then
     zplug "zplug/zplug"
     zplug "zsh-users/zsh-autosuggestions"
     zplug "zsh-users/zsh-history-substring-search"
-    zplug "zsh-users/zsh-syntax-highlighting", nice:10
+    zplug "zsh-users/zsh-syntax-highlighting"
     zplug "junegunn/fzf-bin", \
         from:gh-r, \
         as:command, \
