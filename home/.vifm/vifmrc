@@ -374,7 +374,7 @@ filetype *.pdf
 " fileviewer *.pdf
 "         \ pandoc -i %c -t plain | less
 
-set confirm!
+set confirm-=delete,permdelete
 set syscalls
 set trash!
 
