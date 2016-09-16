@@ -26,24 +26,7 @@ if [ "`tty`" != "not a tty" ]; then
     export SAVEHIST=10000       # Save history after logout
     export HISTFILE=~/.zhistory # History file
 
-    # zplug
-    # source ~/.zplug/init.zsh
-    # zplug "andrewferrier/fzf-z"
-    # zplug "felixr/docker-zsh-completion"
-    # zplug "mafredri/zsh-async"
-    # zplug "sindresorhus/pure"
-    # zplug "walesmd/caniuse.plugin.zsh"
-    # zplug "zplug/zplug"
-    # zplug "zsh-users/zsh-autosuggestions"
-    # zplug "zsh-users/zsh-history-substring-search"
-    # zplug "junegunn/fzf-bin", \
-    #     from:gh-r, \
-    #     as:command, \
-    #     rename-to:fzf, \
-    #     use:"*darwin*amd64*"
-    # zplug "zsh-users/zsh-syntax-highlighting", nice:10
-    # zplug load
-
+    # Plugins and extensions
     source $HOME/.zsh/fzf-z/fzf-z.plugin.zsh
     source $HOME/.zsh/caniuse.plugin.zsh/caniuse.plugin.zsh
     source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -64,6 +47,7 @@ if [ "`tty`" != "not a tty" ]; then
     path=(/usr/bin /bin /usr/sbin /sbin $HOME/.bin $path)
     fpath=($HOME/.zfunctions $HOME/.zsh/zsh-completions/src $fpath)
 
+    # Pure
     autoload -U promptinit; promptinit
     PURE_CMD_MAX_EXEC_TIME=10
     prompt pure
