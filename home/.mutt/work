@@ -1,25 +1,25 @@
-set spoolfile="+herrbischoff.com/INBOX"
-set postponed="+herrbischoff.com/Drafts"
-set record="+herrbischoff.com/Sent"
+set spoolfile="+INBOX"
+set postponed="+Drafts"
+set record="+Sent"
 
 ## Send options.
-set sendmail = "/usr/local/bin/msmtp -a herrbischoff"
+set sendmail = "/opt/local/bin/msmtp -a default"
 set realname = "Marcel Bischoff
 set from = marcel@herrbischoff.com
 set hostname = herrbischoff.com
 
-mailboxes +herrbischoff.com/INBOX \
-          +herrbischoff.com/Archive \
-          +herrbischoff.com/Sent \
-          +herrbischoff.com/Drafts \
-          +herrbischoff.com/Trash \
-          +herrbischoff.com/Logs \
-          +herrbischoff.com/Articles
+mailboxes +INBOX \
+          +Archive \
+          +Sent \
+          +Drafts \
+          +Trash \
+          +Logs \
+          +Articles
 
 subscribe ^mutt-users@mutt\\.org$
 
-macro index A "<save-message>=herrbischoff.com/Archive<return>" "move message to archive folder"
+macro index A "<save-message>=Archive<return>" "move message to archive folder"
 
-account-hook $folder "set spoolfile="+herrbischoff.com/INBOX"
+# account-hook $folder "set spoolfile="+INBOX"
 
 # vim:foldmethod=marker:foldlevel=0:ft=muttrc
