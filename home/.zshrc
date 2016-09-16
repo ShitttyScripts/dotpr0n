@@ -29,7 +29,7 @@ if [ "`tty`" != "not a tty" ]; then
     # Plugins and extensions
     source $HOME/.zsh/fzf-z/fzf-z.plugin.zsh
     source $HOME/.zsh/caniuse.plugin.zsh/caniuse.plugin.zsh
-    source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+    # source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
     source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
