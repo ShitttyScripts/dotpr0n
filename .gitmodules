@@ -7,3 +7,6 @@
 [submodule "home/.marker"]
 	path = home/.marker
 	url = https://github.com/pindexis/marker
+[submodule "home/.zsh/zsh-syntax-highlighting"]
+	path = home/.zsh/zsh-syntax-highlighting
+	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
