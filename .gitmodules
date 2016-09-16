@@ -10,3 +10,24 @@
 [submodule "home/.zsh/zsh-syntax-highlighting"]
 	path = home/.zsh/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
+[submodule "home/.zsh/zsh-completions"]
+	path = home/.zsh/zsh-completions
+	url = https://github.com/zsh-users/zsh-completions.git
+[submodule "home/.zsh/zsh-history-substring-search"]
+	path = home/.zsh/zsh-history-substring-search
+	url = https://github.com/zsh-users/zsh-history-substring-search.git
+[submodule "home/.zsh/zsh-autosuggestions"]
+	path = home/.zsh/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions.git
+[submodule "home/.zsh/caniuse.plugin.zsh"]
+	path = home/.zsh/caniuse.plugin.zsh
+	url = https://github.com/walesmd/caniuse.plugin.zsh.git
+[submodule "home/.zsh/pure"]
+	path = home/.zsh/pure
+	url = https://github.com/sindresorhus/pure.git
+[submodule "home/.zsh/fzf-z"]
+	path = home/.zsh/fzf-z
+	url = https://github.com/andrewferrier/fzf-z.git
+[submodule "home/.fzf"]
+	path = home/.fzf
+	url = https://github.com/junegunn/fzf.git
