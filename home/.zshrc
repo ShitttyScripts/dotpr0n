@@ -27,24 +27,32 @@ if [ "`tty`" != "not a tty" ]; then
     export HISTFILE=~/.zhistory # History file
 
     # zplug
-    source ~/.zplug/init.zsh
-    zplug "andrewferrier/fzf-z"
-    zplug "felixr/docker-zsh-completion"
-    zplug "mafredri/zsh-async"
-    zplug "sindresorhus/pure"
-    zplug "walesmd/caniuse.plugin.zsh"
-    zplug "zplug/zplug"
-    zplug "zsh-users/zsh-autosuggestions"
-    zplug "zsh-users/zsh-history-substring-search"
-    zplug "junegunn/fzf-bin", \
-        from:gh-r, \
-        as:command, \
-        rename-to:fzf, \
-        use:"*darwin*amd64*"
+    # source ~/.zplug/init.zsh
+    # zplug "andrewferrier/fzf-z"
+    # zplug "felixr/docker-zsh-completion"
+    # zplug "mafredri/zsh-async"
+    # zplug "sindresorhus/pure"
+    # zplug "walesmd/caniuse.plugin.zsh"
+    # zplug "zplug/zplug"
+    # zplug "zsh-users/zsh-autosuggestions"
+    # zplug "zsh-users/zsh-history-substring-search"
+    # zplug "junegunn/fzf-bin", \
+    #     from:gh-r, \
+    #     as:command, \
+    #     rename-to:fzf, \
+    #     use:"*darwin*amd64*"
     # zplug "zsh-users/zsh-syntax-highlighting", nice:10
-    zplug load
+    # zplug load
 
+    source $HOME/.zsh/fzf-z/fzf-z.plugin.zsh
+    source $HOME/.zsh/caniuse.plugin.zsh/caniuse.plugin.zsh
+    source $HOME/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
     source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+    source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
+
+    autoload -U promptinit; promptinit
+    PURE_CMD_MAX_EXEC_TIME=10
+    prompt pure
 
     # Set correct TERM for plain shell and tmux
     if [[ -n "$TMUX" ]]; then
@@ -57,13 +65,14 @@ if [ "`tty`" != "not a tty" ]; then
     source $HOME/.homesick/repos/homeshick/homeshick.sh
 
     # Global paths
-    export PATH=/usr/bin:/bin:/usr/sbin:/sbin:$HOME/.bin:$PATH
+    path=(/usr/bin /bin /usr/sbin /sbin $HOME/.bin $path)
+    fpath=($HOME/.zfunctions $HOME/.zsh/zsh-completions/src $fpath)
 
     # Platform-dependent PATH handling
     case $(uname) in
         Darwin)
-            export PATH=/opt/local/bin:/opt/local/sbin:/opt/X11/bin:/opt/X11/bin:/usr/local/MacGPG2/bin:/usr/local/bin:$HOME/.pear/bin:$PATH
-            export MANPATH=/opt/local/share/man:/usr/local/man:/usr/share/man:/usr/local/share/man:$MANPATH
+            path=(/opt/local/bin /opt/local/sbin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin /usr/local/bin $home/.pear/bin $path)
+            manpath=(/opt/local/share/man /usr/local/man /usr/share/man /usr/local/share/man $manpath)
             ;;
         Linux)
             #
@@ -242,5 +251,31 @@ if [ "`tty`" != "not a tty" ]; then
     zstyle ':completion:*:(ssh|scp|rsync):*:hosts-host' ignored-patterns '*(.|:)*' loopback ip6-loopback localhost ip6-localhost broadcasthost
     zstyle ':completion:*:(ssh|scp|rsync):*:hosts-domain' ignored-patterns '<->.<->.<->.<->' '^[-[:alnum:]]##(.[-[:alnum:]]##)##' '*@*'
     zstyle ':completion:*:(ssh|scp|rsync):*:hosts-ipaddr' ignored-patterns '^(<->.<->.<->.<->|(|::)([[:xdigit:].]##:(#c,2))##(|%*))' '127.0.0.<->' '255.255.255.255' '::1' 'fe80::*'
+
+    ## Arrow Keys ###########################################
+
+    # OPTION 1: for most systems
+    zmodload zsh/terminfo
+    bindkey "$terminfo[kcuu1]" history-substring-search-up
+    bindkey "$terminfo[kcud1]" history-substring-search-down
+
+    # OPTION 2: for iTerm2 running on Apple MacBook laptops
+    zmodload zsh/terminfo
+    bindkey "$terminfo[cuu1]" history-substring-search-up
+    bindkey "$terminfo[cud1]" history-substring-search-down
+
+    # OPTION 3: for Ubuntu 12.04, Fedora 21, and MacOSX 10.9
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+
+    ## EMACS mode ###########################################
+
+    bindkey -M emacs '^P' history-substring-search-up
+    bindkey -M emacs '^N' history-substring-search-down
+
+    ## VI mode ##############################################
+
+    bindkey -M vicmd 'k' history-substring-search-up
+    bindkey -M vicmd 'j' history-substring-search-down
 
 fi
