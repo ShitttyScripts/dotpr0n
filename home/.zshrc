@@ -50,10 +50,6 @@ if [ "`tty`" != "not a tty" ]; then
     source $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
     source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
-    autoload -U promptinit; promptinit
-    PURE_CMD_MAX_EXEC_TIME=10
-    prompt pure
-
     # Set correct TERM for plain shell and tmux
     if [[ -n "$TMUX" ]]; then
         export TERM='screen-256color'
@@ -67,6 +63,10 @@ if [ "`tty`" != "not a tty" ]; then
     # Global paths
     path=(/usr/bin /bin /usr/sbin /sbin $HOME/.bin $path)
     fpath=($HOME/.zfunctions $HOME/.zsh/zsh-completions/src $fpath)
+
+    autoload -U promptinit; promptinit
+    PURE_CMD_MAX_EXEC_TIME=10
+    prompt pure
 
     # Platform-dependent PATH handling
     case $(uname) in
