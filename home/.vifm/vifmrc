@@ -134,9 +134,8 @@ filextype *.ps,*.eps open -a Preview.app
 filextype *.djvu open -a MacDjView.app
 
 " Audio
-filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus
-        \ {Open in QuickTime Player}
-        \ open -a QuickTime\ Player.app,
+filextype *.wav,*.mp3,*.flac,*.m4a,*.wma,*.ape,*.ac3,*.og[agx],*.spx,*.opus,*.m4a,*.m4b
+         \ mpv %c
 fileviewer *.mp3 mp3info
 fileviewer *.flac soxi
 
