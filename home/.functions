@@ -4,22 +4,28 @@ function update {
         Darwin)
             echo "=====[ Apple Software Update ]====================================" && \
             sudo softwareupdate -i -a
-            echo "\n=====[ MacPorts ]=================================================" && \
-            sudo port selfupdate && \
-            sudo port outdated
-            sudo port upgrade outdated
-            echo "Cleaning up ..."
-            sudo port uninstall inactive
-            sudo port uninstall leaves
+            echo "\n=====[ Homebrew ]================================================" && \
+            brew update && \
+            brew upgrade && \
+            brew cleanup -s
+            # echo "\n=====[ MacPorts ]=================================================" && \
+            # sudo port selfupdate && \
+            # sudo port outdated
+            # sudo port upgrade outdated
+            # echo "Cleaning up ..."
+            # sudo port uninstall inactive
+            # sudo port uninstall leaves
             echo "\n=====[ npm ]======================================================" && \
             # sudo npm install npm -g && \
             npm update -g
             echo "=====[ Gems ]=====================================================" && \
-            sudo gem update && \
-            sudo gem cleanup
+            gem update && \
+            gem cleanup
             echo "\n=====[ pip ]======================================================" && \
-            sudo -H pip-2.7 install --upgrade $(sudo -H pip-2.7 list --outdated | awk '/.*/ {print $1}') && \
-            sudo -H pip-3.5 install --upgrade $(sudo -H pip-3.5 list --outdated | awk '/.*/ {print $1}')
+            pip2 install --user --upgrade $(pip2 list --outdated | awk '/.*/ {print $1}') && \
+            pip3 install --user --upgrade $(pip3 list --outdated | awk '/.*/ {print $1}')
+            # sudo -H pip-2.7 install --upgrade $(sudo -H pip-2.7 list --outdated | awk '/.*/ {print $1}') && \
+            # sudo -H pip-3.5 install --upgrade $(sudo -H pip-3.5 list --outdated | awk '/.*/ {print $1}')
             ;;
         Linux)
             echo "=====[ apt Software Update ]====================================" && \
