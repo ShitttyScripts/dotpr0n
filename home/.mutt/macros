@@ -12,6 +12,7 @@ macro index n "<shell-escape>mbsync --all && notmuch new<enter>" "run mbsync to 
 # {{{ Saner copy/move dialogs
 macro index C "<copy-message>?<toggle-mailboxes>" "copy a message to a mailbox"
 macro index M "<save-message>?<toggle-mailboxes>" "move a message to a mailbox"
+macro index,pager J "<save-message>=Junk<enter>" "Change to Junk"
 # }}}
 # {{{ Spamcop
 macro index S ":set autoedit=no fast_reply=yes editor=\"true\"\n<tag-prefix><forward-message>submit.GZCfUpRwtLeZLlPz@spam.spamcop.net\n\n" "Forward mail to SpamCop"
