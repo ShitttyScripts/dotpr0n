@@ -4,7 +4,12 @@ bind index G last-entry
 bind index gg first-entry
 bind index P recall-message
 bind index R group-reply
-bind index h noop
+#bind index h noop
+
+bind index h display-toggle-weed
+bind pager h display-toggle-weed
+bind attach h display-toggle-weed
+bind compose h display-toggle-weed
 
 bind pager R group-reply
 bind pager h exit
