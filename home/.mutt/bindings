@@ -35,4 +35,11 @@ bind editor ^T complete
 
 bind index B bounce-message
 
+bind index <C-Up> sidebar-prev
+bind index <C-Down> sidebar-next
+bind index <C-Right> sidebar-open
+bind pager <C-Up> sidebar-prev
+bind pager <C-Down> sidebar-next
+bind pager <C-Right> sidebar-open
+
 # vim:foldmethod=marker:foldlevel=0:ft=muttrc
