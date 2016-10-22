@@ -33,4 +33,6 @@ bind compose P postpone-message
 bind editor <Tab> complete-query
 bind editor ^T complete
 
+bind index B bounce-message
+
 # vim:foldmethod=marker:foldlevel=0:ft=muttrc
