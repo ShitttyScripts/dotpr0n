@@ -1,5 +1,10 @@
 # {{{ Accounts
-macro index,pager gi "<change-folder>=INBOX<enter>" "Change to Work inbox"
+macro index,pager gi "<change-folder>=INBOX<enter>" "Change to Inbox"
+macro index,pager gl "<change-folder>=Logs<enter>" "Change to Logs"
+macro index,pager gs "<change-folder>=Sent<enter>" "Change to Sent"
+macro index,pager gj "<change-folder>=Junk<enter>" "Change to Junk"
+macro index,pager ga "<change-folder>=Archive<enter>" "Change to Archive"
+macro index,pager gm "<change-folder>=MacPorts<enter>" "Change to MacPorts mailing list"
 # }}}
 # {{{ mbsync
 macro index n "<shell-escape>mbsync --all && notmuch new<enter>" "run mbsync to sync all mail"
