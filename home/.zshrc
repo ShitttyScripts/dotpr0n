@@ -57,6 +57,7 @@ if [ "`tty`" != "not a tty" ]; then
         Darwin)
             path=(/opt/local/bin /opt/local/sbin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin /usr/local/bin $home/.pear/bin $path)
             manpath=(/opt/local/share/man /usr/local/man /usr/share/man /usr/local/share/man $manpath)
+            export HOMEBREW_BUILD_FROM_SOURCE=1
             ;;
         Linux)
             #
