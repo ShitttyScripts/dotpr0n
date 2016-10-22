@@ -31,6 +31,7 @@ alias jk="jekyll"
 alias e="nvim -w "
 alias v="vifm"
 alias d="docker"
+alias duck="cd ~/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ Support/duck/Volumes/"
 
 # Git shortcuts
 alias gd="git diff | vim"
