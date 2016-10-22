@@ -14,7 +14,11 @@ mailboxes +INBOX \
           +Drafts \
           +Trash \
           +Logs \
-          +Articles
+          +MacPorts \
+          +DMARC \
+          +Newsletter \
+          +Mutt \
+          +FreeBSD
 
 subscribe ^mutt-users@mutt\\.org$
 
