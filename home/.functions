@@ -12,8 +12,8 @@ function update {
             sudo port uninstall inactive
             sudo port uninstall leaves
             echo "\n=====[ npm ]======================================================" && \
-            sudo npm install npm -g && \
-            sudo npm update -g
+            # sudo npm install npm -g && \
+            npm update -g
             echo "=====[ Gems ]=====================================================" && \
             sudo gem update && \
             sudo gem cleanup
@@ -28,9 +28,9 @@ function update {
             sudo apt-get -y dist-upgrade && \
             sudo apt-get -y autoremove && \
             sudo apt-get -y remove (deborphan)
-            echo "=====[ npm ]======================================================" && \
-            sudo npm install npm -g && \
-            sudo npm update -g
+            # echo "=====[ npm ]======================================================" && \
+            # sudo npm install npm -g && \
+            # sudo npm update -g
             echo "=====[ Gems ]=====================================================" && \
             sudo gem update
             echo "=====[ pip ]======================================================"
