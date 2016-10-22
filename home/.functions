@@ -94,3 +94,20 @@ function removetags {
     print 'Please specify files.' >&2
   fi
 }
+
+function pinfo {
+  local port
+  local mp
+  local hb
+  if (( $# > 0 )); then
+    for port in "$@"; do
+      mp=`port info $port | awk '/.+ @/ {print $2}' | sed 's/@//'`
+      echo "MacPorts version: $mp" && \
+      hb=`brew info $port | head -n 1 | awk '/.*: / {print $3}' | sed 's/,//'`
+      echo "Homebrew version: $hb"
+    done
+  else
+    print 'Please specify files.' >&2
+  fi
+
+}
