@@ -3,7 +3,7 @@ set postponed="+Drafts"
 set record="+Sent"
 
 ## Send options.
-set sendmail = "/opt/local/bin/msmtp -a default"
+set sendmail = "/opt/homebrew/bin/msmtp -a default"
 set realname = "Marcel Bischoff
 set from = marcel@herrbischoff.com
 set hostname = herrbischoff.com
