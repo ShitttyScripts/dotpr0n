@@ -46,7 +46,7 @@ if [ "`tty`" != "not a tty" ]; then
     # Global paths
     path=(/usr/bin /bin /usr/sbin /sbin $HOME/bin $path)
     fpath=($HOME/.zfunctions /opt/homebrew/share/zsh-completions $HOME/.zsh/zsh-completions/src $fpath)
-    manpath=(/usr/local/man $manpath)
+    manpath=(/usr/share/man $manpath)
 
     # Pure
     autoload -U promptinit; promptinit
