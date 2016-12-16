@@ -117,3 +117,10 @@ function pinfo {
   fi
 
 }
+
+function ssht {
+  if [ -z "$1" ]; then
+    echo "usage: $0 <hostname>";
+  fi
+  $(which ssh) $1 -t "sh -c 'tmux a || tmux'";
+}
