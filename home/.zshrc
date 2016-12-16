@@ -97,10 +97,10 @@ if [ "`tty`" != "not a tty" ]; then
     # Set terminal colors
     case $os in
         Darwin)
-            eval $(gdircolors)
+            # eval $(gdircolors)
             ;;
         Linux)
-            eval $(dircolors)
+            # eval $(dircolors)
             ;;
         *)
           # export LSCOLORS='exfxcxdxbxGxDxabagacad'
@@ -118,7 +118,7 @@ if [ "`tty`" != "not a tty" ]; then
     [ -f /opt/local/etc/profile.d/z.sh ] && source /opt/local/etc/profile.d/z.sh
 
     # Use colors for less, man, etc.
-    [ -f ~/.LESS_TERMCAP ] && source ~/.LESS_TERMCAP
+    # [ -f ~/.LESS_TERMCAP ] && source ~/.LESS_TERMCAP
 
     # Source aliases and functions
     source $HOME/.aliases
