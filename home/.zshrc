@@ -109,7 +109,7 @@ if [ "`tty`" != "not a tty" ]; then
     # zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
     # iTerm Shell Integration
-    test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+    # test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
     # fzf
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
