@@ -85,6 +85,7 @@ if [ "`tty`" != "not a tty" ]; then
 
     # Use `ag` for fzf searches
     export FZF_DEFAULT_COMMAND='ag -g ""'
+    export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
     # Base16 Shell
     BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.dark.sh"
