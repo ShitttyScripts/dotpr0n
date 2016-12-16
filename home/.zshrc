@@ -83,8 +83,6 @@ if [ "`tty`" != "not a tty" ]; then
     export PAGER=less
     export MANPAGER='less -X'
 
-    # Use `ag` for fzf searches
-    export FZF_DEFAULT_COMMAND='ag -g ""'
     export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
     # Base16 Shell
@@ -113,6 +111,7 @@ if [ "`tty`" != "not a tty" ]; then
 
     # fzf
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+    export FZF_DEFAULT_COMMAND='ag -g ""'
 
     # z
     # [ -f /opt/local/etc/profile.d/z.sh ] && source /opt/local/etc/profile.d/z.sh
