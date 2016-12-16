@@ -199,18 +199,18 @@ filetype *.sha512
 " fileviewer *.torrent dumptorrent -v %c
 
 " Extract zip files
-filetype *.zip unzip %f
+" filetype *.zip unzip %f
 fileviewer *.zip,*.jar,*.war,*.ear zip -sf %c
 
 " Extract tar archives
-filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz tar -xf %f
+" filetype *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz tar -xf %f
 fileviewer *.tar,*.tar.bz2,*.tbz2,*.tgz,*.tar.gz tar -tf %f
 
 " Extract .bz2 archives
-filetype *.bz2 bzip2 -d %f
+" filetype *.bz2 bzip2 -d %f
 
 " Extract .gz files
-filetype *.gz gunzip %f
+" filetype *.gz gunzip %f
 
 " Mount .dmg archives
 " filetype *.dmg open
@@ -350,13 +350,15 @@ filetype /^ssh-/i
 
 fileviewer *.zip,*.jar,*.war,*.ear unzip -l %c, echo "No zip to preview:"
 
-filetype *.zip,*.jar,*.war,*.ear,*.tar.gz,*.tgz,*.tar.xz,*.txz,*.tar.bz2,*.tbz,*.rar,*.cab,*.iso,*.xar
+filetype *.zip
          \ {Mount with fuse-zip}
-         \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR,
+         \ FUSE_MOUNT|fuse-zip %SOURCE_FILE %DESTINATION_DIR,
          \ {View contents}
-         \ zip −sf %c | less,
-         \ {Extract here}
-         \ tar −xf %c,
+         \ zip −sf %c | less
+
+" filetype *.jar,*.war,*.ear,*.tar.gz,*.tgz,*.tar.xz,*.txz,*.tar.bz2,*.tbz,*.rar,*.cab,*.iso,*.xar
+"          \ {Mount with archivemount}
+"          \ FUSE_MOUNT|archivemount %SOURCE_FILE %DESTINATION_DIR
 
 fileviewer *.epub,*.docx,*.md,*.markdown,*.rst
          \ pandoc -i %c -t plain | less
