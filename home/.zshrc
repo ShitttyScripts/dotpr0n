@@ -88,8 +88,8 @@ if [ "`tty`" != "not a tty" ]; then
     export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
     # Base16 Shell
-    BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.dark.sh"
-    [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+    #BASE16_SHELL="$HOME/.config/base16-shell/scripts/base16-monokai.dark.sh"
+    #[[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
 
     # Marker
     [[ -s "$HOME/.local/share/marker/marker.sh" ]] && source "$HOME/.local/share/marker/marker.sh"
