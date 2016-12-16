@@ -6,6 +6,9 @@ alias ni="nvim"
 alias vi="nvim"
 alias vim="nvim"
 
+# Mutt
+alias m='mutt && mbsync --all && notmuch new > /dev/null 2>&1'
+
 # ls
 alias l='ls -1A'         # Lists in one column, hidden files.
 alias ll='ls -lh'        # Lists human readable sizes.
