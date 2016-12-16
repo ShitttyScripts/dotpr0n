@@ -115,7 +115,7 @@ if [ "`tty`" != "not a tty" ]; then
     [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
     # z
-    [ -f /opt/local/etc/profile.d/z.sh ] && source /opt/local/etc/profile.d/z.sh
+    # [ -f /opt/local/etc/profile.d/z.sh ] && source /opt/local/etc/profile.d/z.sh
 
     # Use colors for less, man, etc.
     # [ -f ~/.LESS_TERMCAP ] && source ~/.LESS_TERMCAP
