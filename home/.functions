@@ -22,8 +22,8 @@ function update {
             gem update && \
             gem cleanup
             echo "\n=====[ pip ]======================================================" && \
-            pip2 install --user --upgrade $(pip2 list --outdated | awk '/.*/ {print $1}') && \
-            pip3 install --user --upgrade $(pip3 list --outdated | awk '/.*/ {print $1}')
+            pip2 install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
+            pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
             # sudo -H pip-2.7 install --upgrade $(sudo -H pip-2.7 list --outdated | awk '/.*/ {print $1}') && \
             # sudo -H pip-3.5 install --upgrade $(sudo -H pip-3.5 list --outdated | awk '/.*/ {print $1}')
             ;;
