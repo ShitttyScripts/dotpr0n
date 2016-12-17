@@ -124,3 +124,18 @@ function ssht {
   fi
   $(which ssh) $1 -t "sh -c 'tmux a || tmux'";
 }
+
+function new-project {
+  if [ -z "$1" ]; then
+    echo "usage: $0 <project-name>";
+  else
+    git clone https://github.com/herrbischoff/project-template $1 && \
+    cd $1 && \
+    rm -rf .git/ && \
+    git init && \
+    cd 04_Development && \
+    npm install && \
+    cd .. && \
+    echo "*---===[ All done! You may start coding now. ] ===---*"
+  fi
+}
