@@ -39,6 +39,7 @@ alias duck="cd ~/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ 
 # Git shortcuts
 alias gd="git diff | vim"
 alias ga="git add"
+alias gc="git commit"
 alias gi="git ignore"
 alias gbd="git branch -D"
 alias gst="git status"
