@@ -1,45 +1,44 @@
-# Get OS X Software Updates, and update installed Ruby gems, MacPorts, npm, and their installed packages
+# Get software updates, and update installed Ruby gems, Homebrew, npm, and their installed packages.
 function update {
     case $(uname) in
         Darwin)
-            echo "=====[ Apple Software Update ]====================================" && \
+            echo "\n===[ Apple Software Update ]===============================" && \
             sudo softwareupdate -i -a
-            echo "\n=====[ Homebrew ]================================================" && \
+            echo "\n===[ App Store ]===========================================" && \
+            mas upgrade
+            echo "\n===[ Homebrew ]============================================" && \
             brew update && \
             brew upgrade && \
             brew cleanup -s
-            # echo "\n=====[ MacPorts ]=================================================" && \
+            # echo "\n==[ MacPorts ]==========================================================" && \
             # sudo port selfupdate && \
             # sudo port outdated
             # sudo port upgrade outdated
             # echo "Cleaning up ..."
             # sudo port uninstall inactive
             # sudo port uninstall leaves
-            echo "\n=====[ npm ]======================================================" && \
-            # sudo npm install npm -g && \
+            echo "\n===[ npm ]=================================================" && \
             npm update -g
-            echo "=====[ Gems ]=====================================================" && \
+            echo "===[ Gems ]================================================" && \
             gem update && \
             gem cleanup
-            echo "\n=====[ pip ]======================================================" && \
-            pip2 install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
+            echo "\n===[ pip ]=================================================" && \
+            pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
             pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
-            # sudo -H pip-2.7 install --upgrade $(sudo -H pip-2.7 list --outdated | awk '/.*/ {print $1}') && \
-            # sudo -H pip-3.5 install --upgrade $(sudo -H pip-3.5 list --outdated | awk '/.*/ {print $1}')
             ;;
         Linux)
-            echo "=====[ apt Software Update ]====================================" && \
+            echo "===[ apt-get ]=============================================" && \
             sudo apt-get update && \
             sudo apt-get -y upgrade && \
             sudo apt-get -y dist-upgrade && \
             sudo apt-get -y autoremove && \
             sudo apt-get -y remove (deborphan)
-            # echo "=====[ npm ]======================================================" && \
+            # echo "==[ npm ]==========================================================" && \
             # sudo npm install npm -g && \
             # sudo npm update -g
-            echo "=====[ Gems ]=====================================================" && \
+            echo "===[ Gems ]================================================" && \
             sudo gem update
-            echo "=====[ pip ]======================================================"
+            echo "===[ pip ]================================================="
             if [ $(cat /etc/issue) -eq "Ubuntu" ]
             then
                 echo "pip updates not supported on Ubuntu as some packages are owned by the system."
@@ -49,9 +48,9 @@ function update {
             fi
             ;;
         FreeBSD)
-            echo "=====[ System Software Update ]====================================" && \
+            echo "===[ System Software Update ]==============================" && \
             freebsd-update fetch upgrade
-            echo "\n=====[ Update Ports ]====================================" && \
+            echo "\n===[ Update Ports ]========================================" && \
             portmaster -av
             ;;
         *)
