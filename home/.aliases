@@ -70,6 +70,8 @@ alias txa="tmux attach-session -t"
 alias txk="tmux kill-session -t"
 alias txl="tmux ls"
 
+# npm shortcuts
+alias nls="npm list --depth=0"
 
 # Bower
 alias bower="noglob bower"
