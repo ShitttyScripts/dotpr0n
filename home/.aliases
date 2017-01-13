@@ -77,7 +77,7 @@ alias nls="npm list --depth=0"
 alias bower="noglob bower"
 
 # Docker
-alias docker-clean="docker rmi -f (docker images -q -a -f dangling=true)"
+alias docker-clean="docker rmi -f $(docker images -q -a -f dangling=true)"
 
 # Ansiweather
 alias weather="ansiweather"
