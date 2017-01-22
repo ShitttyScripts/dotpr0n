@@ -133,11 +133,20 @@ alias httpdump="sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 alias sizes="du -sh * | sort -n"
 
 # Listening ports
-if [[ "$OSTYPE" == darwin* ]]; then
-  alias openports="lsof -i | grep LISTEN"
-else
-  alias openports="netstat -nlp"
-fi
+case $OSTYPE in
+darwin*)
+    alias openports="lsof -i | grep LISTEN"
+    ;;
+FreeBSD)
+    alias openports="sockstat -4 -l"
+    ;;
+Linux)
+    alias openports="netstat -nlp"
+    ;;
+*)
+    echo "Not supported on this OS."
+    ;;
+esac
 
 # Canonical hex dump; some systems have this symlinked
 # command -v hd > /dev/null; or alias hd="hexdump -C"
