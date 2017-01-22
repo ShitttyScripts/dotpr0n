@@ -19,3 +19,6 @@
 [submodule "home/.zsh/pure"]
 	path = home/.zsh/pure
 	url = https://github.com/sindresorhus/pure.git
+[submodule "home/.tmux/plugins/tmux-better-mouse-mode"]
+	path = home/.tmux/plugins/tmux-better-mouse-mode
+	url = https://github.com/nhdaly/tmux-better-mouse-mode
