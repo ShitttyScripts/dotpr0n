@@ -137,7 +137,7 @@ case $OSTYPE in
 darwin*)
     alias openports="lsof -i | grep LISTEN"
     ;;
-FreeBSD)
+freebsd*)
     alias openports="sockstat -4 -l"
     ;;
 Linux)
