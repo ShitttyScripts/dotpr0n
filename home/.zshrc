@@ -73,9 +73,11 @@ if [ "`tty`" != "not a tty" ]; then
     export LC_CTYPE=en_US.UTF-8
 
     # Browser
-    if [[ "$OSTYPE" == darwin* ]]; then
-      export BROWSER='open'
-    fi
+    case $OSTYPE in
+    darwin*)
+        export BROWSER='open'
+        ;;
+    esac
 
     # Set preferred editors and pagers
     export EDITOR=nvim
