@@ -143,9 +143,6 @@ FreeBSD)
 Linux)
     alias openports="netstat -nlp"
     ;;
-*)
-    echo "Not supported on this OS."
-    ;;
 esac
 
 # Canonical hex dump; some systems have this symlinked
