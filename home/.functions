@@ -53,7 +53,7 @@ function update {
             echo "\n===[ Update Ports ]========================================" && \
             portsnap fetch update
             echo "\n===[ Compile and Upgrade Software ]========================" && \
-            synth system-upgrade
+            synth upgrade-system
             echo "\n===[ npm ]=================================================" && \
             npm update -g
             echo "===[ Gems ]================================================" && \
