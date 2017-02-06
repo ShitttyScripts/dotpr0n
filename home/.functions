@@ -49,7 +49,7 @@ function update {
             ;;
         FreeBSD)
             echo "===[ System Software Update ]==============================" && \
-            freebsd-update fetch upgrade && \
+            freebsd-update fetch && \
             freebsd-update install
             echo "\n===[ Update Ports ]========================================" && \
             portsnap fetch update
