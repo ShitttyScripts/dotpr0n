@@ -67,7 +67,7 @@ if [ "`tty`" != "not a tty" ]; then
     esac
 
     # Rust
-    source $HOME/.cargo/env
+    if [ -s $HOME/.cargo/env ] && source $HOME/.cargo/env
 
     # Set language environment
     export LANG=en_US.UTF-8
