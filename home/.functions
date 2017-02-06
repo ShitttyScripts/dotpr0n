@@ -51,10 +51,20 @@ function update {
             echo "===[ System Software Update ]==============================" && \
             freebsd-update fetch upgrade
             echo "\n===[ Update Ports ]========================================" && \
-            portmaster -av
+            portsnap fetch update
+            echo "\n===[ Compile and Upgrade Software ]========================" && \
+            synth system-upgrade
+            echo "\n===[ npm ]=================================================" && \
+            npm update -g
+            echo "===[ Gems ]================================================" && \
+            gem update && \
+            gem cleanup
+            echo "\n===[ pip ]=================================================" && \
+            pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
+            pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
             ;;
         *)
-            echo "Not supported on (uname)."
+            echo "Not supported on $(uname)."
     esac
 }
 
