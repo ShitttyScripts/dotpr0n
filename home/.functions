@@ -1,70 +1,70 @@
+function _freebsd_update {
+	echo "===[ System Software Update ]==============================" && \
+	freebsd-update fetch && \
+	freebsd-update install
+	echo "\n===[ Update Ports ]========================================" && \
+	portsnap fetch update
+	echo "\n===[ Compile and Upgrade Software ]========================" && \
+	synth upgrade-system
+	echo "\n===[ yarn ]================================================" && \
+	yarn global upgrade
+	echo "===[ Gems ]================================================" && \
+	gem update && \
+	gem cleanup
+	echo "\n===[ pip ]=================================================" && \
+	python -m pip_review --auto
+	python3 -m pip_review --auto
+}
+
+function _macos_update {
+	echo "\n===[ Apple Software Update ]===============================" && \
+	sudo softwareupdate -i -a
+	echo "\n===[ App Store ]===========================================" && \
+	mas upgrade
+	echo "\n===[ Homebrew ]============================================" && \
+	brew update && \
+	brew upgrade && \
+	brew cleanup -s
+	echo "\n===[ yarn ]================================================" && \
+	yarn global upgrade
+	echo "\n===[ Gems ]================================================" && \
+	gem update && \
+	gem cleanup
+	echo "\n===[ pip ]=================================================" && \
+	pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
+	pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
+}
+
+function _linux_update {
+	echo "===[ apt-get ]=============================================" && \
+	sudo apt-get update && \
+	sudo apt-get -y upgrade && \
+	sudo apt-get -y dist-upgrade && \
+	sudo apt-get -y autoremove && \
+	sudo apt-get -y remove (deborphan)
+	echo "===[ Gems ]================================================" && \
+	sudo gem update
+	echo "===[ pip ]================================================="
+	if [ $(cat /etc/issue) -eq "Ubuntu" ]
+	then
+		echo "pip updates not supported on Ubuntu as some packages are owned by the system."
+	else
+		sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}') && \
+		sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
+	fi
+}
+
 # Get software updates, and update installed Ruby gems, Homebrew, npm, and their installed packages.
 function update {
     case $(uname) in
         Darwin)
-            echo "\n===[ Apple Software Update ]===============================" && \
-            sudo softwareupdate -i -a
-            echo "\n===[ App Store ]===========================================" && \
-            mas upgrade
-            echo "\n===[ Homebrew ]============================================" && \
-            brew update && \
-            brew upgrade && \
-            brew cleanup -s
-            # echo "\n==[ MacPorts ]==========================================================" && \
-            # sudo port selfupdate && \
-            # sudo port outdated
-            # sudo port upgrade outdated
-            # echo "Cleaning up ..."
-            # sudo port uninstall inactive
-            # sudo port uninstall leaves
-            echo "\n===[ npm ]=================================================" && \
-            npm update -g
-            echo "===[ Gems ]================================================" && \
-            gem update && \
-            gem cleanup
-            echo "\n===[ pip ]=================================================" && \
-            pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
-            pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
+			_macos_update
             ;;
         Linux)
-            echo "===[ apt-get ]=============================================" && \
-            sudo apt-get update && \
-            sudo apt-get -y upgrade && \
-            sudo apt-get -y dist-upgrade && \
-            sudo apt-get -y autoremove && \
-            sudo apt-get -y remove (deborphan)
-            # echo "==[ npm ]==========================================================" && \
-            # sudo npm install npm -g && \
-            # sudo npm update -g
-            echo "===[ Gems ]================================================" && \
-            sudo gem update
-            echo "===[ pip ]================================================="
-            if [ $(cat /etc/issue) -eq "Ubuntu" ]
-            then
-                echo "pip updates not supported on Ubuntu as some packages are owned by the system."
-            else
-                sudo python -m pip install --upgrade (python -m pip list --outdated | awk '/.*/ {print $1}') && \
-                sudo python3 -m pip install --upgrade (python3 -m pip list --outdated | awk '/.*/ {print $1}')
-            fi
+			_linux_update
             ;;
         FreeBSD)
-            echo "===[ System Software Update ]==============================" && \
-            freebsd-update fetch && \
-            freebsd-update install
-            echo "\n===[ Update Ports ]========================================" && \
-            portsnap fetch update
-            echo "\n===[ Compile and Upgrade Software ]========================" && \
-            synth upgrade-system
-            echo "\n===[ npm ]=================================================" && \
-            npm update -g
-            echo "===[ Gems ]================================================" && \
-            gem update && \
-            gem cleanup
-            echo "\n===[ pip ]=================================================" && \
-            python -m pip_review --auto
-            python3 -m pip_review --auto
-            # pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
-            # pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
+			_freebsd_update
             ;;
         *)
             echo "Not supported on $(uname)."
