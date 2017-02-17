@@ -44,7 +44,7 @@ if [ "`tty`" != "not a tty" ]; then
     source $HOME/.homesick/repos/homeshick/homeshick.sh
 
     # Global paths
-    path=(/usr/bin /bin /usr/sbin /sbin $HOME/.yarn/bin $HOME/.config/yarn/global/node_modules/.bin $HOME/bin $path)
+    path=(/usr/bin /bin /usr/sbin /sbin $HOME/bin $path)
     fpath=($HOME/.zfunctions /opt/homebrew/share/zsh-completions $HOME/.zsh/zsh-completions/src $fpath)
     manpath=(/usr/share/man $manpath)
 
@@ -81,6 +81,9 @@ if [ "`tty`" != "not a tty" ]; then
         export BROWSER='open'
         ;;
     esac
+
+    # yarn
+    export PATH="$PATH:`yarn global bin`"
 
     # Set preferred editors and pagers
     export EDITOR=nvim
