@@ -82,6 +82,9 @@ if [ "`tty`" != "not a tty" ]; then
         ;;
     esac
 
+    # Composer
+    export PATH="$PATH:$HOME/.composer/vendor/bin"
+
     # yarn
     export PATH="$PATH:`yarn global bin`"
 
