@@ -95,6 +95,7 @@ if [ "`tty`" != "not a tty" ]; then
     export PAGER=less
     export MANPAGER='less -X'
 
+    # Neovim
     export NVIM_TUI_ENABLE_CURSOR_SHAPE=1
 
     # Base16 Shell
