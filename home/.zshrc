@@ -123,8 +123,7 @@ if [ "`tty`" != "not a tty" ]; then
     test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
     # fzf
-    [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-    export FZF_DEFAULT_COMMAND='ag -g ""'
+    [ -f $HOME/.fzf.zsh ] && source $HOME/.fzf.zsh && export FZF_DEFAULT_COMMAND='ag -g ""'
 
     # z
     # [ -f /opt/local/etc/profile.d/z.sh ] && source /opt/local/etc/profile.d/z.sh
