@@ -45,7 +45,7 @@ if [ "`tty`" != "not a tty" ]; then
 
     # Global paths
     path=(/usr/bin /bin /usr/sbin /sbin $HOME/bin $path)
-    fpath=($HOME/.zfunctions /opt/homebrew/share/zsh-completions $HOME/.zsh/zsh-completions/src $fpath)
+    fpath=($HOME/.zfunctions $HOME/.zsh/zsh-completions/src $fpath)
     manpath=(/usr/share/man $manpath)
 
     # Pure
@@ -57,6 +57,7 @@ if [ "`tty`" != "not a tty" ]; then
     case $(uname) in
         Darwin)
             path=(/opt/homebrew/bin /opt/homebrew/sbin /opt/homebrew/opt/php70 $HOME/pear/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin /usr/local/bin $home/.pear/bin $path)
+            fpath=(/opt/homebrew/share/zsh-completions /opt/homebrew/share/zsh/site-functions $fpath)
             manpath=(/opt/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $manpath)
             ;;
         Linux)
