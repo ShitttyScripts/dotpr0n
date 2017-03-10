@@ -87,7 +87,7 @@ if [ "`tty`" != "not a tty" ]; then
     export PATH="$PATH:$HOME/.composer/vendor/bin"
 
     # yarn
-    yarnbin=$(yarn global bin) && export PATH="$PATH:$yarnbin"
+    export PATH="$PATH:$HOME/.yarn/bin"
 
     # Set preferred editors and pagers
     export EDITOR=nvim
