@@ -283,3 +283,5 @@ fi
 # Add RVM to PATH for scripting.
 # Needs to be the last PATH variable change, therefore the last entry in file.
 [ -f $HOME/.rvm/scripts/rvm ] && source $HOME/.rvm/scripts/rvm && export PATH="$PATH:$HOME/.rvm/bin"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
