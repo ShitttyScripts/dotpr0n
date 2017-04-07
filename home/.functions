@@ -31,8 +31,10 @@ function _macos_update {
 	gem update && \
 	gem cleanup
 	echo "\n===[ pip ]=================================================" && \
-	pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
-	pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
+	# pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}') && \
+	# pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
+	sudo -H python -m pip_review --auto
+	sudo -H python3 -m pip_review --auto
 }
 
 function _linux_update {
