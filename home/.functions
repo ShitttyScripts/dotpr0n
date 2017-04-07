@@ -154,6 +154,12 @@ function new-project {
   fi
 }
 
+function imgopt {
+  # find . -iname '*.jpg' -exec guetzli {} {} \; && \
+  find . -iname '*.jpg' -or -name '*.jpeg' -exec jpegoptim --preserve --strip-all --all-progressive {} \; && \
+  find . -iname '*.png' -exec optipng {} \;
+}
+
 # fh - repeat history
 fh() {
   print -z $( ([ -n "$ZSH_NAME" ] && fc -l 1 || history) | fzf +s --tac | sed 's/ *[0-9]* *//')
