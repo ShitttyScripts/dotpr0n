@@ -21,6 +21,12 @@ function _macos_update {
 	sudo softwareupdate -i -a
 	echo "\n===[ App Store ]===========================================" && \
 	mas upgrade
+	echo "\n===[ MacPorts ]============================================" && \
+	port selfupdate && \
+	port outdated && \
+	port upgrade outdated && \
+	port uninstall leaves
+	# port uninstall inactive
 	echo "\n===[ Homebrew ]============================================" && \
 	brew update && \
 	brew upgrade && \
