@@ -56,7 +56,8 @@ if [ "`tty`" != "not a tty" ]; then
     # Platform-dependent PATH handling
     case $(uname) in
         Darwin)
-            path=(/opt/homebrew/bin /opt/homebrew/sbin /opt/homebrew/opt/php70 $HOME/pear/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin /usr/local/bin $home/.pear/bin $path)
+            path=(/opt/local/bin /opt/homebrew/bin /opt/homebrew/sbin /opt/homebrew/opt/php70 $HOME/pear/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin /usr/local/bin $home/.pear/bin $path)
+            path=($path /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin /opt/local/Library/Frameworks/Python.framework/Versions/3.5/bin)
             fpath=(/opt/homebrew/share/zsh-completions /opt/homebrew/share/zsh/site-functions $fpath)
             manpath=(/opt/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $manpath)
             ;;
