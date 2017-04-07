@@ -25,7 +25,6 @@ alias sl='ls'            # I often screw this up.
 # Shortcuts
 alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
-alias port="sudo port"
 alias g="git"
 alias h="homeshick"
 alias hcd="cd ~/.homesick/repos/dotfiles"
@@ -36,6 +35,11 @@ alias v="vifm"
 alias d="docker"
 alias duck="cd ~/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ Support/duck/Volumes/"
 alias x="exit"
+
+# MacPorts
+alias port="sudo port"
+alias pip="sudo -H pip"
+alias pip3="sudo -H pip3"
 
 # Git shortcuts
 alias gd="git diff"
