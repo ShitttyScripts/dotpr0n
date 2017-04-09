@@ -34,11 +34,11 @@ if [ "`tty`" != "not a tty" ]; then
     source $HOME/.zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 
     # Set correct TERM for plain shell and tmux
-    if [[ -n "$TMUX" ]]; then
-        export TERM='screen-256color'
-    else
-        export TERM='xterm-256color'
-    fi
+    # if [[ -n "$TMUX" ]]; then
+        # export TERM='screen-256color'
+    # else
+        # export TERM='xterm-256color'
+    # fi
 
     # Dotfile management
     source $HOME/.homesick/repos/homeshick/homeshick.sh
