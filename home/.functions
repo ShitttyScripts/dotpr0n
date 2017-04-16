@@ -11,9 +11,9 @@ function _freebsd_update {
 	echo "===[ Gems ]================================================" && \
 	gem update && \
 	gem cleanup
-	echo "\n===[ pip ]=================================================" && \
-	python -m pip_review --auto
-	python3 -m pip_review --auto
+	# echo "\n===[ pip ]=================================================" && \
+	# python -m pip_review --auto
+	# python3 -m pip_review --auto
 }
 
 function _macos_update {
