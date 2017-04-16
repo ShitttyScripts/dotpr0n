@@ -270,8 +270,8 @@ if [ "`tty`" != "not a tty" ]; then
     # bindkey '^[[B' history-substring-search-down
 
     ## EMACS mode ###########################################
-    bindkey -M emacs '^P' history-substring-search-up
-    bindkey -M emacs '^N' history-substring-search-down
+    # bindkey -M emacs '^P' history-substring-search-up
+    # bindkey -M emacs '^N' history-substring-search-down
 
     ## VI mode ##############################################
     # bindkey -M vicmd 'k' history-substring-search-up
@@ -279,8 +279,8 @@ if [ "`tty`" != "not a tty" ]; then
 
 fi
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 # Add RVM to PATH for scripting.
 # Needs to be the last PATH variable change, therefore the last entry in file.
 [ -f $HOME/.rvm/scripts/rvm ] && source $HOME/.rvm/scripts/rvm && export PATH="$PATH:$HOME/.rvm/bin"
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
