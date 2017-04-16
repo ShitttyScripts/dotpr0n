@@ -256,14 +256,14 @@ if [ "`tty`" != "not a tty" ]; then
     ## Arrow Keys ###########################################
 
     # OPTION 1: for most systems
-    # zmodload zsh/terminfo
-    # bindkey "$terminfo[kcuu1]" history-substring-search-up
-    # bindkey "$terminfo[kcud1]" history-substring-search-down
+    zmodload zsh/terminfo
+    bindkey "$terminfo[kcuu1]" history-substring-search-up
+    bindkey "$terminfo[kcud1]" history-substring-search-down
 
     # OPTION 2: for iTerm2 running on Apple MacBook laptops
-    zmodload zsh/terminfo
-    bindkey "$terminfo[cuu1]" history-substring-search-up
-    bindkey "$terminfo[cud1]" history-substring-search-down
+    # zmodload zsh/terminfo
+    # bindkey "$terminfo[cuu1]" history-substring-search-up
+    # bindkey "$terminfo[cud1]" history-substring-search-down
 
     # OPTION 3: for Ubuntu 12.04, Fedora 21, and MacOSX 10.9
     # bindkey '^[[A' history-substring-search-up
