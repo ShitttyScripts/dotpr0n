@@ -1,6 +1,6 @@
 ## Requirements
 
-Zsh >= 5.x
+Zsh >= 5.x  
 fish >= 2.4.x
 
 ## Install
