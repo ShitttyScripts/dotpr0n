@@ -24,8 +24,8 @@ if status --is-interactive
 			set -gx MANPATH /opt/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
 		case FreeBSD
 			set -gx TERM xterm-256color
-			set -gx PATH %%PREFIX%%/%%CCLINKDIR%% $PATH
-			set -gx CCACHE_PATH /usr/bin %%LOCALBASE%%/bin
+			set -gx PATH /usr/local/libexec/ccache/world $PATH
+			set -gx CCACHE_PATH /usr/bin /usr/local/bin
 		case '*'
 			set -gx TERM xterm-256color
 	end
