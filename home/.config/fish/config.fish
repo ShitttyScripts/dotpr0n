@@ -18,11 +18,12 @@ if status --is-interactive
 	# OS specific paths
 	switch $OS
 		case Darwin
+			set -gx TERM xterm-256color-italic
 			set -gx PATH /opt/local/bin /opt/homebrew/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
 			set -gx PATH $PATH /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin /opt/local/Library/Frameworks/Python.framework/Versions/3.5/bin
 			set -gx MANPATH /opt/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
 		case '*'
-			# do nothing
+			set -gx TERM xterm-256color
 	end
 
 	# Set language environment
