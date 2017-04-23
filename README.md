@@ -1,41 +1,45 @@
 ## Requirements
 
-Zsh >= 5.x  
-fish >= 2.4.x
+fish >= 2.4.x  
+Zsh >= 5.x
 
 ## Install
 
-### Zsh
-```zsh
-git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-git clone --recurse-submodules https://github.com/herrbischoff/dotfiles.git ~/.homesick/repos/dotfiles
-~/.homesick/repos/homeshick/bin/homeshick link
-source ~/.zshrc
-```
-
-### fish
+### Use fish
 ```fish
 git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-git clone https://github.com/herrbischoff/dotfiles.git ~/.homesick/repos/dotfiles
-~/.homesick/repos/homeshick/bin/homeshick link
+\curl -sSL https://get.rvm.io | bash -s stable
+~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotfiles
 source ~/.config/fish/config.fish
+```
+
+### Use Zsh
+```zsh
+git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
+\curl -sSL https://get.rvm.io | bash -s stable
+~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotfiles
+source ~/.zshrc
 ```
 
 ## Optional
 
-```zsh
+### macOS
+```sh
 homeshick clone herrbischoff/castle-macos
 ```
 
-```zsh
+### mutt
+```sh
 homeshick clone herrbischoff/castle-mutt
 ```
 
-```zsh
+### cmus
+```sh
 homeshick clone herrbischoff/castle-cmus
 ```
 
-```zsh
+### Neovim
+```sh
 homeshick clone herrbischoff/castle-neovim
 vi +PlugInstall
 ```
