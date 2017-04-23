@@ -4,8 +4,8 @@ abbr --add vi 'nvim'
 abbr --add vim '/opt/local/bin/vim'
 
 # fish
-abbr --add fconf 'vi ~/.config/fish/config.fish'
-abbr --add aconf 'vi ~/.config/fish/abbreviations.fish'
+abbr --add fconf 'nvim ~/.config/fish/config.fish'
+abbr --add aconf 'nvim ~/.config/fish/abbreviations.fish'
 
 # Shortcuts
 abbr --add dl 'cd ~/Downloads'
