@@ -4,6 +4,7 @@ if status --is-interactive
 
 	# Plugins
 	set fish_function_path $HOME/.config/fish/functions/pure $fish_function_path
+	set fish_function_path $HOME/.config/fish/functions/bass $fish_function_path
 
 	# Homesick
 	if test -d $HOME/.homesick
@@ -14,6 +15,7 @@ if status --is-interactive
 	set -gx PATH /usr/bin /bin /usr/sbin /sbin /usr/local/bin $HOME/bin $PATH
 	set -gx MANPATH /usr/share/man $MANPATH
 
+	# OS specific paths
 	switch $OS
 		case Darwin
 			set -gx PATH /opt/local/bin /opt/homebrew/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH

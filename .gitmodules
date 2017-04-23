@@ -25,3 +25,6 @@
 [submodule "home/.config/fish/functions/pure"]
 	path = home/.config/fish/functions/pure
 	url = https://github.com/rafaelrinaldi/pure.git
+[submodule "home/.config/fish/functions/bass"]
+	path = home/.config/fish/functions/bass
+	url = https://github.com/edc/bass.git
