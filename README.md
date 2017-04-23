@@ -6,7 +6,7 @@ Zsh >= 5.x
 ## Install
 
 ### Use fish
-```fish
+```sh
 git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 \curl -sSL https://get.rvm.io | bash -s stable
 ~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotfiles
