@@ -22,3 +22,6 @@
 [submodule "home/.tmux/plugins/tmux-better-mouse-mode"]
 	path = home/.tmux/plugins/tmux-better-mouse-mode
 	url = https://github.com/nhdaly/tmux-better-mouse-mode
+[submodule "home/.config/fish/functions/pure"]
+	path = home/.config/fish/functions/pure
+	url = https://github.com/rafaelrinaldi/pure.git

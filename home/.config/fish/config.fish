@@ -2,14 +2,8 @@ if status --is-interactive
 
 	set -gx OS (uname)
 
-	# Fundle (Begin)
-	if not functions -q fundle; eval (curl -sfL https://git.io/fundle-install); end
-
-	fundle plugin 'edc/bass'
-	fundle plugin 'rafaelrinaldi/pure'
-
-	fundle init
-	# Fundle (End)
+	# Plugins
+	set fish_function_path $HOME/.config/fish/functions/pure $fish_function_path
 
 	# Homesick
 	if test -d $HOME/.homesick
