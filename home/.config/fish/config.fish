@@ -60,6 +60,12 @@ if status --is-interactive
 		rvm default
 	end
 
+	if test -d $HOME/.pyenv
+		set -gx PYENV_ROOT $HOME/.pyenv
+		set -gx PATH $PYENV_ROOT/bin $PATH
+		source (pyenv init -|psub)
+	end
+
 	# Source command abbreviations
 	source $HOME/.config/fish/abbreviations.fish
 

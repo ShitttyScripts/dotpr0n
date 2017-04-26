@@ -28,3 +28,6 @@
 [submodule "home/.config/fish/functions/bass"]
 	path = home/.config/fish/functions/bass
 	url = https://github.com/edc/bass.git
+[submodule "home/.pyenv"]
+	path = home/.pyenv
+	url = https://github.com/pyenv/pyenv.git
