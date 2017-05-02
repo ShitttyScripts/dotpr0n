@@ -31,3 +31,6 @@
 [submodule "home/.pyenv"]
 	path = home/.pyenv
 	url = https://github.com/pyenv/pyenv.git
+[submodule "home/.tmux/plugins/tmux-resurrect"]
+	path = home/.tmux/plugins/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect
