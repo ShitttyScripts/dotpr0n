@@ -1,7 +1,7 @@
 # Neovim as Vim
 abbr --add ni 'nvim'
 abbr --add vi 'nvim'
-abbr --add vim '/opt/local/bin/vim'
+abbr --add vim 'nvim'
 
 # fish
 abbr --add fconf 'nvim ~/.config/fish/config.fish'
