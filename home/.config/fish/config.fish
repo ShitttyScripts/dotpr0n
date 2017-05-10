@@ -19,13 +19,11 @@ if status --is-interactive
 	switch $OS
 		case Darwin
 			set -gx TERM xterm-256color-italic
-			set -gx PATH /opt/local/bin /opt/homebrew/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
+			set -gx PATH /opt/local/bin /opt/local/sbin /opt/homebrew/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
 			set -gx PATH $PATH /opt/local/Library/Frameworks/Python.framework/Versions/2.7/bin /opt/local/Library/Frameworks/Python.framework/Versions/3.5/bin
 			set -gx MANPATH /opt/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
 		case FreeBSD
 			set -gx TERM xterm-256color
-			set -gx PATH /usr/local/libexec/ccache/world $PATH
-			set -gx CCACHE_PATH /usr/bin /usr/local/bin
 		case '*'
 			set -gx TERM xterm-256color
 	end
@@ -53,7 +51,7 @@ if status --is-interactive
 	set -gx MANPAGER 'less -X'
 
 	# Neovim
-	set -gx NVIM_TUI_ENABLE_CURSOR_SHAPE 1
+	# set -gx NVIM_TUI_ENABLE_CURSOR_SHAPE 1
 
 	# rvm
 	if functions -q rvm
