@@ -11,7 +11,6 @@ abbr --add aconf 'nvim ~/.config/fish/abbreviations.fish'
 abbr --add dl 'cd ~/Downloads'
 abbr --add dt 'cd ~/Desktop'
 abbr --add g 'git'
-abbr --add h 'homeshick'
 abbr --add hcd 'cd ~/.homesick/repos/dotfiles'
 abbr --add j 'jobs'
 abbr --add e 'nvim -w '
@@ -19,6 +18,10 @@ abbr --add v 'vifm'
 abbr --add d 'docker'
 abbr --add duck 'cd ~/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ Support/duck/Volumes/'
 abbr --add x 'exit'
+
+# Homeshick
+abbr --add h 'homeshick'
+abbr --add hpull 'homeshick pull'
 
 # MacPorts
 abbr --add port 'sudo port'
