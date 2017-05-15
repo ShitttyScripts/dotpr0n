@@ -54,7 +54,8 @@ if status --is-interactive
 	# set -gx NVIM_TUI_ENABLE_CURSOR_SHAPE 1
 
 	# rvm
-	if functions -q rvm
+	if test -d /usr/local/rvm/bin
+		set -gx PATH $PATH /usr/local/rvm/bin
 		rvm default
 	end
 
