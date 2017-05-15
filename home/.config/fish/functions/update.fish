@@ -72,7 +72,7 @@ function update
 			__linux_update
 		case FreeBSD
 			__freebsd_update
-		'*'
+		case '*'
 			printf "No update function for %s yet." (uname)
 	end
 end
