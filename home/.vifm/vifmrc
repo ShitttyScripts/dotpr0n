@@ -303,7 +303,7 @@ nnoremap yd :!printf %d | pbcopy<cr>
 nnoremap yf :!printf %c:p | pbcopy<cr>
 
 " View preview in Quick Look
-nnoremap q :!qlmanage -p %f > /dev/null 2>&1<cr>
+nnoremap q :q<cr>
 
 " Mappings for faster renaming
 nnoremap I cw<c-a>
