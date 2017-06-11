@@ -1,7 +1,8 @@
 # Neovim as Vim
 abbr --add ni 'nvim'
-abbr --add vi 'vim'
-abbr --add vim 'vim'
+abbr --add vi 'nvim'
+abbr --add e 'nvim'
+# abbr --add vim 'nvim'
 
 # fish
 abbr --add fconf 'nvim ~/.config/fish/config.fish'
@@ -12,7 +13,6 @@ abbr --add dl 'cd ~/Downloads'
 abbr --add dt 'cd ~/Desktop'
 abbr --add g 'git'
 abbr --add j 'jobs'
-abbr --add e 'kak'
 abbr --add v 'vifm'
 abbr --add d 'docker'
 abbr --add duck 'cd ~/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ Support/duck/Volumes/'

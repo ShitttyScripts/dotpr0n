@@ -21,8 +21,8 @@ if status --is-interactive
 	# OS specific paths
 	switch $OS
 		case Darwin
-			set -gx PATH /opt/local/bin /opt/local/sbin /opt/homebrew/bin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
-			set -gx MANPATH /opt/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
+			set -gx PATH $HOME/homebrew/bin $HOME/homebrew/sbin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
+			set -gx MANPATH $HOME/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
 		case FreeBSD
 			# null
 		case '*'
@@ -34,6 +34,9 @@ if status --is-interactive
 	set -gx LANGUAGE en_US.UTF-8
 	set -gx LC_ALL en_US.UTF-8
 	set -gx LC_CTYPE en_US.UTF-8
+
+	# Homebrew
+	set -gx HOMEBREW_BUILD_FROM_SOURCE 1
 
 	# Composer
 	if test -d $HOME/.composer/vendor/bin
@@ -66,11 +69,11 @@ if status --is-interactive
 	end
 
 	# pyenv
-	if test -d $HOME/.pyenv
-		set -gx PYENV_ROOT $HOME/.pyenv
-		set -gx PATH $PYENV_ROOT/bin $PATH
-		source (pyenv init -|psub)
-	end
+	#if test -d $HOME/.pyenv
+	#	set -gx PYENV_ROOT $HOME/.pyenv
+	#	set -gx PATH $PYENV_ROOT/bin $PATH
+	#	source (pyenv init -|psub)
+	#end
 
 	# Source command abbreviations
 	source $HOME/.config/fish/abbreviations.fish

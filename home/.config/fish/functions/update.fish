@@ -24,26 +24,27 @@ function __macos_update
 	sudo softwareupdate -i -a
 	printf "\n===[ App Store ]===========================================\n"; and \
 	mas upgrade
-	printf "\n===[ MacPorts ]============================================\n"; and \
-	sudo port selfupdate; and \
-	sudo port outdated; and \
-	sudo port upgrade outdated; and \
-	sudo port uninstall leaves
+	# printf "\n===[ MacPorts ]============================================\n"; and \
+	# sudo port selfupdate; and \
+	# sudo port outdated; and \
+	# sudo port upgrade outdated; and \
+	# sudo port uninstall leaves
 	# port uninstall inactive
 	printf "\n===[ Homebrew ]============================================\n"; and \
 	brew update; and \
-	brew upgrade; and \
-	brew cleanup -s
+	brew upgrade --cleanup; and \
+	brew install --HEAD universal-ctags; and \
+	brew install --HEAD https://raw.githubusercontent.com/mawww/kakoune/master/contrib/kakoune.rb; and \
+	brew cleanup -s; and \
+	brew prune
 	printf "\n===[ yarn ]================================================\n"; and \
 	yarn global upgrade
 	printf "\n===[ Gems ]================================================\n"; and \
 	gem update; and \
 	gem cleanup
 	printf "\n===[ pip ]=================================================\n"; and \
-	# pip install --user --upgrade $(pip2 list --outdated --format=legacy | awk '/.*/ {print $1}'); and \
-	# pip3 install --user --upgrade $(pip3 list --outdated --format=legacy | awk '/.*/ {print $1}')
-	sudo -H python -m pip_review --auto
-	sudo -H python3 -m pip_review --auto
+	python -m pip_review --auto
+	python3 -m pip_review --auto
 end
 
 function __linux_update
