@@ -34,7 +34,7 @@
 	svn-diff = !git-svn-diff
 	pr = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
 	pr-clean = "!git for-each-ref refs/heads/pr/* --format=\"%(refname)\" | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
-	ctags = !.git/hooks/ctags
+    # ctags = !.git/hooks/ctags
     stats = !git shortlog -sn
 	praise = blame
     recent = "!git for-each-ref --count=10 --sort=-committerdate refs/heads/ --format=\"%(refname:short)\""
@@ -54,4 +54,4 @@
 [github]
 	user = herrbischoff
 [init]
-	templatedir = ~/.git_template
+    # templatedir = ~/.git_template
