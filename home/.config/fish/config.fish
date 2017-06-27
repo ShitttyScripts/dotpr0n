@@ -75,6 +75,17 @@ if status --is-interactive
 	#	source (pyenv init -|psub)
 	#end
 
+	# swiftenv
+	if test -d $HOME/.swiftenv
+		set SWIFTENV_ROOT $HOME/.swiftenv
+		set PATH $SWIFTENV_ROOT/bin $PATH
+		status --is-interactive; and source (swiftenv init -|psub)
+	end
+
+	# Go
+	set GOPATH $HOME/go
+	set PATH $PATH $GOPATH/bin
+
 	# Source command abbreviations
 	source $HOME/.config/fish/abbreviations.fish
 
