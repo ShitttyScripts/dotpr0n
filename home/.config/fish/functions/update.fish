@@ -37,8 +37,8 @@ function __macos_update
 	brew install --HEAD https://raw.githubusercontent.com/mawww/kakoune/master/contrib/kakoune.rb; and \
 	brew cleanup -s; and \
 	brew prune
-	printf "\n===[ yarn ]================================================\n"; and \
-	yarn global upgrade
+	printf "\n===[ npm ]=================================================\n"; and \
+	npm upgrade -g
 	printf "\n===[ Gems ]================================================\n"; and \
 	gem update; and \
 	gem cleanup

@@ -2,7 +2,7 @@
 abbr --add ni 'nvim'
 abbr --add vi 'nvim'
 abbr --add e 'nvim'
-# abbr --add vim 'nvim'
+abbr --add vconf 'nvim ~/.config/nvim/init.vim'
 
 # fish
 abbr --add fconf 'nvim ~/.config/fish/config.fish'
