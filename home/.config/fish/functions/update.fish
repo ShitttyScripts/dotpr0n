@@ -1,7 +1,7 @@
 function __freebsd_update
-	printf "===[ System Software Update ]==============================\n"; and \
-	freebsd-update fetch; and \
-	freebsd-update install
+	# printf "===[ System Software Update ]==============================\n"; and \
+	# freebsd-update fetch; and \
+	# freebsd-update install
 	printf "\n===[ Update Ports ]========================================\n"; and \
 	portsnap fetch update
 	# printf "\n===[ Compile and Upgrade Software ]========================"; and \
@@ -9,8 +9,8 @@ function __freebsd_update
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
 	pkg update; and \
 	pkg upgrade
-	printf "\n===[ yarn ]================================================\n"; and \
-	yarn global upgrade
+	printf "\n===[ npm ]=================================================\n"; and \
+	npm upgrade -g
 	printf "===[ Gems ]================================================\n"; and \
 	gem update; and \
 	gem cleanup
@@ -54,6 +54,8 @@ function __linux_update
 	sudo apt-get -y dist-upgrade; and \
 	sudo apt-get -y autoremove; and \
 	sudo apt-get -y remove (deborphan)
+	printf "\n===[ npm ]=================================================\n"; and \
+	npm upgrade -g
 	# printf "===[ Gems ]================================================"; and \
 	# sudo gem update
 	# printf "===[ pip ]================================================="
