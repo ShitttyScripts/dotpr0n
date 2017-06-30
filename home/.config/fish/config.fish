@@ -83,8 +83,10 @@ if status --is-interactive
 	end
 
 	# Go
-	set GOPATH $HOME/go
-	set PATH $PATH $GOPATH/bin
+	if test -d $HOME/go
+        set GOPATH $HOME/go
+        set PATH $PATH $GOPATH/bin
+    end
 
 	# Source command abbreviations
 	source $HOME/.config/fish/abbreviations.fish
