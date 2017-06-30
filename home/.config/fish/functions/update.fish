@@ -2,6 +2,8 @@ function __freebsd_update
 	# printf "===[ System Software Update ]==============================\n"; and \
 	# freebsd-update fetch; and \
 	# freebsd-update install
+	printf "===[ Update System Sources ]===============================\n"; and \
+	svn-lite update /usr/src
 	printf "\n===[ Update Ports ]========================================\n"; and \
 	portsnap fetch update
 	# printf "\n===[ Compile and Upgrade Software ]========================"; and \
