@@ -2,6 +2,9 @@ if status --is-interactive
 
 	set -gx OS (uname)
 
+    # Base aliases
+    alias ll "ls -la"
+
 	# Plugins
 	set fish_function_path $HOME/.config/fish/functions/pure $fish_function_path
 	set fish_function_path $HOME/.config/fish/functions/bass $fish_function_path
