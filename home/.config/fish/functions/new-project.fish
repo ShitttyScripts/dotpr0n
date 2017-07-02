@@ -1,3 +1,7 @@
+#
+# Sets up a new web development environment (WIP)
+#
+
 function new-project
     if test (count $argv) -gt 0
         # git clone https://github.com/herrbischoff/project-template $1 && \
