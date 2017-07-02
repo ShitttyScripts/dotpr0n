@@ -1,7 +1,6 @@
 ## Requirements
 
-fish >= 2.4.x  
-Zsh >= 5.x
+fish >= 2.4.x
 
 ## Install
 
@@ -11,14 +10,6 @@ git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
 \curl -sSL https://get.rvm.io | bash -s stable
 ~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotfiles
 source ~/.config/fish/config.fish
-```
-
-### Use Zsh
-```zsh
-git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-\curl -sSL https://get.rvm.io | bash -s stable
-~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotfiles
-source ~/.zshrc
 ```
 
 ## Optional
