@@ -4,6 +4,6 @@ function freebsd-up-1
     cd /usr/src
     make -j4 buildworld
     make -j4 kernel
-    shutdown -r now
+    # shutdown -r now
 end
 
