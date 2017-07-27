@@ -35,8 +35,7 @@ function __macos_update
 	printf "\n===[ Homebrew ]============================================\n"; and \
 	brew update; and \
 	brew upgrade --cleanup; and \
-	brew install --HEAD universal-ctags; and \
-	brew install --HEAD https://raw.githubusercontent.com/mawww/kakoune/master/contrib/kakoune.rb; and \
+	brew upgrade --fetch-HEAD universal-ctags kakoune vis; and \
 	brew cleanup -s; and \
 	brew prune
 	printf "\n===[ npm ]=================================================\n"; and \
@@ -45,8 +44,10 @@ function __macos_update
 	gem update; and \
 	gem cleanup
 	printf "\n===[ pip ]=================================================\n"; and \
-	python -m pip_review --auto
+	python2 -m pip_review --auto
 	python3 -m pip_review --auto
+	# pip install -U (pip freeze | awk '{split($0, a, "=="); print a[1]}')
+	# pip3 install -U (pip3 freeze | awk '{split($0, a, "=="); print a[1]}')
 end
 
 function __linux_update
