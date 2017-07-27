@@ -15,7 +15,7 @@ if status --is-interactive
 	end
 
 	# Global paths
-	set -gx PATH /usr/bin /bin /usr/sbin /sbin /usr/local/bin $HOME/bin $PATH
+	set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $HOME/bin $PATH
 	set -gx MANPATH /usr/share/man $MANPATH
 
 	# Terminal colors
