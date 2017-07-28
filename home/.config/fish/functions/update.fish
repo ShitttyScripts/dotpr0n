@@ -11,7 +11,8 @@ function __freebsd_update
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
 	# pkg update; and \
 	# pkg upgrade
-	portmaster -ad
+	portmaster -ad; and \
+	portmaster -y --clean-distfiles
 	printf "\n===[ npm ]=================================================\n"; and \
 	npm upgrade -g
 	printf "===[ Gems ]================================================\n"; and \
