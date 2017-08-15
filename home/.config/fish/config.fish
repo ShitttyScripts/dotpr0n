@@ -3,7 +3,7 @@ if status --is-interactive
 	set -gx OS (uname)
 
     # Base aliases
-    alias ll "ls -la"
+    alias ll "ls -lah"
 
 	# Plugins
 	set fish_function_path $HOME/.config/fish/functions/pure $fish_function_path
@@ -89,6 +89,11 @@ if status --is-interactive
 	if test -d $HOME/go
         set GOPATH $HOME/go
         set PATH $PATH $GOPATH/bin
+    end
+
+	# Rust
+	if test -d $HOME/.cargo
+        source $HOME/.cargo/env
     end
 
 	# Source command abbreviations
