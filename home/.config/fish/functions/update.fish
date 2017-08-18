@@ -72,7 +72,7 @@ function __linux_update
 	# end
 end
 
-function update
+function update --description 'Update system software'
 	switch (uname)
 		case Darwin
 			__macos_update
