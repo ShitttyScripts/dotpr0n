@@ -4,6 +4,7 @@ if status --is-interactive
 
     # Base aliases
     alias ll "ls -lah"
+    alias vim "nvim"
 
 	# Plugins
 	set fish_function_path $HOME/.config/fish/functions/pure $fish_function_path
@@ -24,7 +25,7 @@ if status --is-interactive
 	# OS specific paths
 	switch $OS
 		case Darwin
-			set -gx PATH $HOME/homebrew/bin $HOME/homebrew/sbin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
+			set -gx PATH $HOME/homebrew/bin $HOME/homebrew/opt/node@6/bin $HOME/homebrew/sbin /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
 			set -gx MANPATH $HOME/homebrew/share/man /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
 		case FreeBSD
 			# null
