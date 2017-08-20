@@ -2,25 +2,31 @@ if status --is-interactive
 
 	set -gx OS (uname)
 
+	# Terminal colors
+	set -gx TERM xterm-256color
+
+	# Set language environment
+	set -gx LANG en_US.UTF-8
+	set -gx LANGUAGE en_US.UTF-8
+	set -gx LC_ALL en_US.UTF-8
+	set -gx LC_CTYPE en_US.UTF-8
+
     # Base aliases
     alias ll "ls -lah"
     alias vim "nvim"
 
 	# Plugins
 	set fish_function_path $HOME/.config/fish/functions/pure $fish_function_path
-	set fish_function_path $HOME/.config/fish/functions/bass $fish_function_path
+	# set fish_function_path $HOME/.config/fish/functions/bass $fish_function_path
 
 	# Homesick
 	if test -d $HOME/.homesick
-		source "$HOME/.homesick/repos/homeshick/homeshick.fish"
+		source $HOME/.homesick/repos/homeshick/homeshick.fish
 	end
 
 	# Global paths
 	set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $HOME/bin $PATH
 	set -gx MANPATH /usr/share/man $MANPATH
-
-	# Terminal colors
-	set -gx TERM xterm-256color
 
 	# OS specific paths
 	switch $OS
@@ -32,12 +38,6 @@ if status --is-interactive
 		case '*'
 			# null
 	end
-
-	# Set language environment
-	set -gx LANG en_US.UTF-8
-	set -gx LANGUAGE en_US.UTF-8
-	set -gx LC_ALL en_US.UTF-8
-	set -gx LC_CTYPE en_US.UTF-8
 
 	# Homebrew
 	set -gx HOMEBREW_BUILD_FROM_SOURCE 1
@@ -62,15 +62,15 @@ if status --is-interactive
 	# set -gx NVIM_TUI_ENABLE_CURSOR_SHAPE 1
 
 	# rvm
-	if test -d /usr/local/rvm/bin
-		set -gx PATH $PATH /usr/local/rvm/bin
-		rvm default
-	end
+	# if test -d /usr/local/rvm/bin
+	# 	set -gx PATH $PATH /usr/local/rvm/bin
+	# 	rvm default
+	# end
 
-	if test -d $HOME/.rvm/bin
-		set -gx PATH $PATH $HOME/.rvm/bin
-		rvm default
-	end
+	# if test -d $HOME/.rvm/bin
+	# 	set -gx PATH $PATH $HOME/.rvm/bin
+	# 	rvm default
+	# end
 
 	# pyenv
 	#if test -d $HOME/.pyenv
