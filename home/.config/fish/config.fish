@@ -1,4 +1,8 @@
-if status --is-interactive
+if not status --is-interactive
+
+    exit 0
+
+else
 
 	set -gx OS (uname)
 
