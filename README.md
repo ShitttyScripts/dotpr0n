@@ -17,8 +17,8 @@ fish >= 2.4.x
 ### Use fish
 ```sh
 git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-curl -sSL https://get.rvm.io | bash -s stable
-~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotfiles
+(optional) curl -sSL https://get.rvm.io | bash -s stable
+~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotpr0n
 source ~/.config/fish/config.fish
 ```
 
