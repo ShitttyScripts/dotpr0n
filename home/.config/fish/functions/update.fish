@@ -103,7 +103,7 @@ function __debian_apt
 	sudo apt-get -y upgrade; and \
 	sudo apt-get -y dist-upgrade; and \
 	sudo apt-get autoremove
-	if which deborphan
+	if which deborphan > /dev/null
         sudo apt-get remove (deborphan)
     end
 end
