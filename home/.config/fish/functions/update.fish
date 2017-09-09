@@ -4,8 +4,10 @@ function __freebsd_update
 	# freebsd-update install
 	# printf "===[ Update System Sources ]===============================\n"; and \
 	# svnlite update /usr/src
-	printf "\n===[ Update Ports ]========================================\n"; and \
-	portsnap fetch update
+    if not [ "$argv[1]" = "jail" ]
+        printf "\n===[ Update Ports ]========================================\n"; and \
+        portsnap fetch update
+    end
 	# printf "\n===[ Compile and Upgrade Software ]========================"; and \
 	# synth upgrade-system
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
