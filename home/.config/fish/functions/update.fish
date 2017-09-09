@@ -27,11 +27,15 @@ function __freebsd_jail_update
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
 	portmaster -ad; and \
 	portmaster -y --clean-distfiles
-	printf "\n===[ npm ]=================================================\n"; and \
-	npm upgrade -g
-	printf "===[ Gems ]================================================\n"; and \
-	gem update; and \
-	gem cleanup
+	if (which npm)
+        printf "\n===[ npm ]=================================================\n"; and \
+        npm upgrade -g
+    end
+    if (which gem)
+        printf "===[ Gems ]================================================\n"; and \
+        gem update; and \
+        gem cleanup
+    end
 end
 
 function __macos_update
