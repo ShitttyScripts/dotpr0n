@@ -4,10 +4,8 @@ function __freebsd_update
 	# freebsd-update install
 	# printf "===[ Update System Sources ]===============================\n"; and \
 	# svnlite update /usr/src
-    if not [ "$argv[1]" = "jail" ]
-        printf "\n===[ Update Ports ]========================================\n"; and \
-        portsnap fetch update
-    end
+    printf "\n===[ Update Ports ]========================================\n"; and \
+    portsnap fetch update
 	# printf "\n===[ Compile and Upgrade Software ]========================"; and \
 	# synth upgrade-system
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
@@ -23,6 +21,17 @@ function __freebsd_update
 	# printf "\n===[ pip ]================================================="; and \
 	# python -m pip_review --auto
 	# python3 -m pip_review --auto
+end
+
+function __freebsd_jail_update
+	printf "\n===[ Upgrade Software ] ===================================\n"; and \
+	portmaster -ad; and \
+	portmaster -y --clean-distfiles
+	printf "\n===[ npm ]=================================================\n"; and \
+	npm upgrade -g
+	printf "===[ Gems ]================================================\n"; and \
+	gem update; and \
+	gem cleanup
 end
 
 function __macos_update
@@ -81,7 +90,11 @@ function update --description 'Update system software'
 		case Linux
 			__linux_update
 		case FreeBSD
-			__freebsd_update $argv[1]
+			if [ "$argv[1]" = "jail" ]
+                __freebsd_jail_update
+            else
+                __freebsd_update
+            end
 		case '*'
 			printf "No update function for %s yet." (uname)
 	end
