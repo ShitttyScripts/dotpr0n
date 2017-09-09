@@ -20,8 +20,15 @@ function __freebsd_synth
 end
 
 function __freebsd_portsnap
-    printf "\n===[ Update Ports ]========================================\n"; and \
+    printf "\n===[ Update Ports tree ]===================================\n"; and \
     portsnap fetch update
+end
+
+function __freebsd_ezjail_ports
+	if which ezjail-admin > /dev/null
+        printf "\n===[ Update ezjail Ports tree ]============================\n"; and \
+        ezjail-admin update -P
+    end
 end
 
 function __freebsd_freebsd-update
@@ -36,14 +43,14 @@ function __freebsd_source
 end
 
 function __update_npm
-	if which npm
+	if which npm > /dev/null
         printf "\n===[ npm ]=================================================\n"; and \
         npm upgrade -g
     end
 end
 
 function __update_gems
-    if which gem
+    if which gem > /dev/null
         printf "===[ Gems ]================================================\n"; and \
         gem update; and \
         gem cleanup
@@ -56,26 +63,32 @@ function __macos_software_update
 end
 
 function __macos_appstore
-	printf "\n===[ App Store ]===========================================\n"; and \
-	mas upgrade
+    if which mas > /dev/null
+        printf "\n===[ App Store ]===========================================\n"; and \
+        mas upgrade
+    end
 end
 
 function __macos_macports
-	printf "\n===[ MacPorts ]============================================\n"; and \
-	sudo port selfupdate; and \
-	sudo port outdated; and \
-	sudo port upgrade outdated; and \
-	sudo port uninstall leaves
-	port uninstall inactive
+    if which port > /dev/null
+        printf "\n===[ MacPorts ]============================================\n"; and \
+        sudo port selfupdate; and \
+        sudo port outdated; and \
+        sudo port upgrade outdated; and \
+        sudo port uninstall leaves
+        port uninstall inactive
+    end
 end
 
 function __macos_homebrew
-	printf "\n===[ Homebrew ]============================================\n"; and \
-	brew update; and \
-	brew upgrade --cleanup; and \
-	brew upgrade --fetch-HEAD universal-ctags kakoune vis; and \
-	brew cleanup -s; and \
-	brew prune
+    if which brew > /dev/null
+        printf "\n===[ Homebrew ]============================================\n"; and \
+        brew update; and \
+        brew upgrade --cleanup; and \
+        brew upgrade --fetch-HEAD universal-ctags kakoune vis; and \
+        brew cleanup -s; and \
+        brew prune
+    end
 end
 
 function __macos_update_pip
@@ -117,6 +130,7 @@ function update --description 'Update system software'
                 __update_gems
             else
                 __freebsd_portsnap
+                __freebsd_ezjail_ports
                 __freebsd_portmaster
                 __update_npm
                 __update_gems
