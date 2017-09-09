@@ -81,7 +81,7 @@ function update --description 'Update system software'
 		case Linux
 			__linux_update
 		case FreeBSD
-			__freebsd_update
+			__freebsd_update $argv[1]
 		case '*'
 			printf "No update function for %s yet." (uname)
 	end
