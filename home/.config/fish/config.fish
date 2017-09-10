@@ -26,6 +26,7 @@ else
 	# Homesick
 	if test -d $HOME/.homesick
 		source $HOME/.homesick/repos/homeshick/homeshick.fish
+		homeshick pull
 	end
 
 	# Global paths
