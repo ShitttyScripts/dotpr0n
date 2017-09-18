@@ -85,7 +85,7 @@ function __macos_homebrew
         printf "\n===[ Homebrew ]============================================\n"; and \
         brew update; and \
         brew upgrade --cleanup; and \
-        brew upgrade --fetch-HEAD universal-ctags kakoune vis; and \
+        brew upgrade --fetch-HEAD universal-ctags kakoune; and \
         brew cleanup -s; and \
         brew prune
     end
