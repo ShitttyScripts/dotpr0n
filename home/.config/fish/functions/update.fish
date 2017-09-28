@@ -15,7 +15,7 @@ function __freebsd_pkg
 end
 
 function __freebsd_synth
-	printf "\n===[ Compile and Upgrade Software ]========================"; and \
+	printf "\n===[ Compile and Upgrade Software ]========================\n"; and \
 	synth upgrade-system
 end
 
