@@ -131,7 +131,7 @@ function update --description 'Update system software'
             else
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
-                __freebsd_portmaster
+                __freebsd_synth
                 __update_npm
                 __update_gems
             end
