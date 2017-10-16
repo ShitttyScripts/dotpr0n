@@ -45,7 +45,7 @@ else
 	end
 
 	# Homebrew
-	set -gx HOMEBREW_BUILD_FROM_SOURCE 1
+    # set -gx HOMEBREW_BUILD_FROM_SOURCE 1
 
 	# Composer
 	if test -d $HOME/.composer/vendor/bin
