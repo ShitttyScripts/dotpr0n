@@ -12,6 +12,7 @@ function __freebsd_pkg
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
 	pkg update; and \
 	pkg upgrade
+	pkg autoremove
 end
 
 function __freebsd_synth
@@ -125,7 +126,7 @@ function update --description 'Update system software'
 			__update_gems
 		case FreeBSD
 			if [ "$argv[1]" = "jail" ]
-                __freebsd_portmaster
+                __freebsd_pkg
                 __update_npm
                 __update_gems
             else
