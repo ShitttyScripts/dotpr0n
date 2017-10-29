@@ -126,13 +126,13 @@ function update --description 'Update system software'
 			__update_gems
 		case FreeBSD
 			if [ "$argv[1]" = "jail" ]
-                __freebsd_pkg
+                __freebsd_portmaster
                 __update_npm
                 __update_gems
             else
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
-                __freebsd_portmaster
+                __freebsd_pkg
                 # __freebsd_synth
                 __update_npm
                 __update_gems
