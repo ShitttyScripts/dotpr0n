@@ -78,11 +78,11 @@ else
 	# end
 
 	# pyenv
-	#if test -d $HOME/.pyenv
-	#	set -gx PYENV_ROOT $HOME/.pyenv
-	#	set -gx PATH $PYENV_ROOT/bin $PATH
-	#	source (pyenv init -|psub)
-	#end
+	if test -d $HOME/.pyenv
+		set -gx PYENV_ROOT $HOME/.pyenv
+		set -gx PATH $PYENV_ROOT/bin $PATH
+		source (pyenv init -|psub)
+	end
 
 	# swiftenv
 	if test -d $HOME/.swiftenv
