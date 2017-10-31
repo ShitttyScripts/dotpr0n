@@ -94,8 +94,8 @@ end
 
 function __macos_update_pip
 	printf "\n===[ pip ]=================================================\n"; and \
-	python2 -m pip_review --auto
-	python3 -m pip_review --auto
+	python -m pip_review --auto
+	# python3 -m pip_review --auto
 end
 
 function __debian_apt
