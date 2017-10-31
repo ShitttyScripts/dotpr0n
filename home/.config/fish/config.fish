@@ -67,15 +67,15 @@ else
 	# set -gx NVIM_TUI_ENABLE_CURSOR_SHAPE 1
 
 	# rvm
-	# if test -d /usr/local/rvm/bin
-	# 	set -gx PATH $PATH /usr/local/rvm/bin
-	# 	rvm default
-	# end
+	if test -d /usr/local/rvm/bin
+		set -x PATH $PATH /usr/local/rvm/bin
+		rvm default
+	end
 
-	# if test -d $HOME/.rvm/bin
-	# 	set -gx PATH $PATH $HOME/.rvm/bin
-	# 	rvm default
-	# end
+	if test -d $HOME/.rvm/bin
+		set -x PATH $PATH $HOME/.rvm/bin
+		rvm default
+	end
 
 	# pyenv
 	if test -d $HOME/.pyenv
