@@ -101,7 +101,7 @@ function __debian_apt
 	printf "\n===[ apt-get ]=============================================\n"; and \
 	sudo apt-get update; and \
 	sudo apt-get -y upgrade; and \
-	sudo apt-get -y dist-upgrade; and \
+	sudo apt-get -y dist-upgrade
     # sudo apt-get autoremove
     # if which deborphan > /dev/null
  #        sudo apt-get remove (deborphan)
