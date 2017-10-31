@@ -79,8 +79,8 @@ else
 
 	# pyenv
 	if test -d $HOME/.pyenv
-		set -gx PYENV_ROOT $HOME/.pyenv
-		set -gx PATH $PYENV_ROOT/bin $PATH
+		set -x PYENV_ROOT $HOME/.pyenv
+		set -x PATH $PYENV_ROOT/bin $PATH
 		source (pyenv init -|psub)
 	end
 
