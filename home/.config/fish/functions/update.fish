@@ -12,7 +12,6 @@ function __freebsd_pkg
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
 	pkg update; and \
 	pkg upgrade
-	pkg autoremove
 end
 
 function __freebsd_synth
@@ -103,10 +102,10 @@ function __debian_apt
 	sudo apt-get update; and \
 	sudo apt-get -y upgrade; and \
 	sudo apt-get -y dist-upgrade; and \
-	sudo apt-get autoremove
-	if which deborphan > /dev/null
-        sudo apt-get remove (deborphan)
-    end
+    # sudo apt-get autoremove
+    # if which deborphan > /dev/null
+ #        sudo apt-get remove (deborphan)
+ #    end
 end
 
 #####
