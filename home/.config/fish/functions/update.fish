@@ -91,7 +91,7 @@ function __macos_homebrew
     end
 end
 
-function __macos_update_pip
+function __update_pip
 	printf "\n===[ pip ]=================================================\n"; and \
 	python -m pip_review --auto
 	# python3 -m pip_review --auto
@@ -118,16 +118,18 @@ function update --description 'Update system software'
 			__macos_homebrew
 			__update_npm
 			__update_gems
-			__macos_update_pip
+			__update_pip
 		case Linux
 			__debian_apt
 			__update_npm
 			__update_gems
+			__update_pip
 		case FreeBSD
 			if [ "$argv[1]" = "jail" ]
                 __freebsd_portmaster
                 __update_npm
                 __update_gems
+                __update_pip
             else
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
@@ -135,6 +137,7 @@ function update --description 'Update system software'
                 # __freebsd_synth
                 __update_npm
                 __update_gems
+                __update_pip
             end
 		case '*'
 			printf "No update function for %s yet." (uname)
