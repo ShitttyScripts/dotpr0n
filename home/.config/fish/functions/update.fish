@@ -4,7 +4,7 @@
 
 function __freebsd_portmaster
 	printf "\n===[ Upgrade Software ] ===================================\n"; and \
-	portmaster -ad; and \
+	portmaster -aBd; and \
 	portmaster -y --clean-distfiles
 end
 
@@ -126,6 +126,12 @@ function update --description 'Update system software'
 			__update_pip
 		case FreeBSD
 			if [ "$argv[1]" = "jail" ]
+                __freebsd_portmaster
+                __update_npm
+                __update_gems
+                __update_pip
+            else if [ (uname -p) = "armv6" ]
+                __freebsd_portsnap
                 __freebsd_portmaster
                 __update_npm
                 __update_gems
