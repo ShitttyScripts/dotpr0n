@@ -79,9 +79,6 @@ abbr --add flush 'dscacheutil -flushcache; and killall -HUP mDNSResponder'
 # Clean up LaunchServices to remove duplicates in the “Open With” menu
 abbr --add lscleanup '/System/Library/Frameworks/CoreServices.framework/Frameworks/LaunchServices.framework/Support/lsregister -kill -r -domain local -domain system -domain user; and killall Finder'
 
-# Serve folder via HTTP
-abbr --add serve 'python -m SimpleHTTPServer'
-
 # View HTTP traffic
 abbr --add sniff "sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 
