@@ -134,3 +134,6 @@ abbr --add header 'curl -I'
 
 # Find out if remote server supports gzip / mod_deflate or not
 abbr --add headerc 'curl -I --compress'
+
+# Die, smiley, die!
+abbr --add cleanvsc "sed -i '' 's/\.send-feedback{display:inline-block}/\.send-feedback{display:none}/' /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/out/vs/workbench/workbench.main.css"
