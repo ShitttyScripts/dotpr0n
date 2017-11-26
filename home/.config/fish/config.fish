@@ -27,7 +27,7 @@ else
 
 	# Homesick
 	if test -d $HOME/.homesick
-		source $HOME/.homesick/repos/homeshick/homeshick.fish
+		source $HOME/.homesick/repos/homeshick/homeshick.fish > /dev/null
 	end
 
 	# Global paths
@@ -70,26 +70,26 @@ else
 	# rvm
 	if test -d /usr/local/rvm/bin
 		set -x PATH $PATH /usr/local/rvm/bin
-		rvm default
+		rvm default > /dev/null
 	end
 
 	if test -d $HOME/.rvm/bin
 		set -x PATH $PATH $HOME/.rvm/bin
-		rvm default
+		rvm default > /dev/null
 	end
 
 	# pyenv
 	if test -d $HOME/.pyenv
 		set -x PYENV_ROOT $HOME/.pyenv
 		set -x PATH $PYENV_ROOT/bin $PATH
-		source (pyenv init -|psub)
+		source (pyenv init -|psub) > /dev/null
 	end
 
 	# swiftenv
 	if test -d $HOME/.swiftenv
 		set SWIFTENV_ROOT $HOME/.swiftenv
 		set PATH $SWIFTENV_ROOT/bin $PATH
-		status --is-interactive; and source (swiftenv init -|psub)
+		status --is-interactive; and source (swiftenv init -|psub) > /dev/null
 	end
 
 	# Go
@@ -100,10 +100,10 @@ else
 
 	# Rust
 	if test -d $HOME/.cargo
-        source $HOME/.cargo/env
+        source $HOME/.cargo/env > /dev/null
     end
 
 	# Source command abbreviations
-	source $HOME/.config/fish/abbreviations.fish
+	source $HOME/.config/fish/abbreviations.fish > /dev/null
 
 end
