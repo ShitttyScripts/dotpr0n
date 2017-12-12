@@ -103,6 +103,16 @@ else
         source $HOME/.cargo/env > /dev/null
     end
 
+	# acme.sh
+	if test -d $HOME/.acme.sh
+		set -gx PATH $PATH $HOME/.acme.sh
+	end
+
+	# myrepos
+	if test -d $HOME/.myrepos
+		set -gx PATH $PATH $HOME/.myrepos
+	end
+
 	# Source command abbreviations
 	source $HOME/.config/fish/abbreviations.fish > /dev/null
 
