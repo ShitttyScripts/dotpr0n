@@ -130,12 +130,12 @@ function update --description 'Update system software'
                 __update_npm
                 __update_gems
                 __update_pip
-            else if [ (uname -p) = "armv6" ]
-                __freebsd_portsnap
-                __freebsd_portmaster
-                __update_npm
-                __update_gems
-                __update_pip
+            # else if [ (uname -p) = "armv6" ]
+            #     __freebsd_portsnap
+            #     __freebsd_portmaster
+            #     __update_npm
+            #     __update_gems
+            #     __update_pip
             else
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
