@@ -16,13 +16,17 @@ fish >= 2.4.x
 
 ### Use fish
 ```sh
-git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-(optional) curl -sSL https://get.rvm.io | bash -s stable
-~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotpr0n
+git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick \
+~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotpr0n \
 source ~/.config/fish/config.fish
 ```
 
 ## Optional
+
+### rvm
+``sh
+curl -sSL https://get.rvm.io | bash -s stable
+```
 
 ### macOS
 ```sh
