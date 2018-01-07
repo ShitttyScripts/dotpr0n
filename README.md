@@ -24,7 +24,7 @@ source ~/.config/fish/config.fish
 ## Optional
 
 ### rvm
-``sh
+```sh
 curl -sSL https://get.rvm.io | bash -s stable
 ```
 
