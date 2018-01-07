@@ -49,6 +49,13 @@ function __update_npm
     end
 end
 
+function __update_yarn
+	if which npm > /dev/null
+        printf "\n===[ yarn ]================================================\n"; and \
+        yarn global upgrade
+    end
+end
+
 function __update_gems
     if which gem > /dev/null
         printf "===[ Gems ]================================================\n"; and \
@@ -85,7 +92,7 @@ function __macos_homebrew
         printf "\n===[ Homebrew ]============================================\n"; and \
         brew update; and \
         brew upgrade --cleanup; and \
-        brew upgrade --fetch-HEAD universal-ctags; and \
+        # brew upgrade --fetch-HEAD universal-ctags; and \
         brew cleanup -s; and \
         brew prune
     end
@@ -94,7 +101,6 @@ end
 function __update_pip
 	printf "\n===[ pip ]=================================================\n"; and \
 	python -m pip_review --auto
-	# python3 -m pip_review --auto
 end
 
 function __debian_apt
@@ -102,10 +108,6 @@ function __debian_apt
 	sudo apt-get update; and \
 	sudo apt-get -y upgrade; and \
 	sudo apt-get -y dist-upgrade
-    # sudo apt-get autoremove
-    # if which deborphan > /dev/null
- #        sudo apt-get remove (deborphan)
- #    end
 end
 
 #####
@@ -116,7 +118,7 @@ function update --description 'Update system software'
 			__macos_software_update
 			__macos_appstore
 			__macos_homebrew
-			__update_npm
+			__update_yarn
 			__update_gems
 			__update_pip
 		case Linux
@@ -140,7 +142,6 @@ function update --description 'Update system software'
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
                 __freebsd_pkg
-                # __freebsd_synth
                 __update_npm
                 __update_gems
                 __update_pip
