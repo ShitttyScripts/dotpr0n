@@ -20,8 +20,7 @@ abbr --add x 'exit'
 
 # Homeshick
 abbr --add h 'homeshick'
-abbr --add hpull 'homeshick pull'
-abbr --add hcd 'cd ~/.homesick/repos/dotpr0n'
+abbr --add hcd 'cd ~/.homesick/repos'
 
 # Mutt
 abbr --add m 'mutt'
