@@ -105,9 +105,8 @@ end
 
 function __debian_apt
 	printf "\n===[ apt-get ]=============================================\n"; and \
-	sudo apt-get update; and \
-	sudo apt-get -y upgrade; and \
-	sudo apt-get -y dist-upgrade
+	sudo apt update; and \
+	sudo apt upgrade
 end
 
 #####
