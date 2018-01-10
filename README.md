@@ -28,6 +28,11 @@ source ~/.config/fish/config.fish
 curl -sSL https://get.rvm.io | bash -s stable
 ```
 
+### yarn
+```sh
+curl -o- -L https://yarnpkg.com/install.sh | bash
+```
+
 ### macOS
 ```sh
 homeshick clone herrbischoff/castle-macos
