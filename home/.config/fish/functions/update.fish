@@ -25,7 +25,8 @@ function __freebsd_portsnap
 end
 
 function __freebsd_ezjail_ports
-	if which ezjail-admin > /dev/null
+    set cmd (which ezjail-admin)
+    if test $status -eq 0
         printf "\n===[ Update ezjail Ports tree ]============================\n"; and \
         ezjail-admin update -P
     end
@@ -42,26 +43,30 @@ function __freebsd_source
 	svnlite update /usr/src
 end
 
-function __update_npm
-	if which npm > /dev/null
+function __update_node_packages
+    set cmd (which npm)
+    if test $status -eq 0
         printf "\n===[ npm ]=================================================\n"; and \
         npm upgrade -g
     end
-end
 
-function __update_yarn
-	if which npm > /dev/null
+    set cmd (which yarn)
+    if test $status -eq 0
         printf "\n===[ yarn ]================================================\n"; and \
         yarn global upgrade
     end
+
+    set -e cmd
 end
 
 function __update_gems
-    if which gem > /dev/null
+    set cmd (which gem)
+    if test $status -eq 0
         printf "===[ Gems ]================================================\n"; and \
         gem update; and \
         gem cleanup
     end
+    set -e cmd
 end
 
 function __macos_software_update
@@ -70,14 +75,17 @@ function __macos_software_update
 end
 
 function __macos_appstore
-    if which mas > /dev/null
+    set cmd (which mas)
+    if test $status -eq 0
         printf "\n===[ App Store ]===========================================\n"; and \
         mas upgrade
     end
+    set -e cmd
 end
 
 function __macos_macports
-    if which port > /dev/null
+    set cmd (which port)
+    if test $status -eq 0
         printf "\n===[ MacPorts ]============================================\n"; and \
         sudo port selfupdate; and \
         sudo port outdated; and \
@@ -85,10 +93,12 @@ function __macos_macports
         sudo port uninstall leaves
         port uninstall inactive
     end
+    set -e cmd
 end
 
 function __macos_homebrew
-    if which brew > /dev/null
+    set cmd (which brew)
+    if test $status -eq 0
         printf "\n===[ Homebrew ]============================================\n"; and \
         brew update; and \
         brew upgrade --cleanup; and \
@@ -96,6 +106,7 @@ function __macos_homebrew
         brew cleanup -s; and \
         brew prune
     end
+    set -e cmd
 end
 
 function __update_pip
@@ -117,12 +128,12 @@ function update --description 'Update system software'
 			__macos_software_update
 			__macos_appstore
 			__macos_homebrew
-			__update_yarn
+			__update_node_packages
 			__update_gems
 			__update_pip
 		case Linux
 			__debian_apt
-			__update_npm
+			__update_node_packages
 			__update_gems
 			__update_pip
 		case FreeBSD
@@ -141,7 +152,7 @@ function update --description 'Update system software'
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
                 __freebsd_pkg
-                __update_npm
+                __update_node_packages
                 __update_gems
                 __update_pip
             end
