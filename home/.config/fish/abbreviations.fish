@@ -23,8 +23,8 @@ abbr --add h 'homeshick'
 abbr --add hpull 'homeshick pull'
 abbr --add hcd 'cd ~/.homesick/repos/dotpr0n'
 
-# MacPorts
-abbr --add port 'sudo port'
+# Mutt
+abbr --add m 'mutt'
 
 # Git shortcuts
 abbr --add gd 'git diff'
@@ -140,3 +140,6 @@ abbr --add cleanvsc "sed -i '' 's/\.send-feedback{display:inline-block}/\.send-f
 
 # Ranger
 abbr --add r "ranger"
+
+# USB Serial
+abbr --add usbserial "screen /dev/tty.usbserial 115200"
