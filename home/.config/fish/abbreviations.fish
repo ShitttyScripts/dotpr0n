@@ -21,6 +21,7 @@ abbr --add x 'exit'
 # Homeshick
 abbr --add h 'homeshick'
 abbr --add hcd 'cd ~/.homesick/repos'
+abbr --add hsu 'homeshick pull; and homeshick link'
 
 # Mutt
 abbr --add m 'mutt'
