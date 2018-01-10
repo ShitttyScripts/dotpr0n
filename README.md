@@ -51,5 +51,5 @@ homeshick clone herrbischoff/castle-cmus
 ### Neovim
 ```sh
 homeshick clone herrbischoff/castle-neovim
-vi +PlugInstall
+vi +PlugInstall +UpdateRemotePlugins
 ```
