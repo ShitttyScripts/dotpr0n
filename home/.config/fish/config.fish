@@ -25,7 +25,7 @@ else
     # set fish_function_path $HOME/.config/fish/functions/bass $fish_function_path
 
     # set pure_symbol_prompt "~>"
-    set pure_symbol_prompt ">"
+    set pure_symbol_prompt "❯"
 
     # Homesick
     if test -d $HOME/.homesick
