@@ -25,6 +25,12 @@ source ~/.config/fish/config.fish
 
 ### pyenv
 
+### Neovim
+```sh
+homeshick clone herrbischoff/castle-neovim
+vi +PlugInstall +UpdateRemotePlugins
+```
+
 #### Linux
 
 ```sh
@@ -56,10 +62,4 @@ homeshick clone herrbischoff/castle-mutt
 ### cmus
 ```sh
 homeshick clone herrbischoff/castle-cmus
-```
-
-### Neovim
-```sh
-homeshick clone herrbischoff/castle-neovim
-vi +PlugInstall +UpdateRemotePlugins
 ```
