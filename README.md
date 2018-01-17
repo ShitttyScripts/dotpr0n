@@ -23,13 +23,13 @@ source ~/.config/fish/config.fish
 
 ## Optional
 
-### pyenv
-
 ### Neovim
 ```sh
 homeshick clone herrbischoff/castle-neovim
 vi +PlugInstall +UpdateRemotePlugins
 ```
+
+### pyenv
 
 #### Linux
 
