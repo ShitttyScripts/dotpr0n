@@ -16,12 +16,24 @@ fish >= 2.4.x
 
 ### Use fish
 ```sh
-git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick \
-~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotpr0n \
+git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
+~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotpr0n
 source ~/.config/fish/config.fish
 ```
 
 ## Optional
+
+### pyenv
+
+#### Linux
+
+```sh
+apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev \
+libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev \
+xz-utils tk-dev
+pyenv install 3.6.3
+pyenv global 3.6.3
+```
 
 ### rvm
 ```sh
