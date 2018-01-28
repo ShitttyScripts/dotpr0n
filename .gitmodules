@@ -7,18 +7,12 @@
 [submodule "home/.config/fish/functions/pure"]
 	path = home/.config/fish/functions/pure
 	url = https://github.com/rafaelrinaldi/pure.git
-[submodule "home/.config/fish/functions/bass"]
-	path = home/.config/fish/functions/bass
-	url = https://github.com/edc/bass.git
 [submodule "home/.pyenv"]
 	path = home/.pyenv
 	url = https://github.com/pyenv/pyenv.git
 [submodule "home/.tmux/plugins/tmux-resurrect"]
 	path = home/.tmux/plugins/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect
-[submodule "home/.swiftenv"]
-	path = home/.swiftenv
-	url = https://github.com/kylef/swiftenv.git
 [submodule "home/.myrepos"]
 	path = home/.myrepos
 	url = git://myrepos.branchable.com/
