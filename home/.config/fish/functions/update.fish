@@ -3,56 +3,56 @@
 #
 
 function __freebsd_portmaster
-	printf "\n===[ Upgrade Software ] ===================================\n"; and \
+	printf "\n====[ Upgrade Software ] ===================================\n"; and \
 	portmaster -aBd; and \
 	portmaster -y --clean-distfiles
 end
 
 function __freebsd_pkg
-	printf "\n===[ Upgrade Software ] ===================================\n"; and \
+	printf "\n====[ Upgrade Software ] ===================================\n"; and \
 	pkg update; and \
 	pkg upgrade
 end
 
 function __freebsd_synth
-	printf "\n===[ Compile and Upgrade Software ]========================\n"; and \
+	printf "\n====[ Compile and Upgrade Software ]========================\n"; and \
 	synth upgrade-system
 end
 
 function __freebsd_portsnap
-    printf "\n===[ Update Ports tree ]===================================\n"; and \
+    printf "\n====[ Update Ports tree ]===================================\n"; and \
     portsnap fetch update
 end
 
 function __freebsd_ezjail_ports
     set cmd (which ezjail-admin)
     if test $status -eq 0
-        printf "\n===[ Update ezjail Ports tree ]============================\n"; and \
+        printf "\n====[ Update ezjail Ports tree ]============================\n"; and \
         ezjail-admin update -P
     end
 end
 
 function __freebsd_freebsd-update
-	printf "===[ System Software Update ]==============================\n"; and \
+	printf "====[ System Software Update ]==============================\n"; and \
 	freebsd-update fetch; and \
 	freebsd-update install
 end
 
 function __freebsd_source
-	printf "===[ Update System Sources ]===============================\n"; and \
+	printf "====[ Update System Sources ]===============================\n"; and \
 	svnlite update /usr/src
 end
 
 function __update_node_packages
     set cmd (which npm)
     if test $status -eq 0
-        printf "\n===[ npm ]=================================================\n"; and \
+        printf "\n====[ npm ]=================================================\n"; and \
         npm upgrade -g
     end
 
     set cmd (which yarn)
     if test $status -eq 0
-        printf "\n===[ yarn ]================================================\n"; and \
+        printf "\n====[ yarn ]================================================\n"; and \
         yarn global upgrade
     end
 
@@ -62,7 +62,7 @@ end
 function __update_gems
     set cmd (which gem)
     if test $status -eq 0
-        printf "===[ Gems ]================================================\n"; and \
+        printf "====[ Gems ]================================================\n"; and \
         gem update; and \
         gem cleanup
     end
@@ -70,14 +70,14 @@ function __update_gems
 end
 
 function __macos_software_update
-	printf "\n===[ Apple Software Update ]===============================\n"; and \
+	printf "\n====[ Apple Software Update ]===============================\n"; and \
 	sudo softwareupdate -i -a
 end
 
 function __macos_appstore
     set cmd (which mas)
     if test $status -eq 0
-        printf "\n===[ App Store ]===========================================\n"; and \
+        printf "\n====[ App Store ]===========================================\n"; and \
         mas upgrade
     end
     set -e cmd
@@ -86,7 +86,7 @@ end
 function __macos_macports
     set cmd (which port)
     if test $status -eq 0
-        printf "\n===[ MacPorts ]============================================\n"; and \
+        printf "\n====[ MacPorts ]============================================\n"; and \
         sudo port selfupdate; and \
         sudo port outdated; and \
         sudo port upgrade outdated; and \
@@ -99,7 +99,7 @@ end
 function __macos_homebrew
     set cmd (which brew)
     if test $status -eq 0
-        printf "\n===[ Homebrew ]============================================\n"; and \
+        printf "\n====[ Homebrew ]============================================\n"; and \
         brew update; and \
         brew upgrade --cleanup; and \
         # brew upgrade --fetch-HEAD universal-ctags; and \
@@ -110,12 +110,12 @@ function __macos_homebrew
 end
 
 function __update_pip
-	printf "\n===[ pip ]=================================================\n"; and \
+	printf "\n====[ pip ]=================================================\n"; and \
 	python -m pip_review --auto
 end
 
 function __debian_apt
-	printf "\n===[ apt-get ]=============================================\n"; and \
+	printf "\n====[ apt-get ]=============================================\n"; and \
 	sudo apt update; and \
 	sudo apt upgrade
 end
