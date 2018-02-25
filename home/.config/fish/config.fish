@@ -118,4 +118,8 @@ else
     # Source command abbreviations
     source $HOME/.config/fish/abbreviations.fish > /dev/null 2>&1
 
+    # iTerm integration
+    if test -e {$HOME}/.iterm2_shell_integration.fish
+        source {$HOME}/.iterm2_shell_integration.fish
+    end
 end
