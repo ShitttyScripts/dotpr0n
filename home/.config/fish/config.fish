@@ -41,6 +41,7 @@ else
         case Darwin
             set -gx PATH /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
             set -gx MANPATH /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
+            set -g fish_user_paths /usr/local/sbin $fish_user_paths
         case FreeBSD
             # null
         case '*'
