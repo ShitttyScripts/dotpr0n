@@ -122,4 +122,8 @@ else
     if test -e {$HOME}/.iterm2_shell_integration.fish
         source {$HOME}/.iterm2_shell_integration.fish
     end
+
+    # ripgrep
+    set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
 end
