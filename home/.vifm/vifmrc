@@ -380,3 +380,5 @@ set syscalls
 set trash!
 
 set syscalls
+
+nnoremap <f2> :!~/.homesick/repos/homeshick/bin/homeshick track castle-macos-private %f<cr>
