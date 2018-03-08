@@ -88,6 +88,12 @@ else
         source (pyenv init -|psub) > /dev/null 2>&1
     end
 
+    # luaenv
+    # if test -d $HOME/.luaenv
+    #     set -x PATH $PATH $HOME/.luaenv/bin
+    #     source (luaenv init -|psub) > /dev/null 2>&1
+    # end
+
     # swiftenv
     # if test -d $HOME/.swiftenv
     #     set SWIFTENV_ROOT $HOME/.swiftenv
