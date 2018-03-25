@@ -44,18 +44,17 @@ function __freebsd_source
 end
 
 function __update_node_packages
-    set cmd (which npm)
-    if test $status -eq 0
-        printf "\n====[ npm ]=================================================\n"; and \
-        npm upgrade -g
-    end
+    # set cmd (which npm)
+    # if test $status -eq 0
+    #     printf "\n====[ npm ]=================================================\n"; and \
+    #     npm upgrade -g
+    # end
 
     set cmd (which yarn)
     if test $status -eq 0
         printf "\n====[ yarn ]================================================\n"; and \
         yarn global upgrade
     end
-
     set -e cmd
 end
 
@@ -110,8 +109,12 @@ function __macos_homebrew
 end
 
 function __update_pip
-	printf "\n====[ pip ]=================================================\n"; and \
-	python -m pip_review --auto
+    set cmd (python -m pip_review --help)
+    if test $status -eq 0
+        printf "\n====[ pip ]=================================================\n"; and \
+        python -m pip_review --auto
+    end
+    set -e cmd
 end
 
 function __debian_apt
