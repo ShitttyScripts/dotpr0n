@@ -50,6 +50,11 @@ else
             # null
     end
 
+    # Set preferred editors and pagers
+    set -gx EDITOR nvim
+    set -gx VISUAL nvim
+    set -gx PAGER less
+    set -gx MANPAGER 'less -X'
 
     # Colorize man
     set MANROFFOPT '-c'
@@ -73,15 +78,6 @@ else
         set -gx PATH $PATH $HOME/.yarn/bin
     end
 
-    # Set preferred editors and pagers
-    set -gx EDITOR nvim
-    set -gx VISUAL nvim
-    set -gx PAGER less
-    set -gx MANPAGER 'less -X'
-
-    # Neovim
-    # set -gx NVIM_TUI_ENABLE_CURSOR_SHAPE 1
-
     # rvm
     if test -d /usr/local/rvm/bin
         set -x PATH $PATH /usr/local/rvm/bin
@@ -100,6 +96,20 @@ else
         source (pyenv init -|psub) > /dev/null 2>&1
     end
 
+    # acme.sh
+    if test -d $HOME/.acme.sh
+        set -gx PATH $PATH $HOME/.acme.sh
+    end
+
+    # Go
+    if test -d $HOME/go
+        set GOPATH $HOME/go
+        set PATH $PATH $GOPATH/bin
+    end
+
+    # ripgrep
+    set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+
     # luaenv
     # if test -d $HOME/.luaenv
     #     set -x PATH $PATH $HOME/.luaenv/bin
@@ -113,26 +123,15 @@ else
     #     status --is-interactive; and source (swiftenv init -|psub) > /dev/null 2>&1
     # end
 
-    # Go
-    if test -d $HOME/go
-        set GOPATH $HOME/go
-        set PATH $PATH $GOPATH/bin
-    end
-
     # Rust
     # if test -d $HOME/.cargo
     #     source $HOME/.cargo/env > /dev/null 2>&1
     # end
 
-    # acme.sh
-    if test -d $HOME/.acme.sh
-        set -gx PATH $PATH $HOME/.acme.sh
-    end
-
     # myrepos
-    if test -d $HOME/.myrepos
-        set -gx PATH $PATH $HOME/.myrepos
-    end
+    # if test -d $HOME/.myrepos
+    #     set -gx PATH $PATH $HOME/.myrepos
+    # end
 
     # Source command abbreviations
     source $HOME/.config/fish/abbreviations.fish > /dev/null 2>&1
@@ -141,8 +140,5 @@ else
     if test -e {$HOME}/.iterm2_shell_integration.fish
         source {$HOME}/.iterm2_shell_integration.fish
     end
-
-    # ripgrep
-    set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
 end
