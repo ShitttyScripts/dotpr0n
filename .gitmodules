@@ -4,9 +4,6 @@
 [submodule "home/.tmux/plugins/tmux-better-mouse-mode"]
 	path = home/.tmux/plugins/tmux-better-mouse-mode
 	url = https://github.com/nhdaly/tmux-better-mouse-mode
-[submodule "home/.config/fish/functions/pure"]
-	path = home/.config/fish/functions/pure
-	url = https://github.com/rafaelrinaldi/pure.git
 [submodule "home/.pyenv"]
 	path = home/.pyenv
 	url = https://github.com/pyenv/pyenv.git
@@ -16,6 +13,3 @@
 [submodule "home/.myrepos"]
 	path = home/.myrepos
 	url = git://myrepos.branchable.com/
-[submodule "home/.acme.sh"]
-	path = home/.acme.sh
-	url = https://github.com/Neilpang/acme.sh.git
