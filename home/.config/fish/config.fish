@@ -21,11 +21,7 @@ else
     alias vim "nvim"
 
     # Plugins
-    set fish_function_path $HOME/.config/fish/functions/pure $fish_function_path
     set fish_function_path $fish_function_path $HOME/.config/fish/plugins/plugin-foreign-env/functions
-
-    # set pure_symbol_prompt "~>"
-    set pure_symbol_prompt "\$"
 
     # Homesick
     if test -d $HOME/.homesick
