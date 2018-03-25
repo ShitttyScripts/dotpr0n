@@ -38,14 +38,18 @@ else
             set -gx PATH /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
             set -gx MANPATH /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
             set -g fish_user_paths /usr/local/sbin $fish_user_paths
+
+            # Homebrew
+            set -gx HOMEBREW_NO_ANALYTICS 1
+            set -gx HOMEBREW_NO_AUTO_UPDATE 1
+            set -gx HOMEBREW_NO_GITHUB_API 1
+            set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
         case FreeBSD
             # null
         case '*'
             # null
     end
 
-    # Homebrew
-    # set -gx HOMEBREW_BUILD_FROM_SOURCE 1
 
     # Composer
     if test -d $HOME/.composer/vendor/bin
