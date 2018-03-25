@@ -4,6 +4,9 @@ if not status --is-interactive
 
 else
 
+    # Disable annoying greeting message
+    set fish_greeting ""
+
     set -gx OS (uname)
 
     # Terminal colors
