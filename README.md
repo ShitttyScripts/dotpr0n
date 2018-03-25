@@ -49,6 +49,11 @@ curl -sSL https://get.rvm.io | bash -s stable
 curl -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
+### acme.sh
+```sh
+curl https://get.acme.sh | sh
+```
+
 ### macOS
 ```sh
 homeshick clone herrbischoff/castle-macos
