@@ -4,43 +4,43 @@
 
 function __freebsd_portmaster
 	printf "\n====[ Upgrade Software ] ===================================\n"; and \
-	portmaster -aBd; and \
-	portmaster -y --clean-distfiles
+	sudo portmaster -aBd; and \
+	sudo portmaster -y --clean-distfiles
 end
 
 function __freebsd_pkg
 	printf "\n====[ Upgrade Software ] ===================================\n"; and \
-	pkg update; and \
-	pkg upgrade
+	sudo pkg update; and \
+	sudo pkg upgrade
 end
 
 function __freebsd_synth
 	printf "\n====[ Compile and Upgrade Software ]========================\n"; and \
-	synth upgrade-system
+	sudo synth upgrade-system
 end
 
 function __freebsd_portsnap
     printf "\n====[ Update Ports tree ]===================================\n"; and \
-    portsnap fetch update
+    sudo portsnap fetch update
 end
 
 function __freebsd_ezjail_ports
     set cmd (which ezjail-admin)
     if test $status -eq 0
         printf "\n====[ Update ezjail Ports tree ]============================\n"; and \
-        ezjail-admin update -P
+        sudo ezjail-admin update -P
     end
 end
 
 function __freebsd_freebsd-update
 	printf "====[ System Software Update ]==============================\n"; and \
-	freebsd-update fetch; and \
-	freebsd-update install
+	sudo freebsd-update fetch; and \
+	sudo freebsd-update install
 end
 
 function __freebsd_source
 	printf "====[ Update System Sources ]===============================\n"; and \
-	svnlite update /usr/src
+	sudo svnlite update /usr/src
 end
 
 function __update_node_packages
