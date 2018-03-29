@@ -59,13 +59,11 @@ function __update_node_packages
 end
 
 function __update_gems
-    set cmd (which gem)
-    if test $status -eq 0
+    if test -d $HOME/.rvm/bin
         printf "====[ Gems ]================================================\n"; and \
         gem update; and \
         gem cleanup
     end
-    set -e cmd
 end
 
 function __macos_software_update
@@ -132,18 +130,18 @@ function update --description 'Update system software'
 			__macos_appstore
 			__macos_homebrew
 			__update_node_packages
-			__update_gems
+			# __update_gems
 			__update_pip
 		case Linux
 			__debian_apt
 			__update_node_packages
-			__update_gems
+			# __update_gems
 			__update_pip
 		case FreeBSD
 			if [ "$argv[1]" = "jail" ]
                 __freebsd_portmaster
-                __update_npm
-                __update_gems
+                __update_node_packages
+                # __update_gems
                 __update_pip
             # else if [ (uname -p) = "armv6" ]
             #     __freebsd_portsnap
@@ -156,7 +154,7 @@ function update --description 'Update system software'
                 __freebsd_ezjail_ports
                 __freebsd_pkg
                 __update_node_packages
-                __update_gems
+                # __update_gems
                 __update_pip
             end
 		case '*'
