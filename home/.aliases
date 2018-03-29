@@ -63,7 +63,7 @@ alias gl="git log --pretty='format:%C(Yellow)%h%Creset %C(Blue)%ar%Creset %an - 
 alias gpom="git pull origin master"
 alias gcd='cd "`git rev-parse --show-toplevel`"'
 
-alias bfg="java -jar $HOME/bin/bfg-1.12.15.jar"
+alias bfg="java -jar $HOME/bin/bfg-1.13.0.jar"
 
 # Taskwarrior shortcuts
 alias t="task"
