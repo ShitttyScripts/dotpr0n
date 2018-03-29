@@ -33,6 +33,14 @@ pyenv install 3.6.4
 pyenv global 3.6.4
 ```
 
+#### macOS
+
+```sh
+brew install readline xz
+pyenv install 3.6.4
+pyenv global 3.6.4
+```
+
 ### yarn
 ```sh
 curl -o- -L https://yarnpkg.com/install.sh | bash
