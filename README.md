@@ -29,8 +29,8 @@ source ~/.config/fish/config.fish
 
 ```sh
 apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
-pyenv install 3.6.3
-pyenv global 3.6.3
+pyenv install 3.6.4
+pyenv global 3.6.4
 ```
 
 ### yarn
