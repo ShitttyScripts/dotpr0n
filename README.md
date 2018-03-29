@@ -23,12 +23,6 @@ source ~/.config/fish/config.fish
 
 ## Optional
 
-### Neovim
-```sh
-homeshick clone herrbischoff/castle-neovim
-vi +PlugInstall +UpdateRemotePlugins
-```
-
 ### pyenv
 
 #### Linux
@@ -39,14 +33,21 @@ pyenv install 3.6.3
 pyenv global 3.6.3
 ```
 
-### rvm
-```sh
-curl -sSL https://get.rvm.io | bash -s stable
-```
-
 ### yarn
 ```sh
 curl -o- -L https://yarnpkg.com/install.sh | bash
+```
+
+### Neovim
+```sh
+homeshick clone herrbischoff/castle-neovim
+~/.homesick/repos/castle-neovim/install_dependencies.sh
+vi +PlugInstall +UpdateRemotePlugins
+```
+
+### rvm
+```sh
+curl -sSL https://get.rvm.io | bash -s stable
 ```
 
 ### acme.sh
