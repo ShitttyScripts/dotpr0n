@@ -132,9 +132,9 @@ else
     # end
 
     # myrepos
-    # if test -d $HOME/.myrepos
-    #     set -gx PATH $PATH $HOME/.myrepos
-    # end
+    if test -d $HOME/.myrepos
+        set -gx PATH $PATH $HOME/.myrepos
+    end
 
     # Source command abbreviations
     source $HOME/.config/fish/abbreviations.fish > /dev/null 2>&1
