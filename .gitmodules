@@ -1,15 +1,9 @@
-[submodule "home/.marker"]
-	path = home/.marker
-	url = https://github.com/pindexis/marker
 [submodule "home/.tmux/plugins/tmux-better-mouse-mode"]
 	path = home/.tmux/plugins/tmux-better-mouse-mode
 	url = https://github.com/nhdaly/tmux-better-mouse-mode
 [submodule "home/.pyenv"]
 	path = home/.pyenv
 	url = https://github.com/pyenv/pyenv.git
-[submodule "home/.tmux/plugins/tmux-resurrect"]
-	path = home/.tmux/plugins/tmux-resurrect
-	url = https://github.com/tmux-plugins/tmux-resurrect
 [submodule "home/.myrepos"]
 	path = home/.myrepos
 	url = git://myrepos.branchable.com/
