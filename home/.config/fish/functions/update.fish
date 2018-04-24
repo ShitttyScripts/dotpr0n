@@ -131,18 +131,18 @@ function update --description 'Update system software'
 			__macos_homebrew
 			__update_node_packages
 			# __update_gems
-			__update_pip
+			# __update_pip
 		case Linux
 			__debian_apt
 			__update_node_packages
 			# __update_gems
-			__update_pip
+			# __update_pip
 		case FreeBSD
 			if [ "$argv[1]" = "jail" ]
                 __freebsd_portmaster
                 __update_node_packages
                 # __update_gems
-                __update_pip
+                # __update_pip
             # else if [ (uname -p) = "armv6" ]
             #     __freebsd_portsnap
             #     __freebsd_portmaster
@@ -155,7 +155,7 @@ function update --description 'Update system software'
                 __freebsd_pkg
                 __update_node_packages
                 # __update_gems
-                __update_pip
+                # __update_pip
             end
 		case '*'
 			printf "No update function for %s yet." (uname)
