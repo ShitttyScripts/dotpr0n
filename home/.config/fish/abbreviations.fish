@@ -12,6 +12,7 @@ abbr --add aconf 'nvim ~/.config/fish/abbreviations.fish'
 # Shortcuts
 abbr --add dl 'cd ~/Downloads'
 abbr --add dt 'cd ~/Desktop'
+abbr --add f 'fossil'
 abbr --add g 'git'
 abbr --add j 'jobs'
 abbr --add v 'vifm'
@@ -26,6 +27,10 @@ abbr --add hsu 'homeshick pull; and homeshick link'
 
 # Mutt
 abbr --add m 'mutt'
+
+# Fossil shortcuts
+abbr --add fst 'fossil status'
+abbr --add fc 'fossil commit'
 
 # Git shortcuts
 abbr --add gd 'git diff'
