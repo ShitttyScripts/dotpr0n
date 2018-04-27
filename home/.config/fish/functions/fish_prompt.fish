@@ -1,4 +1,5 @@
 function fish_prompt --description 'Write out the prompt'
+    echo
 	# Save our status
     set -l last_status $status
 
@@ -22,7 +23,6 @@ function fish_prompt --description 'Write out the prompt'
             set suffix 'λ'
     end
 
-    echo
     echo -n -s "$USER" @ (prompt_hostname) ' ' (set_color $color_cwd) (prompt_pwd) (set_color normal)
     echo -e "\n$suffix "
 end
