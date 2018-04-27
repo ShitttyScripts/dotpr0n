@@ -44,17 +44,17 @@ function __freebsd_source
 end
 
 function __update_node_packages
-    # set cmd (which npm)
-    # if test $status -eq 0
-    #     printf "\n====[ npm ]=================================================\n"; and \
-    #     npm upgrade -g
-    # end
-
-    set cmd (which yarn)
+    set cmd (which npm)
     if test $status -eq 0
-        printf "\n====[ yarn ]================================================\n"; and \
-        yarn global upgrade
+        printf "\n====[ npm ]=================================================\n"; and \
+        npm upgrade -g
     end
+
+    # set cmd (which yarn)
+    # if test $status -eq 0
+    #     printf "\n====[ yarn ]================================================\n"; and \
+    #     yarn global upgrade
+    # end
     set -e cmd
 end
 
