@@ -47,7 +47,7 @@ function __update_node_packages
     set cmd (which npm)
     if test $status -eq 0
         printf "\n====[ npm ]=================================================\n"; and \
-        npm upgrade -g
+        sudo npm -g upgrade
     end
 
     # set cmd (which yarn)

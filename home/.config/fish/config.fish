@@ -97,6 +97,7 @@ else
         set -x PYENV_ROOT $HOME/.pyenv
         set -x PATH $PYENV_ROOT/bin $PATH
         source (pyenv init -|psub) > /dev/null 2>&1
+        source (pyenv virtualenv-init -|psub) > /dev/null 2>&1
     end
 
     # acme.sh
@@ -144,6 +145,8 @@ else
         source {$HOME}/.iterm2_shell_integration.fish
     end
 
+    # The Fuck
+    thefuck --alias | source
 
     # Colorscheme
     set fish_color_autosuggestion 555 brblack
