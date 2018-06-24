@@ -97,7 +97,6 @@ else
         set -x PYENV_ROOT $HOME/.pyenv
         set -x PATH $PYENV_ROOT/bin $PATH
         source (pyenv init -|psub) > /dev/null 2>&1
-        # source (pyenv virtualenv-init -|psub) > /dev/null 2>&1
     end
 
     # acme.sh
