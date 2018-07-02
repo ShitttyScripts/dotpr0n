@@ -144,9 +144,6 @@ else
         source {$HOME}/.iterm2_shell_integration.fish
     end
 
-    # The Fuck
-    thefuck --alias | source
-
     # Colorscheme
     set fish_color_autosuggestion 555 brblack
     set fish_color_cancel -r

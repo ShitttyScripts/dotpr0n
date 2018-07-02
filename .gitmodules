@@ -4,3 +4,6 @@
 [submodule "home/.myrepos"]
 	path = home/.myrepos
 	url = git://myrepos.branchable.com/
+[submodule "home/.pyenv"]
+	path = home/.pyenv
+	url = https://github.com/pyenv/pyenv
