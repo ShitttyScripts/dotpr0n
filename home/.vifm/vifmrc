@@ -15,6 +15,9 @@ set history=100
 " unambiguous beginning using :! (e.g. :!Te instead of :!Terminal or :!Te<tab>).
 set fastrun
 
+" Sort by name, case-insensitive
+set sort=+iname
+
 " Natural sort of (version) numbers within text.
 set sortnumbers
 
@@ -239,7 +242,8 @@ fileviewer *.docx, docx2txt.pl %f -
 "
 " Or leave it for automatic detection
 "
-fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
+" fileviewer *[^/] pygmentize -O style=monokai -f console256 -g
+fileviewer *[^/] bat
 
 " Displaying pictures in terminal
 "
