@@ -1,13 +1,10 @@
 # Neovim as Vim
-abbr --add ni 'nvim'
-abbr --add vi 'nvim'
-abbr --add e 'nvim'
 abbr --add vconf 'nvim ~/.config/nvim/init.vim'
 abbr --add vplug 'cd ~/.config/nvim/plugins'
 
 # fish
 abbr --add fconf 'nvim ~/.config/fish/config.fish'
-abbr --add aconf 'nvim ~/.config/fish/abbreviations.fish'
+abbr --add aconf 'nvim ~/.config/fish/abbreviations.fish; and source ~/.config/fish/abbreviations.fish'
 
 # Shortcuts
 abbr --add dl 'cd ~/Downloads'
@@ -19,6 +16,7 @@ abbr --add v 'vifm'
 abbr --add d 'docker'
 abbr --add duck 'cd ~/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ Support/duck/Volumes/'
 abbr --add x 'exit'
+abbr --add co 'code'
 
 # Homeshick
 abbr --add h 'homeshick'
@@ -33,44 +31,52 @@ abbr --add fst 'fossil status'
 abbr --add fc 'fossil commit'
 
 # Git shortcuts
-abbr --add gd 'git diff'
 abbr --add ga 'git add'
 abbr --add gaa 'git add .'
-abbr --add gc 'git commit'
-abbr --add gcs 'git commit -sS'
-abbr --add gi 'git ignore'
+abbr --add gb 'git branch'
+abbr --add gba 'git branch -a'
 abbr --add gbd 'git branch -D'
+abbr --add gbl 'git branch | grep "*" | sed "s/* //"'
+abbr --add gc 'git commit'
+abbr --add gca 'git commit -a'
+abbr --add gcd 'cd (git rev-parse --show-toplevel)'
+abbr --add gco 'git checkout'
+abbr --add gcob 'git checkout -b'
+abbr --add gcod 'git checkout development'
+abbr --add gcom 'git checkout master'
+abbr --add gcp 'git cherry-pick'
+abbr --add gcs 'git commit -sS'
+abbr --add gd 'git diff'
+abbr --add gfp 'git fetch --prune'
+abbr --add gi 'git ignore'
+abbr --add gl "git log --pretty='format:%C(Yellow)%h%Creset %C(Blue)%ar%Creset %an - %s' --graph"
+abbr --add gm 'git merge --no-ff'
+abbr --add gpom 'git pull origin master'
+abbr --add gpull 'git pull'
+abbr --add gpush 'git push'
+abbr --add gput 'git push --tags'
+abbr --add grh 'git reset --hard'
+abbr --add gst 'git status'
 abbr --add gt 'git tag'
 abbr --add gts 'git tag -s'
-abbr --add gst 'git status'
+abbr --add lg 'lazygit'
 abbr --add ts 'tig status'
-abbr --add gca 'git commit -a'
-abbr --add gm 'git merge --no-ff'
-abbr --add gpt 'git push --tags'
-abbr --add gp 'git push'
-abbr --add grh 'git reset --hard'
-abbr --add gb 'git branch'
-abbr --add gcob 'git checkout -b'
-abbr --add gcom 'git checkout master'
-abbr --add gco 'git checkout'
-abbr --add gba 'git branch -a'
-abbr --add gcp 'git cherry-pick'
-abbr --add gl "git log --pretty='format:%C(Yellow)%h%Creset %C(Blue)%ar%Creset %an - %s' --graph"
-abbr --add gpom 'git pull origin master'
-abbr --add gcd 'cd (git rev-parse --show-toplevel)'
 
 abbr --add bfg 'java -jar $HOME/bin/bfg-1.12.15.jar'
 
 # Taskwarrior shortcuts
-abbr --add t 'task'
-abbr --add ta 'task add'
-abbr --add tl 'task list'
+# abbr --add t 'task'
+# abbr --add ta 'task add'
+# abbr --add tl 'task list'
 
 # npm shortcuts
 abbr --add nls 'npm list --depth=0'
 
+# fzf
+abbr --add preview 'fzf --preview \'head -100 {}\''
+
 # Sane cat for Markdown files
-abbr --add mdcat 'pandoc -f markdown -t plain'
+# abbr --add mdcat 'pandoc -f markdown -t plain'
 
 # Get week number
 abbr --add week 'date +%V'

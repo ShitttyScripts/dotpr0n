@@ -110,6 +110,11 @@ else
         set PATH $PATH $GOPATH/bin
     end
 
+    # fzf
+    if test -d $HOME/.fzf/shell
+        source $HOME/.fzf/shell/key-bindings.fish
+    end
+
     # ripgrep
     set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
