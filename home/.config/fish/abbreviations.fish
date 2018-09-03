@@ -4,7 +4,7 @@ abbr --add vplug 'cd ~/.config/nvim/plugins'
 
 # fish
 abbr --add fconf 'nvim ~/.config/fish/config.fish'
-abbr --add aconf 'nvim ~/.config/fish/abbreviations.fish; and source ~/.config/fish/abbreviations.fish'
+abbr --add aconf 'nvim ~/.config/fish/abbreviations.fish; and for a in (abbr -l); abbr -e $a; end; and source ~/.config/fish/abbreviations.fish'
 
 # Shortcuts
 abbr --add dl 'cd ~/Downloads'
