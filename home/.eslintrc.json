@@ -15,7 +15,10 @@
     "ecmaVersion": 6,
     "sourceType": "module"
   },
-  "extends": "eslint:recommended",
+  "extends": [
+      "plugin:vue/recommended",
+      "eslint:recommended"
+    ],
   "rules": {
     "semi": ["error", "always"],
     "no-undef": "off",
