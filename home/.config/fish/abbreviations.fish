@@ -1,6 +1,7 @@
 # Neovim as Vim
 abbr --add vconf 'nvim ~/.config/nvim/init.vim'
 abbr --add vplug 'cd ~/.config/nvim/plugins'
+abbr --add vit 'nvim ~/.taskpaper/current.taskpaper'
 
 # fish
 abbr --add fconf 'nvim ~/.config/fish/config.fish'
@@ -16,7 +17,6 @@ abbr --add v 'vifm'
 abbr --add d 'docker'
 abbr --add duck 'cd ~/Library/Group\ Containers/G69SCX94XU.duck/Library/Application\ Support/duck/Volumes/'
 abbr --add x 'exit'
-abbr --add co 'code'
 
 # Homeshick
 abbr --add h 'homeshick'
@@ -51,10 +51,9 @@ abbr --add gfp 'git fetch --prune'
 abbr --add gi 'git ignore'
 abbr --add gl "git log --pretty='format:%C(Yellow)%h%Creset %C(Blue)%ar%Creset %an - %s' --graph"
 abbr --add gm 'git merge --no-ff'
-abbr --add gpom 'git pull origin master'
+abbr --add gpoh 'git push origin HEAD'
 abbr --add gpull 'git pull'
 abbr --add gpush 'git push'
-abbr --add gput 'git push --tags'
 abbr --add grh 'git reset --hard'
 abbr --add gst 'git status'
 abbr --add gt 'git tag'
@@ -74,9 +73,6 @@ abbr --add nls 'npm list --depth=0'
 
 # fzf
 abbr --add preview 'fzf --preview \'head -100 {}\''
-
-# Sane cat for Markdown files
-# abbr --add mdcat 'pandoc -f markdown -t plain'
 
 # Get week number
 abbr --add week 'date +%V'
@@ -98,7 +94,7 @@ abbr --add sniff "sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 abbr --add sizes 'du -sh * | sort -n'
 
 # Recursively delete `.DS_Store` files
-abbr --add cleanup "find . -type f -name '*.DS_Store' -ls -delete"
+abbr --add dsclean "find . -type f -name '*.DS_Store' -ls -delete"
 
 # Show/hide hidden files in Finder
 abbr --add show 'defaults write com.apple.finder AppleShowAllFiles -bool true; and killall Finder'
@@ -146,9 +142,6 @@ abbr --add header 'curl -I'
 
 # Find out if remote server supports gzip / mod_deflate or not
 abbr --add headerc 'curl -I --compress'
-
-# Die, smiley, die!
-abbr --add cleanvsc "sed -i '' 's/\.send-feedback{display:inline-block}/\.send-feedback{display:none}/' /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/out/vs/workbench/workbench.main.css"
 
 # USB Serial
 abbr --add usbserial "screen /dev/tty.usbserial 115200"
