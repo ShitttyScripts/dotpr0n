@@ -45,9 +45,14 @@ end
 
 function __update_node_packages
     set cmd (which npm)
+    set os (uname)
     if test $status -eq 0
-        printf "\n====[ npm ]=================================================\n"; and \
-        sudo npm -g upgrade
+        printf "\n====[ npm ]=================================================\n"
+        if [ $os = "Darwin" ]
+            npm -g upgrade
+        else
+            sudo npm -g upgrade
+        end
     end
 
     # set cmd (which yarn)
@@ -56,6 +61,7 @@ function __update_node_packages
     #     yarn global upgrade
     # end
     set -e cmd
+    set -e os
 end
 
 function __update_gems
