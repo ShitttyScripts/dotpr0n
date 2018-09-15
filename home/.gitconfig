@@ -50,8 +50,8 @@
 [pull]
 	rebase = true
 [mergetool]
-	prompt = false
 	keepBackup = false
+	prompt = false
 [mergetool "Kaleidoscope"]
 	cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
 	trustexitcode = true
