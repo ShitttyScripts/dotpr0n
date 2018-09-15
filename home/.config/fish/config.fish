@@ -141,6 +141,11 @@ else
         set -gx PATH $PATH $HOME/.myrepos
     end
 
+    # kitty
+    if test (which kitty)
+        kitty + complete setup fish | source
+    end
+
     # Source command abbreviations
     source $HOME/.config/fish/abbreviations.fish > /dev/null 2>&1
 
