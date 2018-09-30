@@ -72,9 +72,9 @@ else
     set LESS_TERMCAP_mh (tput dim)
 
     # Composer
-    if test -d $HOME/.composer/vendor/bin
-        set -gx PATH $PATH $HOME/.composer/vendor/bin
-    end
+    # if test -d $HOME/.composer/vendor/bin
+    #     set -gx PATH $PATH $HOME/.composer/vendor/bin
+    # end
 
     # yarn
     if test -d $HOME/.yarn/bin
@@ -82,15 +82,15 @@ else
     end
 
     # rvm
-    if test -d /usr/local/rvm/bin
-        set -x PATH $PATH /usr/local/rvm/bin
-        rvm default > /dev/null 2>&1
-    end
-
-    if test -d $HOME/.rvm/bin
-        set -x PATH $PATH $HOME/.rvm/bin
-        rvm default > /dev/null 2>&1
-    end
+    # if test -d /usr/local/rvm/bin
+    #     set -x PATH $PATH /usr/local/rvm/bin
+    #     rvm default > /dev/null 2>&1
+    # end
+    #
+    # if test -d $HOME/.rvm/bin
+    #     set -x PATH $PATH $HOME/.rvm/bin
+    #     rvm default > /dev/null 2>&1
+    # end
 
     # pyenv
     if test -d $HOME/.pyenv
@@ -100,9 +100,9 @@ else
     end
 
     # acme.sh
-    if test -d $HOME/.acme.sh
-        set -gx PATH $PATH $HOME/.acme.sh
-    end
+    # if test -d $HOME/.acme.sh
+    #     set -gx PATH $PATH $HOME/.acme.sh
+    # end
 
     # Go
     if test -d $HOME/go
@@ -113,10 +113,8 @@ else
     # fzf
     if test -d $HOME/.fzf/shell
         source $HOME/.fzf/shell/key-bindings.fish
+        set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
     end
-
-    # ripgrep
-    set -x FZF_DEFAULT_COMMAND 'rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 
     # luaenv
     # if test -d $HOME/.luaenv
@@ -137,9 +135,9 @@ else
     # end
 
     # myrepos
-    if test -d $HOME/.myrepos
-        set -gx PATH $PATH $HOME/.myrepos
-    end
+    # if test -d $HOME/.myrepos
+    #     set -gx PATH $PATH $HOME/.myrepos
+    # end
 
     # kitty
     if test (which kitty)
@@ -150,9 +148,9 @@ else
     source $HOME/.config/fish/abbreviations.fish > /dev/null 2>&1
 
     # iTerm integration
-    if test -e {$HOME}/.iterm2_shell_integration.fish
-        source {$HOME}/.iterm2_shell_integration.fish
-    end
+    # if test -e {$HOME}/.iterm2_shell_integration.fish
+    #     source {$HOME}/.iterm2_shell_integration.fish
+    # end
 
     # Colorscheme
     set fish_color_autosuggestion 555 brblack
