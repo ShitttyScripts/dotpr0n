@@ -55,11 +55,11 @@ function __update_node_packages
         end
     end
 
-    # set cmd (which yarn)
-    # if test $status -eq 0
-    #     printf "\n====[ yarn ]================================================\n"; and \
-    #     yarn global upgrade
-    # end
+    set cmd (which yarn)
+    if test $status -eq 0
+        printf "\n====[ yarn ]================================================\n"; and \
+        yarn global upgrade
+    end
     set -e cmd
     set -e os
 end
@@ -104,10 +104,10 @@ function __macos_homebrew
     if test $status -eq 0
         printf "\n====[ Homebrew ]============================================\n"; and \
         brew update; and \
-        brew upgrade --cleanup; and \
+        brew upgrade
         # brew upgrade --fetch-HEAD universal-ctags; and \
-        brew cleanup -s; and \
-        brew prune
+        # brew cleanup -s; and \
+        # brew prune
     end
     set -e cmd
 end

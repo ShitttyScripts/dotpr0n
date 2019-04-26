@@ -43,6 +43,7 @@ else
             set -g fish_user_paths /usr/local/sbin $fish_user_paths
 
             # Homebrew
+            set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
             set -gx HOMEBREW_NO_ANALYTICS 1
             set -gx HOMEBREW_NO_AUTO_UPDATE 1
             set -gx HOMEBREW_NO_GITHUB_API 1
@@ -78,7 +79,7 @@ else
 
     # yarn
     if test -d $HOME/.yarn/bin
-        set -gx PATH $PATH $HOME/.yarn/bin
+        set -gx PATH $PATH $HOME/.yarn/bin $HOME/.config/yarn/global/node_modules/.bin
     end
 
     # rvm
@@ -93,11 +94,11 @@ else
     # end
 
     # pyenv
-    if test -d $HOME/.pyenv
-        set -x PYENV_ROOT $HOME/.pyenv
-        set -x PATH $PYENV_ROOT/bin $PATH
-        source (pyenv init -|psub) > /dev/null 2>&1
-    end
+    # if test -d $HOME/.pyenv
+    #     set -x PYENV_ROOT $HOME/.pyenv
+    #     set -x PATH $PYENV_ROOT/bin $PATH
+    #     source (pyenv init -|psub) > /dev/null 2>&1
+    # end
 
     # acme.sh
     # if test -d $HOME/.acme.sh
