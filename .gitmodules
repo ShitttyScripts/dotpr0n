@@ -4,3 +4,6 @@
 [submodule "home/.pyenv"]
 	path = home/.pyenv
 	url = https://github.com/pyenv/pyenv
+[submodule "home/.tmux/plugins/tpm"]
+	path = home/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
