@@ -44,16 +44,16 @@ function __freebsd_source
 end
 
 function __update_node_packages
-    set cmd (which npm)
-    set os (uname)
-    if test $status -eq 0
-        printf "\n====[ npm ]=================================================\n"
-        if [ $os = "Darwin" ]
-            npm -g upgrade
-        else
-            sudo npm -g upgrade
-        end
-    end
+    # set cmd (which npm)
+    # set os (uname)
+    # if test $status -eq 0
+    #     printf "\n====[ npm ]=================================================\n"
+    #     if [ $os = "Darwin" ]
+    #         npm -g upgrade
+    #     else
+    #         sudo npm -g upgrade
+    #     end
+    # end
 
     set cmd (which yarn)
     if test $status -eq 0
