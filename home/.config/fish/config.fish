@@ -141,7 +141,7 @@ else
     # end
 
     # kitty
-    if test (which kitty)
+    if command --search kitty > /dev/null
         kitty + complete setup fish | source
     end
 
