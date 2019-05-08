@@ -38,12 +38,13 @@ else
     # OS specific paths
     switch $OS
         case Darwin
-            set -gx PATH /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $PATH
+            set -gx PATH /opt/X11/bin /opt/X11/bin /usr/local/MacGPG2/bin $HOME/.pear/bin $HOME/Library/Python/3.7/bin $PATH
             set -gx MANPATH /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
             set -g fish_user_paths /usr/local/sbin $fish_user_paths
 
             # Homebrew
             set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
+            set -gx PATH /opt/local/bin /opt/local/sbin $PATH
             set -gx HOMEBREW_NO_ANALYTICS 1
             set -gx HOMEBREW_NO_AUTO_UPDATE 1
             set -gx HOMEBREW_NO_GITHUB_API 1
@@ -153,31 +154,33 @@ else
     #     source {$HOME}/.iterm2_shell_integration.fish
     # end
 
-    # Colorscheme
-    # set fish_color_autosuggestion 555 brblack
-    # set fish_color_cancel -r
-    # set fish_color_command --bold
-    # set fish_color_comment red
-    # set fish_color_cwd green
-    # set fish_color_cwd_root red
-    # set fish_color_end brmagenta
-    # set fish_color_error brred
-    # set fish_color_escape bryellow --bold
-    # set fish_color_history_current --bold
-    # set fish_color_host normal
-    # set fish_color_match --background=brblue
-    # set fish_color_normal normal
-    # set fish_color_operator bryellow
-    # set fish_color_param cyan
-    # set fish_color_quote yellow
-    # set fish_color_redirection brblue
-    # set fish_color_search_match bryellow --background=brblack
-    # set fish_color_selection white --bold --background=brblack
-    # set fish_color_user brgreen
-    # set fish_color_valid_path --underline
-    # set fish_pager_color_completion
-    # set fish_pager_color_description B3A06D yellow
-    # set fish_pager_color_prefix white --bold --underline
-    # set fish_pager_color_progress brwhite --background=cyan
+    # Colorscheme (Solarized Dark)
+
+    set fish_color_autosuggestion 555 brblack
+    set fish_color_cancel -r
+    set fish_color_command 93a1a1
+    set fish_color_comment 586e75
+    set fish_color_cwd green
+    set fish_color_cwd_root red
+    set fish_color_end 268bd2
+    set fish_color_error dc322f
+    set fish_color_escape 00a6b2
+    set fish_color_history_current --bold
+    set fish_color_host normal
+    set fish_color_match red
+    set fish_color_normal normal
+    set fish_color_operator 00a6b2
+    set fish_color_param 839496
+    set fish_color_quote yellow
+    set fish_color_redirection 6c71c4
+    set fish_color_search_match --background=black
+    set fish_color_selection --background 666
+    set fish_color_status red
+    set fish_color_user brgreen
+    set fish_color_valid_path --underline
+    set fish_pager_color_completion B3A06D
+    set fish_pager_color_description 4B646C white
+    set fish_pager_color_prefix cyan --underline
+    set fish_pager_color_progress brwhite --background=cyan
 
 end
