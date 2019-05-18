@@ -107,6 +107,11 @@ else
     #     set -gx PATH $PATH $HOME/.acme.sh
     # end
 
+    # Composer
+    if test -d $HOME/.composer
+        set PATH $PATH $HOME/.composer/vendor/bin
+    end
+
     # Go
     if test -d $HOME/go
         set GOPATH $HOME/go
