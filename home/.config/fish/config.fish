@@ -42,13 +42,14 @@ else
             set -gx MANPATH /usr/local/man /usr/share/man /usr/local/share/man $MANPATH
             set -g fish_user_paths /usr/local/sbin $fish_user_paths
 
-            # Homebrew
+            # MacPorts
             set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
             set -gx PATH /opt/local/bin /opt/local/sbin $PATH
-            set -gx HOMEBREW_NO_ANALYTICS 1
-            set -gx HOMEBREW_NO_AUTO_UPDATE 1
-            set -gx HOMEBREW_NO_GITHUB_API 1
-            set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
+            set -gx MANPATH $MANPATH /opt/local/man/
+            # set -gx HOMEBREW_NO_ANALYTICS 1
+            # set -gx HOMEBREW_NO_AUTO_UPDATE 1
+            # set -gx HOMEBREW_NO_GITHUB_API 1
+            # set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
         case FreeBSD
             # null
         case '*'
