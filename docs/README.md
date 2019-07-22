@@ -2,7 +2,7 @@
 
 I'm a bit obsessive about my dotfiles and have gathered the most important pieces here.
 
-This repository and its *castles* work best when using [Homeshick](https://github.com/andsens/homeshick), a pure Bash implementation of [Homesick](https://github.com/technicalpickles/homesick). I don't like the latter one as it depends on Ruby being available. I like to keep my dependencies to a minimum. Give Homeshick a spin, it's quite nice to work with.
+This repository is managed by [yadm](https://github.com/TheLocehiliosan/yadm).
 
 [fish](https://www.fishshell.com) is my interactive shell of choice. For scripting, I largely target `sh`, for portability. I was a long-time user of plain Bash, then Zsh and finally settled on fish. It breaks with Bash compatibility where usability can be improved and needs some getting used to. Once you are, it truly feels like the *command line shell for the 90s* it's claiming to be. fish offers some great simplifications for scripting as well. For ad-hoc scripting, I use it almost exclusively.
 
@@ -11,19 +11,25 @@ Obviously, you're not going to just dump the bulk of my dotfiles to your local s
 ## Requirements
 
 fish >= 2.4.x
+yadm
 
 ## Install
 
 ### Use fish
-```sh
-git clone https://github.com/andsens/homeshick.git ~/.homesick/repos/homeshick
-~/.homesick/repos/homeshick/bin/homeshick clone herrbischoff/dotpr0n
+```fish
+mkdir ~/bin && \
+curl -fLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && \
+chmod a+x ~/bin && \
 source ~/.config/fish/config.fish
 ```
 
 ## Optional
 
 ### pyenv
+
+```fish
+git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+```
 
 #### Debian/Ubuntu
 
@@ -61,19 +67,4 @@ curl -sSL https://get.rvm.io | bash -s stable
 ### acme.sh
 ```sh
 curl https://get.acme.sh | sh
-```
-
-### macOS
-```sh
-homeshick clone herrbischoff/castle-macos
-```
-
-### mutt
-```sh
-homeshick clone herrbischoff/castle-mutt
-```
-
-### cmus
-```sh
-homeshick clone herrbischoff/castle-cmus
 ```
