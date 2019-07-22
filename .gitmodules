@@ -1,9 +1,0 @@
-[submodule "home/.tmux/plugins/tmux-better-mouse-mode"]
-	path = home/.tmux/plugins/tmux-better-mouse-mode
-	url = https://github.com/nhdaly/tmux-better-mouse-mode
-[submodule "home/.pyenv"]
-	path = home/.pyenv
-	url = https://github.com/pyenv/pyenv
-[submodule "home/.tmux/plugins/tpm"]
-	path = home/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm

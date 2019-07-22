@@ -1,0 +1,1 @@
+../../../../.homesick/repos/dotpr0n/home/.config/fish/functions/pure/fish_prompt.fish
