@@ -10,8 +10,7 @@ Obviously, you're not going to just dump the bulk of my dotfiles to your local s
 
 ## Requirements
 
-fish >= 2.4.x
-yadm
+fish >= 2.5.x
 
 ## Install
 
