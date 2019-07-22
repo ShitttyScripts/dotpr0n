@@ -25,6 +25,18 @@ source ~/.config/fish/config.fish
 
 ## Optional
 
+### Neovim
+```fish
+pip install --user neovim python-language-server vim-vint yamllint
+yarn global add babel-eslint eslint eslint-plugin-html eslint-plugin-vue javascript-typescript-langserver prettier pug-lint stylelint svgo vue-language-server
+vi +PlugInstall +UpdateRemotePlugins
+```
+
+### yarn
+```fish
+curl -o- -L https://yarnpkg.com/install.sh | bash
+```
+
 ### pyenv
 
 ```fish
@@ -33,7 +45,7 @@ git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
 #### Debian/Ubuntu
 
-```sh
+```fish
 apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev
 pyenv install 3.6.4
 pyenv global 3.6.4
@@ -41,30 +53,18 @@ pyenv global 3.6.4
 
 #### macOS
 
-```sh
+```fish
 brew install readline xz
 pyenv install 3.6.4
 pyenv global 3.6.4
 ```
 
-### yarn
-```sh
-curl -o- -L https://yarnpkg.com/install.sh | bash
-```
-
-### Neovim
-```sh
-homeshick clone herrbischoff/castle-neovim
-~/.homesick/repos/castle-neovim/install_dependencies.sh
-vi +PlugInstall +UpdateRemotePlugins
-```
-
 ### rvm
-```sh
+```fish
 curl -sSL https://get.rvm.io | bash -s stable
 ```
 
 ### acme.sh
-```sh
+```fish
 curl https://get.acme.sh | sh
 ```
