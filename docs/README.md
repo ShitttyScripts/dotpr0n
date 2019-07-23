@@ -17,7 +17,7 @@ fish >= 2.5.x
 ### Use fish
 ```fish
 mkdir ~/bin && \
-curl -fLo /usr/local/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && \
+curl -fLo ~/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && \
 chmod a+x ~/bin && \
 source ~/.config/fish/config.fish
 ```
