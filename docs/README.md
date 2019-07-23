@@ -18,7 +18,8 @@ fish >= 2.5.x
 ```fish
 mkdir ~/bin && \
 curl -fLo ~/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && \
-chmod a+x ~/bin && \
+chmod a+x ~/bin/yadm && \
+~/bin/yadm clone git@github.com:herrbischoff/dotpr0n.git && \
 source ~/.config/fish/config.fish
 ```
 
