@@ -73,22 +73,10 @@ set writebackup
     " let &t_EI = "\e[2 q"
 " endif
 
-" MacVim
-if (has('gui_macvim'))
-    " set linespace=2 " Set line spacing
-    set guifont=Source\ Code\ Pro:h13
-    " set guifont=Iosevka\ Term:h15
-    set guioptions=
-    set guicursor=a:blinkon0
-    set t_Co=256
-endif
-
 set autoindent " autoindent based on line above, works most of the time
 " set breakindent
-set colorcolumn=80,100 " Make a mark for column 80
 " set copyindent " copy the previous indentation on autoindenting
 set clipboard=unnamed
-set cursorline
 set diffopt+=vertical
 set expandtab " use spaces instead of tabs
 set foldenable " enable folding
@@ -99,9 +87,6 @@ set foldmethod=indent " fold based on indent level
 set gdefault
 set hlsearch " highlight searches by default
 set ignorecase
-if has('nvim')
-    set inccommand=nosplit
-endif
 set incsearch " find the next match as we type the search
 set laststatus=2
 set lazyredraw
@@ -138,7 +123,25 @@ set tagcase=followscs " Follow smartcase and ignorecase when doing tag search
 set wrapscan
 set grepprg=rg\ --vimgrep
 
+" MacVim
+if (has('gui_macvim'))
+    " set linespace=2 " Set line spacing
+    set guifont=Source\ Code\ Pro:h13
+    " set guifont=Iosevka\ Term:h15
+    set guioptions=
+    set guicursor=a:blinkon0
+    set t_Co=256
+endif
+
+" MacVim
+if has('nvim')
+    set inccommand=nosplit
+endif
+
 if (OS == "Darwin")
+    set colorcolumn=80,100 " Make a mark for columns 80 and 100
+    set cursorline
+
     " let g:seoul256_background = 236
     " colorscheme seoul256
     " colorscheme OceanicNextMnml
