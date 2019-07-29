@@ -79,6 +79,9 @@ abbr --add nls 'npm list --depth=0'
 # fzf
 abbr --add preview 'fzf --preview \'head -100 {}\''
 
+# Glances
+abbr --add glances 'sudo glances --disable-bg --disable-check-update'
+
 # Get week number
 abbr --add week 'date +%V'
 

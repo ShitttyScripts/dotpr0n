@@ -19,7 +19,7 @@ else
     set -gx LC_CTYPE en_US.UTF-8
 
     # Base aliases
-    alias ll "ls -lah"
+    alias l "ls -lah"
     alias vi "nvim"
     alias vim "nvim"
 
