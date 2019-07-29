@@ -20,7 +20,7 @@ mkdir ~/bin && \
 curl -fLo ~/bin/yadm https://github.com/TheLocehiliosan/yadm/raw/master/yadm && \
 chmod a+x ~/bin/yadm && \
 ~/bin/yadm clone https://github.com/herrbischoff/dotpr0n.git && \
-yadm submodule update --init --recursive && \
+~/bin/yadm submodule update --init --recursive && \
 source ~/.config/fish/config.fish
 ```
 
