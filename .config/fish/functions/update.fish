@@ -90,11 +90,11 @@ function __macos_macports
     set cmd (which port)
     if test $status -eq 0
         printf "\n====[ MacPorts ]============================================\n"; and \
-        sudo port selfupdate; and \
-        sudo port outdated; and \
-        sudo port upgrade outdated; and \
-        sudo port uninstall leaves
-        port uninstall inactive
+        sudo port selfupdate && \
+        sudo port outdated && \
+        sudo port upgrade outdated && \
+        sudo port uninstall leaves && \
+        sudo port uninstall inactive
     end
     set -e cmd
 end
@@ -136,9 +136,9 @@ end
 function update --description 'Update system software'
 	switch (uname)
 		case Darwin
-			__macos_software_update
+			# __macos_software_update
 			__macos_appstore
-			__macos_homebrew
+			__macos_macports
 			__update_node_packages
             __neovim_plugins
 			# __update_gems

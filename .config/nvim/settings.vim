@@ -89,7 +89,6 @@ set hlsearch " highlight searches by default
 set ignorecase
 set incsearch " find the next match as we type the search
 set laststatus=2
-set lazyredraw
 set linebreak
 set listchars=tab:▸\ ,eol:¬,extends:❯,precedes:❮
 set modelines=1
@@ -161,15 +160,15 @@ if (OS == "Darwin")
     endif
 
     " Make background transparent
-    " if (has('nvim') && !has("gui_vimr"))
-    "     highlight Normal guibg=none ctermbg=none gui=none
-    "     highlight NonText guibg=none ctermbg=none gui=none
-    "     highlight SignColumn guibg=none ctermbg=none gui=none
-    "     highlight EndOfBuffer guibg=none ctermbg=none gui=none
-    " else
+    if (has('nvim') && !has("gui_vimr"))
+        highlight Normal guibg=none ctermbg=none gui=none
+        highlight NonText guibg=none ctermbg=none gui=none
+        highlight SignColumn guibg=none ctermbg=none gui=none
+        highlight EndOfBuffer guibg=none ctermbg=none gui=none
+    else
         highlight Normal ctermbg=none
         highlight NonText ctermbg=none
-    " endif
+    endif
 
     " SignColumn
     highlight SignColumn ctermbg=NONE cterm=NONE guibg=NONE gui=NONE
