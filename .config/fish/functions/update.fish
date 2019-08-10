@@ -127,6 +127,10 @@ function __debian_apt
 	sudo apt upgrade
 end
 
+function __neovim_plugins
+    nvim +PlugUpgrade +PlugInstall +PlugClean! +PlugUpdate +qall!
+end
+
 #####
 
 function update --description 'Update system software'
@@ -136,6 +140,7 @@ function update --description 'Update system software'
 			__macos_appstore
 			__macos_homebrew
 			__update_node_packages
+            __neovim_plugins
 			# __update_gems
 			# __update_pip
 		case Linux
