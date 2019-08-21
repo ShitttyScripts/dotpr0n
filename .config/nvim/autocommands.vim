@@ -18,6 +18,7 @@ augroup filetypes
     autocmd FileType jade,pug setlocal ts=2 sts=2 sw=2
     autocmd FileType javascript,json setlocal ts=2 sts=2 sw=2
     " autocmd FileType javascript,json setlocal ts=4 sts=4 sw=4
+    autocmd FileType mail setlocal tw=72 formatoptions+=w
     autocmd FileType make setlocal ts=8 sts=8 sw=8 noexpandtab
     " autocmd FileType markdown setlocal ts=4 sts=4 sw=4 textwidth=0 wrapmargin=0 wrap spell formatoptions+=l
     autocmd FileType markdown setlocal ts=4 sts=4 sw=4 spell wrap linebreak nolist textwidth=79 formatoptions+=t
