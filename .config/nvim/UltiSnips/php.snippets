@@ -2,6 +2,7 @@ snippet php "PHP opening tag"
 <?php
 ${1}
 endsnippet
+
 snippet doc "DocBlock default"
 /**
  * ${1}
@@ -16,6 +17,7 @@ snippet doc "DocBlock default"
  */
 ${7}
 endsnippet
+
 snippet change_date_format52 "Change Date Format for PHP 5.2"
 /**
  * This is needed for PHP 5.2
@@ -38,6 +40,7 @@ if( !filter_var( $emailAddress, FILTER_VALIDATE_EMAIL ) ) {
     echo "Address submitted successfully";
 }
 endsnippet
+
 snippet detect_mobile_browser "Detect Mobile Browser"
 <?php
 $tablet_browser = 0;
@@ -93,6 +96,7 @@ else {
    print 'is desktop';
 }
 endsnippet
+
 snippet last_word_after_url "Get Last Word From URL After Slash"
 $current_link = "http://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
 $self = basename($_SERVER['PHP_SELF']);
@@ -107,6 +111,7 @@ else :
 	echo 'Nothing to parse.';
 endif;
 endsnippet
+
 snippet download_file "Download File Instead of Displaying"
 $pattern = "/\/wp-content\/uploads\//";
 
@@ -128,6 +133,7 @@ if ( !empty($_GET['img']) && preg_match($pattern, $_GET['img']) ) {
 
 header( "HTTP/1.0 404 Not Found" );
 endsnippet
+
 snippet occurrences "Count the occurrences of substring in a string"
 /** Count the occurrences of substring in a string;
  * @param {String} string   Required. The string;
@@ -153,17 +159,19 @@ function occurrences(string, subString, allowOverlapping) {
 }
 endsnippet
 
-#########################################
+###############################################################################
 ## WordPress Snippets
-#########################################
+###############################################################################
 
 snippet register_nav_menu "Register Custom Menu"
 register_nav_menu('main', 'Main navigation menu');
 endsnippet
+
 snippet acf_date "Reformat ACF Date Entry"
 $date = new DateTime( get_field('date') );
 echo $date->format('d.m.Y');
 endsnippet
+
 snippet acf_sub_fields "Output All Sub Pages With Repeater Fields"
 <?php $sliders = get_pages( 'child_of=' . get_the_id() ); ?>
 <?php foreach ( $sliders as $slider ) : ?>
@@ -186,6 +194,7 @@ snippet acf_sub_fields "Output All Sub Pages With Repeater Fields"
 
 <?php endforeach; ?>
 endsnippet
+
 snippet load_theme_textdomain "Load Text Domain"
 add_action('after_setup_theme', 'my_theme_setup');
 function my_theme_setup(){
@@ -200,6 +209,7 @@ function my_theme_setup(){
  * and initialization actions of your theme have run.
  */
 endsnippet
+
 snippet functionality "Functionality Plugin Starter"
 <?php
 /*

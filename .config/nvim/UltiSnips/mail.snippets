@@ -1,19 +1,45 @@
 snippet abuse "Abuse template"
 Hello,
 
-in our logs we noticed a brute force password attack on one of our websites
-originating from your net range. As a professional and responsible company, you
-probably want to know about this and take appropriate actions to prevent future
+in our logs we noticed a brute force password attack on one of our websites 
+originating from your net range. As a professional and responsible company, you 
+probably want to know about this and take appropriate actions to prevent future 
 incidences.
 
-Please see a relevant log excerpt below. Thank you for your time and
+Please see a relevant log excerpt below. Thank you for your time and 
 consideration. All times are CET.
 
-Best regard,
+Best regards,
 Marcel Bischoff
 Webmaster
 
 === Log Excerpt Start ===
 $1
 === Log Excerpt End ===
+endsnippet
+
+snippet spam "Spam Report"
+To whom it may concern,
+
+someone on your network using the IP $1 is repeatedly trying to 
+offload forged email into one of our email servers and was automatically 
+blacklisted at the firewall level.
+
+As a professional and responsible company, you probably want to know about this 
+and take appropriate action to stop this and prevent future incidences.
+
+Please see a log excerpt below. All times are CEST.
+
+[...]
+$2
+[...]
+
+Thank you for your time and consideration.
+
+Best regards,
+Marcel Bischoff
+
+--
+Network Administrator
+herrbischoff.com
 endsnippet

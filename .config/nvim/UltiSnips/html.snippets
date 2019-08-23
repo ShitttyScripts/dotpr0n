@@ -3,12 +3,14 @@ snippet svg
   <use xlink:href="#$1"></use>
 </svg>
 endsnippet
-snippet repeater
+
+snippet twig_repeater
 {% for item in post.get_field('$1') %}
   $2
 {% endfor %}
 $0
 endsnippet
+
 snippet html "HTML5 Template"
 <!DOCTYPE html>
 <html>
@@ -23,6 +25,7 @@ snippet html "HTML5 Template"
   </body>
 </html>
 endsnippet
+
 snippet attribution "Fancy header"
 <!--
 ////////////////////////////////////////////////////////////////////////////////
