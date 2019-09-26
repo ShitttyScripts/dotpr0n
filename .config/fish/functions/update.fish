@@ -128,7 +128,8 @@ function __debian_apt
 end
 
 function __neovim_plugins
-    nvim +PlugUpgrade +PlugInstall +PlugClean! +PlugUpdate +qall!
+    nvim +PlugUpgrade +qall!
+    nvim +PlugInstall +PlugClean! +PlugUpdate +qall!
 end
 
 #####
