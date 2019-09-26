@@ -1,3 +1,6 @@
 [submodule ".tmux/plugins/tpm"]
 	path = .tmux/plugins/tpm
 	url = https://github.com/tmux-plugins/tpm
+[submodule "/Users/mbischoff/docs/cheatsheets"]
+	path = /Users/mbischoff/docs/cheatsheets
+	url = git@github.com:herrbischoff/cheatsheets.git
