@@ -2,16 +2,16 @@
 # Update functions
 #
 
-function __freebsd_portmaster
-	printf "\n====[ Upgrade Software ] ===================================\n"; and \
-	sudo portmaster -aBd; and \
-	sudo portmaster -y --clean-distfiles
-end
-
 function __freebsd_pkg
 	printf "\n====[ Upgrade Software ] ===================================\n"; and \
 	sudo pkg update; and \
 	sudo pkg upgrade
+end
+
+function __freebsd_portmaster
+	printf "\n====[ Upgrade Software ] ===================================\n"; and \
+    sudo portmaster -aBd --packages-build && \
+	sudo portmaster -y --clean-distfiles
 end
 
 function __freebsd_synth
@@ -140,32 +140,19 @@ function update --description 'Update system software'
 			__macos_homebrew
 			__update_node_packages
             __neovim_plugins
-			# __update_gems
-			# __update_pip
 		case Linux
 			__debian_apt
 			__update_node_packages
-			# __update_gems
-			# __update_pip
 		case FreeBSD
-			if [ "$argv[1]" = "jail" ]
+			if [ "$argv[1]" = "source" ]
+                __freebsd_portsnap
+                # __freebsd_ezjail_ports
                 __freebsd_portmaster
                 __update_node_packages
-                # __update_gems
-                # __update_pip
-            # else if [ (uname -p) = "armv6" ]
-            #     __freebsd_portsnap
-            #     __freebsd_portmaster
-            #     __update_npm
-            #     __update_gems
-            #     __update_pip
             else
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
                 __freebsd_pkg
-                __update_node_packages
-                # __update_gems
-                # __update_pip
             end
 		case '*'
 			printf "No update function for %s yet." (uname)
