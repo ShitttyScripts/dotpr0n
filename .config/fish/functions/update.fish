@@ -44,22 +44,22 @@ function __freebsd_source
 end
 
 function __update_node_packages
-    # set cmd (which npm)
-    # set os (uname)
-    # if test $status -eq 0
-    #     printf "\n====[ npm ]=================================================\n"
-    #     if [ $os = "Darwin" ]
-    #         npm -g upgrade
-    #     else
-    #         sudo npm -g upgrade
-    #     end
-    # end
-
-    set cmd (which yarn)
+    set cmd (which npm)
+    set os (uname)
     if test $status -eq 0
-        printf "\n====[ yarn ]================================================\n"; and \
-        yarn global upgrade
+        printf "\n====[ npm ]=================================================\n"
+        if [ $os = "Darwin" ]
+            npm -g upgrade
+        else
+            sudo npm -g upgrade
+        end
     end
+
+    # set cmd (which yarn)
+    # if test $status -eq 0
+    #     printf "\n====[ yarn ]================================================\n"; and \
+    #     yarn global upgrade
+    # end
     set -e cmd
     set -e os
 end
@@ -103,11 +103,9 @@ function __macos_homebrew
     set cmd (which brew)
     if test $status -eq 0
         printf "\n====[ Homebrew ]============================================\n"; and \
-        brew update; and \
-        brew upgrade
-        # brew upgrade --fetch-HEAD universal-ctags; and \
-        # brew cleanup -s; and \
-        # brew prune
+        brew update && \
+        brew upgrade && \
+        brew cleanup --prune=0
     end
     set -e cmd
 end
@@ -128,8 +126,7 @@ function __debian_apt
 end
 
 function __neovim_plugins
-    nvim +PlugUpgrade +qall!
-    nvim +PlugInstall +PlugClean! +PlugUpdate +qall!
+    nvim +PlugUpgrade +PlugInstall +PlugClean! +PlugUpdate +qall
 end
 
 #####
@@ -139,7 +136,8 @@ function update --description 'Update system software'
 		case Darwin
 			# __macos_software_update
 			__macos_appstore
-			__macos_macports
+			# __macos_macports
+			__macos_homebrew
 			__update_node_packages
             __neovim_plugins
 			# __update_gems
