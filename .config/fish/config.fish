@@ -43,13 +43,17 @@ else
             set -g fish_user_paths /usr/local/sbin $fish_user_paths
 
             # MacPorts
-            set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
-            set -gx PATH /opt/local/bin /opt/local/sbin $PATH
-            set -gx MANPATH $MANPATH /opt/local/man/
-            # set -gx HOMEBREW_NO_ANALYTICS 1
-            # set -gx HOMEBREW_NO_AUTO_UPDATE 1
-            # set -gx HOMEBREW_NO_GITHUB_API 1
-            # set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
+            # set -g fish_user_paths "/usr/local/opt/node@10/bin" $fish_user_paths
+            # set -gx PATH /usr/local/nvim-osx64/bin /opt/local/bin /opt/local/sbin $PATH
+            # set -gx MANPATH $MANPATH /opt/local/man/
+
+            # Homebrew
+            # set -gx PATH $PATH /usr/local/homebrew/bin
+            set -gx HOMEBREW_NO_ANALYTICS 1
+            set -gx HOMEBREW_NO_AUTO_UPDATE 1
+            set -gx HOMEBREW_NO_GITHUB_API 1
+            set -gx HOMEBREW_NO_INSECURE_REDIRECT 1
+            set -gx DYLD_FALLBACK_LIBRARY_PATH /usr/local/opt/openssl/lib $DYLD_FALLBACK_LIBRARY_PATH
         case FreeBSD
             # null
         case '*'
