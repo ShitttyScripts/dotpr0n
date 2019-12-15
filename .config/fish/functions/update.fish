@@ -10,7 +10,7 @@ end
 
 function __freebsd_portmaster
 	printf "\n====[ Upgrade Software ] ===================================\n"; and \
-    sudo portmaster -aBd --packages-build && \
+    sudo portmaster -aBdP && \
 	sudo portmaster -y --clean-distfiles
 end
 
@@ -146,9 +146,8 @@ function update --description 'Update system software'
 		case FreeBSD
 			if [ "$argv[1]" = "source" ]
                 __freebsd_portsnap
-                # __freebsd_ezjail_ports
+                __freebsd_ezjail_ports
                 __freebsd_portmaster
-                __update_node_packages
             else
                 __freebsd_portsnap
                 __freebsd_ezjail_ports
