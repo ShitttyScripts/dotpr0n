@@ -1,21 +1,28 @@
 snippet abuse "Abuse template"
 Hello,
 
-in our logs we noticed a brute force password attack on one of our websites 
-originating from your net range. As a professional and responsible company, you 
-probably want to know about this and take appropriate actions to prevent future 
-incidences.
+recently there was an attempt to scan and compromise one of our servers 
+from an IP address under your control. Please see the following log 
+excerpt for details and take appropriate action to stop this behaviour, 
+warn this customer or user and possibly report this to law enforcement, 
+in accordance to your Terms of Service and local laws.
 
-Please see a relevant log excerpt below. Thank you for your time and 
-consideration. All times are CET.
+=== Log Excerpt Start ===
+Log type: $1
+Timezone: Europe/Berlin
+
+$2
+=== Log Excerpt End ===
+
+Thank you for your time and consideration.
 
 Best regards,
 Marcel Bischoff
-Webmaster
 
-=== Log Excerpt Start ===
-$1
-=== Log Excerpt End ===
+--
+Network Administrator
+herrbischoff.com
+
 endsnippet
 
 snippet spam "Spam Report"
