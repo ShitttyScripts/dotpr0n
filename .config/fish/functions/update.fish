@@ -10,7 +10,7 @@ end
 
 function __freebsd_portmaster
 	printf "\n====[ Upgrade Software ] ===================================\n"; and \
-    sudo portmaster -aBdP && \
+        sudo portmaster -aBdt --packages-build && \
 	sudo portmaster -y --clean-distfiles
 end
 
