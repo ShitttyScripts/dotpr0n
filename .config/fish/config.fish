@@ -142,9 +142,9 @@ else
     # end
 
     # Rust
-    # if test -d $HOME/.cargo
-    #     source $HOME/.cargo/env > /dev/null 2>&1
-    # end
+    if test -d $HOME/.cargo
+        source $HOME/.cargo/env > /dev/null 2>&1
+    end
 
     # myrepos
     # if test -d $HOME/.myrepos
