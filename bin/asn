@@ -1,0 +1,8 @@
+#!/bin/sh
+
+ASN=$1
+TMPFILE="/tmp/asntmp"
+
+whois -h whois.radb.net -- "-i origin $ASN" > $TMPFILE
+cat $TMPFILE | grep '^route:' | awk '{print $2}' | cidr-merge
+cat $TMPFILE | grep '^route6:' | awk '{print $2}' | cidr-merge
