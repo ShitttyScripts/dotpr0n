@@ -32,8 +32,8 @@ else
     end
 
     # Global paths
-    set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $HOME/bin $PATH
-    set -gx MANPATH /usr/share/man $MANPATH
+    set -gx PATH /usr/local/bin /usr/bin /bin /usr/sbin /sbin $HOME/bin $HOME/.local/bin $PATH
+    set -gx MANPATH /usr/share/man /usr/local/man /usr/local/share/man $MANPATH
 
     # OS specific paths
     switch $OS
