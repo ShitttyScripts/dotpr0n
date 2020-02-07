@@ -427,3 +427,35 @@ nnoremap q :q<cr>
 
 " yank current filename without path into the clipboard
 nnoremap yn :!echo -n %c | pbcopy %i<cr>
+
+" quick way to select all files in the view
+nnoremap VV :%select<cr>
+
+" move the cursor in the other window
+nnoremap <silent> J <space>j<space>
+nnoremap <silent> K <space>k<space>
+
+" shortcut to sort command
+nnoremap S :sort<cr>
+
+" toggle preview, and within preview toggle wrap
+nnoremap w :view<cr>
+nnoremap W :set wrap!<cr>
+
+" grow/shrink window by 4 columns at a time
+nnoremap < 4<c-w><
+nnoremap > 4<c-w>>
+
+" tag a file and move down to the next one
+nmap <space> tj
+
+" cd should be faster than it is :)
+nnoremap cd :cd<space>
+
+" make vimdiff as easy as possible, assuming a file of the same name
+" exists in the other panel
+nnoremap dv :!vimdiff %c %D/%c<CR>
+
+" rename file; I inserts at the beginning, A appends at the end.
+nnoremap I cw<c-a>
+nnoremap A cw
