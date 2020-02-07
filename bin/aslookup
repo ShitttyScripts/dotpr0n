@@ -1,0 +1,12 @@
+#!/bin/sh
+
+if [ -z $1 ]; then
+    echo "Missing argument: `basename $0` <IP>"
+else
+    TMPFILE="/tmp/aslookuptmp"
+    curl -Ls "https://api.hackertarget.com/aslookup/?q=$1" > $TMPFILE
+    OUTPUT=`cat $TMPFILE | head -n 1 | awk -F \" '{print $4 " " $8}' | sed -E 's/(.*), (.*)/AS\1 | \2/'`
+    CONTACT=`querycontacts $1`
+    echo "$OUTPUT | $CONTACT"
+    rm $TMPFILE
+fi
